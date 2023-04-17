@@ -1,0 +1,53 @@
+{{ 'faqs.js' | asset_url | script_tag }}
+
+<div class="faqs page-width page-width--narrow section-{{ section.id }}-padding">
+  <div class="container">
+    <div class="accordian">
+      {% for block in section.blocks %}
+        <div class="accordian-card">
+          <div class="card-heading">
+            <p onclick="function('card-heading-{{ forloop.index }}')">{{ block.settings.question }}</p>
+          </div>
+          <div class="card-body-{{ forloop.index }}">
+            <p>{{ block.settings.answer }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "t:sections.faqs.name",
+    "tag": "section",
+    "class": "section",
+    "blocks": [
+      {
+        "type": "text",
+        "name": "t:sections.faqs.blocks.faq-qa.name",
+        "settings": [
+          {
+            "type": "inline_richtext",
+            "id": "question",
+            "label": "t:sections.faqs.blocks.faq-qa.settings.question.label"
+          }, {
+            "type": "richtext",
+            "id": "answer",
+            "label": "t:sections.faqs.blocks.faq-qa.settings.answer.label"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "t:sections.faqs.presets.name",
+        "blocks": [
+          {
+            "type": "text"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,48 @@
+<div class="section">
+  {%- assign hello_text = 'Hello world!' -%}
+  <p>{{ hello_text }}</p>
+  <p>{{ hello_text | upcase }}</p>
+  <p>{{ hello_text | replace: 'world', 'AHT' }}</p>
+
+  {%- assign fruits = 'apples, peaches, oranges, tomatoes' | split: ', ' -%}
+  <p>{{ fruits | join: '-' }}</p>
+  <p>{{ fruits | slice: 1 }}</p>
+  <p>{{ fruits | sort | join: '-' }}</p>
+  <div>
+    {%- for fruit in fruits -%}
+      {%- assign fruit_size = fruit | size -%}
+      {%- if fruit_size == 7 -%}
+        {{ fruit }}
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+
+  {%- assign fruits_2 = 'apples, peaches, oranges, tomatoes' | split: ', ' -%}
+  <div>
+    {%- for fruit in fruits_2 -%}
+      {%- if fruit contains 'o' -%}
+        {{ fruit }}
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+
+  {%- assign num = 4.3 -%}
+  <p>{{ num | ceil }}</p>
+  <p>{{ num | floor }}</p>
+  <p>{{ num | times: 10 }}</p>
+  <p>{{ num | divided_by: 2 }}</p>
+</div>
+
+
+{% schema %}
+  {
+    "name": "t:sections.ex-section.name",
+    "tag": "section",
+    "class": "section",
+    "presets": [
+      {
+        "name": "t:sections.ex-section.presets.name"
+      }
+    ]
+  }
+{% endschema %}
