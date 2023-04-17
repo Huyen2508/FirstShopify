@@ -1,9 +1,26 @@
 {{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
 
+{%- style -%}
+  @media screen and (max-width: 768px) {
+    .banner__desktop {
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: 769px) {
+    .banner__mobile {
+      display: none;
+    }
+  }
+{%- endstyle -%}
+
 <div class="banner">
-  {%- if section.settings.image_desktop != blank -%}
-    <div class="banner__media media">
-      {{ section.settings.image_desktop | image_url: width: 3840 | image_tag: loading: 'lazy' }}
+  <div class="banner__desktop">
+    {{ section.settings.image_desktop | image_url: width: 3840 | image_tag: loading: 'lazy' }}
+  </div>
+  {%- if section.settings.image_mobile != blank -%}
+    <div class="banner__mobile">
+      {{ section.settings.image_mobile | image_url: width: 768 | image_tag: loading: 'lazy' }}
     </div>
   {%- endif -%}
   <div class="banner__content banner__content">
