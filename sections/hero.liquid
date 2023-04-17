@@ -1,8 +1,7 @@
 {{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
-
 {%- style -%}
   @media screen and (max-width: 768px) {
-    .banner__desktop {
+    .banner__media {
       display: none;
     }
   }
@@ -15,7 +14,7 @@
 {%- endstyle -%}
 
 <div class="banner">
-  <div class="banner__desktop">
+  <div class="banner__media media">
     {{ section.settings.image_desktop | image_url: width: 3840 | image_tag: loading: 'lazy' }}
   </div>
   {%- if section.settings.image_mobile != blank -%}
