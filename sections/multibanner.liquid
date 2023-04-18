@@ -19,6 +19,7 @@
 
   h2 {
     position: absolute;
+    color: white;
   }
 {%- endstyle -%}
 
@@ -26,12 +27,11 @@
   {%- for block in section.blocks -%}
     <div class="row">
       <div class="column">
-        <a href="{{ block.settings.link }}">
-          <img
-            src="{{ block.settings.image | image_url: width: 150 }}"
-            alt="img_banner"
-            style="width:100%">
-        </a>
+        <a href="{{ block.settings.link }}"></a>
+        <img
+          src="{{ block.settings.image | image_url: width: 150 }}"
+          alt="img_banner"
+          style="width:100%">
         <h2>{{ block.settings.title }}</h2>
       </div>
     </div>
