@@ -3390,6 +3390,25 @@
       "presets": {
         "name": "Collapsible content"
       }
+    },
+    "faqs": {
+      "name": "FAQs",
+      "blocks": {
+        "faq-qa": {
+          "name": "Question & Answer",
+          "settings": {
+            "question": {
+              "label": "Question"
+            },
+            "answer": {
+              "label": "Answer"
+            }
+          }
+        }
+      },
+      "presets": {
+        "name": "FAQs"
+      }
     }
   }
 }
