@@ -30,6 +30,8 @@
         "09f7cb87-9b81-4402-a1fe-05695c00b905"
       ],
       "settings": {
+        "button_label": "Contact",
+        "button_link": "shopify:\/\/pages\/contact"
       }
     }
   },
