@@ -6,7 +6,7 @@
   .row {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-around;
+    align-items: stretch;
   }
 {%- endstyle -%}
 
@@ -19,7 +19,7 @@
           <img
             src="{{ block.settings.image | image_url: width: 150 }}"
             alt="img_banner"
-            style="width:100%">
+            style="width: 100%, flex-grow: {% if {{ block.settings.link }} == 'half' %}4{% else %}2{% endif %}">
           <h2>{{ block.settings.title }}</h2>
         </div>
       {%- endfor -%}
