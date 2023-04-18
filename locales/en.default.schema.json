@@ -3417,6 +3417,37 @@
       "presets": {
         "name": "FAQs"
       }
+    },
+    "multibanner": {
+      "name": "Multiple Banners",
+      "blocks": {
+        "banner": {
+          "name": "Banner",
+          "settings": {
+            "image": {
+              "label": "Image"
+            },
+            "title": {
+              "label": "Title"
+            },
+            "link": {
+              "label": "Link"
+            },
+            "width": {
+              "options__1": {
+                "label": "Half"
+              },
+              "options__2": {
+                "label": "Quarter"
+              },
+              "label": "Width"
+            }
+          }
+        }
+      },
+      "presets": {
+        "name": "Multiple Banners"
+      }
     }
   }
 }
