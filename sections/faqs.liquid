@@ -1,20 +1,69 @@
-{{ 'faqs.js' | asset_url | script_tag }}
+{%- style -%}
+  .faq-wrapper input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+
+  .faq-wrapper label {
+    position: relative;
+    display: block;
+    padding: 20px;
+    margin-bottom: 5px;
+    line-height: normal;
+    cursor: pointer;
+    border-top: 1px solid #ececec;
+    color: #000000;
+  }
+
+  .accordion__title span,
+  .faq-content p {
+    margin-left: 32px;
+  }
+
+  .faq-wrapper label::before {
+    position: absolute;
+    content: "+";
+    color: #F6AE2D;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 28px;
+    transition: all 0.5s;
+    padding: 0 5px;
+  }
+
+  .faq-wrapper input:checked~label::before {
+    content: "-";
+  }
+
+  .faq-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s;
+  }
+
+  .faq-wrapper input:checked~.faq-content {
+    max-height: none;
+  }
+{%- endstyle -%}
 
 <div class="faqs page-width page-width--narrow section-{{ section.id }}-padding">
-  <div class="container">
-    <div class="accordian">
-      {% for block in section.blocks %}
-        <div class="accordian-card">
-          <div class="card-heading">
-            <p onclick="function('card-heading-{{ forloop.index }}')">{{ block.settings.question }}</p>
-          </div>
-          <div class="card-body-{{ forloop.index }}">
-            <p>{{ block.settings.answer }}</p>
-          </div>
+  {% for block in section.blocks %}
+    <div class="faq-element">
+      <faq-tab class="faq-wrapper">
+        <input
+          id="faq-title-{{ forloop.index }}"
+          type="checkbox"
+          name="tabs">
+        <label for="faq-title-{{ forloop.index }}" class="h4 accordion__title">
+          <span>{{ block.settings.question }}</span>
+        </label>
+        <div class="faq-content">
+          <p>{{ block.settings.answer }}</p>
         </div>
-      {% endfor %}
+      </faq-tab>
     </div>
-  </div>
+  {% endfor %}
 </div>
 
 {% schema %}
