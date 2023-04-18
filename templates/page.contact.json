@@ -16,10 +16,50 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "3d0b6e21-295e-4478-92f9-bc8a0d4db957": {
+      "type": "multibanner",
+      "blocks": {
+        "template--18707507577137__3d0b6e21-295e-4478-92f9-bc8a0d4db957-16818154159ef5f128-0": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/silhouetted-couples-look-out-at-a-city-at-night.jpg",
+            "title": "",
+            "link": "",
+            "width": "half"
+          }
+        },
+        "5f151f7b-96e5-41a4-adf0-8696191a89f4": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/teaspoons-full-of-spices.jpg",
+            "title": "",
+            "link": "",
+            "width": "half"
+          }
+        },
+        "f3793354-250d-49ea-847d-d7ec57790a9b": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/highway-through-fall-wood.jpg",
+            "title": "",
+            "link": "",
+            "width": "half"
+          }
+        }
+      },
+      "block_order": [
+        "template--18707507577137__3d0b6e21-295e-4478-92f9-bc8a0d4db957-16818154159ef5f128-0",
+        "5f151f7b-96e5-41a4-adf0-8696191a89f4",
+        "f3793354-250d-49ea-847d-d7ec57790a9b"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
     "main",
-    "form"
+    "form",
+    "3d0b6e21-295e-4478-92f9-bc8a0d4db957"
   ]
 }
