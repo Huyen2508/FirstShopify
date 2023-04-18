@@ -3393,6 +3393,14 @@
     },
     "faqs": {
       "name": "FAQs",
+      "settings": {
+        "button_label": {
+          "label": "Button Label"
+        },
+        "button_link": {
+          "label": "Button Link"
+        }
+      },
       "blocks": {
         "faq-qa": {
           "name": "Question & Answer",

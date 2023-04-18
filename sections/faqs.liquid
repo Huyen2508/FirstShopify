@@ -69,6 +69,11 @@
       </faq-tab>
     </div>
   {% endfor %}
+  <div class="banner__buttons" {{ block.shopify_attributes }}>
+    <a href="{{ section.settings.button_link }}" class="button button--secondary">
+      {{- section.settings.button_label | escape -}}
+    </a>
+  </div>
 </div>
 
 {% schema %}
@@ -76,6 +81,18 @@
     "name": "t:sections.faqs.name",
     "tag": "section",
     "class": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "button_label",
+        "default": "Button",
+        "label": "t:sections.faqs.settings.button_label.label"
+      }, {
+        "type": "url",
+        "id": "button_link",
+        "label": "t:sections.faqs.settings.button_link.label"
+      }
+    ],
     "blocks": [
       {
         "type": "text",
