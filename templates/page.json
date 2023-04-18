@@ -6,9 +6,35 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "261af643-b5e9-48fb-92a3-0d7dce5c0076": {
+      "type": "faqs",
+      "blocks": {
+        "template--18707507806513__261af643-b5e9-48fb-92a3-0d7dce5c0076-1681789113d099c317-0": {
+          "type": "text",
+          "settings": {
+            "question": "<strong>HOW DO I PLACE AN ORDER ONLINE?<\/strong>",
+            "answer": "<p><em><strong>Step 1: Adding Items To Your Shopping Bag<\/strong><\/em><\/p><p>Browse through the Rodney Clark website and click on a product image for more detailed information. On most items, you have a size and\/ or colour option. select the size and\/ or colour you would like to order and click on the \"ADD TO BAG\" button.<\/p><p>If a specific size in a colour is greyed out, then it is currently out of stock or has been sold out online.<\/p><p><em><strong>Step 2: Viewing Your Shopping Bag<\/strong><\/em><\/p><p>You can view the items in your bag at any time by clicking the \"Shopping Bag\" button in the top right hand corner of every page of our website:<\/p><ul><li>To change the quantity of items you wish to purchase, change the number in the \"Qty\" box, and click the \" update Qty\" link.<\/li><li>To delete an item from your bag, click the \"Remove\" link next to the item you wish to remove OR set the \"Qty\" to 0 and click the \" update Qty\" link.<\/li><li>Once you are happy with the items in your bag please press the \"CHECKOUT\" button.<\/li><\/ul><p><em><strong>Step 3: Checkout - Payment & Delivery Details<\/strong><\/em><\/p><p>Our checkout will prompt you with 2 options:<\/p><p><em><strong>Login<\/strong><\/em><\/p><ul><li>This is for Rodney Clark Members or Existing Online Customers.<\/li><li>If you have placed an order online please enter your Login & Password;<\/li><li>After you provide us with your Login & Password, we will retrieve your details to make your purchase faster, OR<\/li><\/ul><p><em><strong>New Customers<\/strong><\/em><\/p><ul><li>Please enter your contact, delivery and payment details.<\/li><li>Once you have completed all the fields marked with an asterisk(*), please select the \"SUBMIT\" button.<\/li><li>After completing one of the above options you will go through to Step 4 – Order Confirmation.<\/li><\/ul><p><em><strong>Step 4: Order Confirmation (Secure Area)<\/strong><\/em><\/p><p>It is important to confirm your order & delivery details.<\/p>"
+          }
+        },
+        "09f7cb87-9b81-4402-a1fe-05695c00b905": {
+          "type": "text",
+          "settings": {
+            "question": "<strong>HOW DO I SHOP WITH AFTERPAY?<\/strong>",
+            "answer": "<p>Afterpay is an alternative method of payment available through Rodney Clark Online. Afterpay enables you to pay in 4 easy payments giving you more time to pay for everything you need. You receive your order immediately and there is no interest if paid on time.<\/p><p>Essentially, you can purchase an item today and pay for it later.<\/p><p>SHOP IN 3 EASY STEPS WITH AFTERPAY<\/p><p>1. SHOP & CHECKOUTShop and proceed to check out as usual.<\/p><p>2. select AFTERPAY AS YOUR PAYMENT OPTION ON THE CHECKOUT PAGEYou will be re-directed to Afterpay to complete your purchase.<\/p><p>3. REGISTER OR LOGIN TO FINALISE YOUR PLANIf you are 18 years or older and a permanent resident of Australia all you need is - Photo id - Debit or credit card - Email address - Mobile phone.<\/p><p>Please Note:Rodney Clark only accepts AFTERPAY transaction when the amount is over $70.00*At this time, Afterpay is available on online orders only<\/p><p>Read the full terms and conditions:<a href=\"https:\/\/www.afterpay.com\/en-AU\/terms-of-service\" title=\"Afterpay Terms\">https:\/\/www.afterpay.com\/en-AU\/terms-of-service<\/a><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--18707507806513__261af643-b5e9-48fb-92a3-0d7dce5c0076-1681789113d099c317-0",
+        "09f7cb87-9b81-4402-a1fe-05695c00b905"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "261af643-b5e9-48fb-92a3-0d7dce5c0076"
   ]
 }
