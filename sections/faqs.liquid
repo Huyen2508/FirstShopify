@@ -50,6 +50,10 @@
   .faq-wrapper input:checked~.faq-content {
     max-height: none;
   }
+
+  .banner__buttons {
+    margin-top: 15px;
+  }
 {%- endstyle -%}
 
 <div class="faqs page-width page-width--narrow section-{{ section.id }}-padding">
@@ -71,7 +75,7 @@
   {% endfor %}
   <div class="banner__buttons" {{ block.shopify_attributes }}>
     <a href="{{ section.settings.button_link }}" class="button button--primary">
-      {{- section.settings.button_label | escape -}}
+      {{- section.settings.button_label | escape | upcase -}}
     </a>
   </div>
 </div>
