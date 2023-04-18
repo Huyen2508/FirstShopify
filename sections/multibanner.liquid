@@ -1,108 +1,41 @@
 {%- style -%}
-  .banner-hero {
+  .column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
     position: relative;
-    text-align: center;
-    color: white;
-    line-height: 80px;
   }
 
-  .banner_desktop {
-    width: 100%;
+  /* Clearfix (clear floats) */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
   }
 
-  .banner_mobile {
-    display: none;
-  }
-
-  .banner-hero-content {
+  img {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
   }
 
-  .banner__heading {
-    color: white;
-  }
-
-  @media screen and (max-width: 768px) {
-    .banner-hero {
-      text-align: left;
-    }
-
-    .banner-hero .banner_desktop {
-      display: none;
-    }
-
-    .banner_mobile {
-      display: block;
-    }
-
-    .banner__text {
-      line-height: 25px;
-    }
-
-    .banner__buttons {
-      margin-top: 10px;
-    }
+  h2 {
+    position: absolute;
   }
 {%- endstyle -%}
 
-<div class="banner-hero">
-  {%- if section.settings.image_mobile == blank -%}
-    <img
-      class="banner_desktop"
-      src="{{ section.settings.image_desktop | image_url: width: 1500 }}"
-      alt="image_desktop">
-  {%- else -%}
-    <img
-      class="banner_desktop"
-      src="{{ section.settings.image_desktop | image_url: width: 1500 }}"
-      alt="image_desktop">
-    <img
-      class="banner_mobile"
-      src="{{ section.settings.image_mobile | image_url: width: 768 }}"
-      alt="banner_mobile">
-  {%- endif -%}
-  <div class="banner-hero-content">
-    {%- for block in section.blocks -%}
-      {%- case block.type -%}
-        {%- when 'heading' -%}
-        <h1 class="banner__heading inline-richtext" {{ block.shopify_attributes }}>{{ block.settings.heading }}</h1>
-        {%- when 'text' -%}
-        <div class="banner__text rte {{ block.shopify_attributes }}">
-          <p>{{ block.settings.subtitle }}</p>
-        </div>
-        {%- when 'buttons' -%}
-        <div class="banner__buttons{% if block.settings.button_label_1 != blank and block.settings.button_label_2 != blank %} banner__buttons--multiple{% endif %}" {{ block.shopify_attributes }}>
-          {%- if block.settings.button_label_1 != blank -%}
-            <a
-              {% if block.settings.button_link_1 == blank %}
-              role="link"
-              aria-disabled="true"
-              {% else %}
-              href="{{ block.settings.button_link_1 }}"
-              {% endif %}
-              class="button button--secondary">
-              {{- block.settings.button_label_1 | escape -}}
-            </a>
-          {%- endif -%}
-          {%- if block.settings.button_label_2 != blank -%}
-            <a
-              {% if block.settings.button_link_2 == blank %}
-              role="link"
-              aria-disabled="true"
-              {% else %}
-              href="{{ block.settings.button_link_2 }}"
-              {% endif %}
-              class="button button--secondary">
-              {{- block.settings.button_label_2 | escape -}}
-            </a>
-          {%- endif -%}
-        </div>
-      {%- endcase -%}
-    {%- endfor -%}
-  </div>
+<div class="multi-banner">
+  {%- for block in section.blocks -%}
+    <div class="row">
+      <div class="column">
+        <a href="{{ block.settings.link }}">
+          <img
+            src="{{ block.settings.image | image_url: width: 150 }}"
+            alt="img_banner"
+            style="width:100%">
+        </a>
+        <h2>{{ block.settings.title }}</h2>
+      </div>
+    </div>
+  {%- endfor -%}
 </div>
 
 {% schema %}
