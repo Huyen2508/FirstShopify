@@ -18,28 +18,28 @@
 
 <div class="banner">
   {%- if section.settings.image_mobile == blank -%}
-    <div class="banner_desktop">
-      {{
-         section.settings.image_desktop
-       | image_url: width: 3840
-       | image_tag:
-       loading: 'lazy' }}
-    </div>
+    <img
+      class="banner_desktop"
+      src="{{section.settings.image_desktop
+              | image_url: width: 3840
+              | image_tag:
+              loading: 'lazy' }}"
+      alt="image_desktop">
   {%- else -%}
-    <div class="banner_desktop">
-      {{
-         section.settings.image_desktop
-       | image_url: width: 3840
-       | image_tag:
-       loading: 'lazy' }}
-    </div>
-    <div class="banner_mobile">
-      {{
-         section.settings.image_mobile
-       | image_url: width: 768
-       | image_tag:
-       loading: 'lazy' }}
-    </div>
+    <img
+      class="banner_desktop"
+      src="{{section.settings.image_desktop
+                | image_url: width: 3840
+                | image_tag:
+                loading: 'lazy' }}"
+      alt="image_desktop">
+    <img
+      class="banner_mobile"
+      src="{{section.settings.image_mobile
+                | image_url: width: 768
+                | image_tag:
+                loading: 'lazy' }}"
+      alt="image_mobile">
   {%- endif -%}
   <div class="banner__content banner__content">
     <div class="banner__box content-container">
