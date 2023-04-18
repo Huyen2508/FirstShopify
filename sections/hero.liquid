@@ -30,24 +30,23 @@
 
 <div class="banner-hero">
   {%- if section.settings.image_mobile == blank -%}
-    <img class="banner_desktop" src="
-                            {{section.settings.image_desktop
-                            | image_url: width: 1920
-                            | image_tag:
-                            loading: 'lazy' }}
-                          ">{%- else -%}
-    <img class="banner_desktop" src="
-                                      {{section.settings.image_desktop
-                                      | image_url: width: 1920
-                                      | image_tag:
-                                      loading: 'lazy' }}
-                                    ">
-    <img class="banner_mobile" src="
-                                    {{section.settings.image_mobile
-                                    | image_url: width: 768
-                                    | image_tag:
-                                    loading: 'lazy' }}
-                                  ">{%- endif -%}
+    <img class="banner_desktop" 
+        src="{{section.settings.image_desktop
+            | image_url: width: 1920
+            | image_tag: loading: 'lazy' }}"
+    >
+  {%- else -%}
+    <img class="banner_desktop" 
+        src="{{section.settings.image_desktop
+            | image_url: width: 1920
+            | image_tag: loading: 'lazy' }}"
+    >
+    <img class="banner_mobile" 
+        src="{{section.settings.image_mobile
+            | image_url: width: 768
+            | image_tag: loading: 'lazy' }}"
+    >
+  {%- endif -%}
   <div class="banner-hero-content">
     {%- for block in section.blocks -%}
       {%- case block.type -%}
