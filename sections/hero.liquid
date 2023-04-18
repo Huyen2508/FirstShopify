@@ -4,6 +4,10 @@
     text-align: center;
   }
 
+  .banner_desktop {
+    width: 100%;
+  }
+
   .banner_mobile {
     display: none;
   }
@@ -32,12 +36,12 @@
   {%- if section.settings.image_mobile == blank -%}
     <img
       class="banner_desktop"
-      src="{{ section.settings.image_desktop | image_url: width: 1920 }}"
+      src="{{ section.settings.image_desktop | image_url: height: 1000 }}"
       alt="image_desktop">
   {%- else -%}
     <img
       class="banner_desktop"
-      src="{{ section.settings.image_desktop | image_url: width: 1920 }}"
+      src="{{ section.settings.image_desktop | image_url: height: 1000 }}"
       alt="image_desktop">
     <img
       class="banner_mobile"
