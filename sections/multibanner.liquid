@@ -14,12 +14,12 @@
   <div class="multi-banner">
     <div class="row">
       {%- for block in section.blocks -%}
-        <div class="column">
+        <div class="column" style="flex-grow: {% if {{ block.settings.link }} == 'half' %}4{% else %}2{% endif %}">
           <a href="{{ block.settings.link }}"></a>
           <img
             src="{{ block.settings.image | image_url: width: 150 }}"
             alt="img_banner"
-            style="width: 100%, flex-grow: {% if {{ block.settings.link }} == 'half' %}4{% else %}2{% endif %}">
+            style="width: 100%">
           <h2>{{ block.settings.title }}</h2>
         </div>
       {%- endfor -%}
