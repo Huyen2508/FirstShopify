@@ -33,10 +33,50 @@
         "button_label": "Contact",
         "button_link": "shopify:\/\/pages\/contact"
       }
+    },
+    "dab58ddb-99b0-4fb3-992b-a70040e94f32": {
+      "type": "multibanner",
+      "blocks": {
+        "template--18707507806513__dab58ddb-99b0-4fb3-992b-a70040e94f32-1681809610767bc46b-0": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/teaspoons-full-of-spices.jpg",
+            "title": "<p>Test<\/p>",
+            "link": "shopify:\/\/pages\/contact",
+            "width": "half"
+          }
+        },
+        "5b09a361-649b-4aeb-9e80-69584fa955eb": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/warm-colored-autumn-leaves.jpg",
+            "title": "",
+            "link": "",
+            "width": "half"
+          }
+        },
+        "48e962b2-3d3a-45c3-b5c3-01579384467c": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/silhouetted-couples-look-out-at-a-city-at-night.jpg",
+            "title": "",
+            "link": "",
+            "width": "half"
+          }
+        }
+      },
+      "block_order": [
+        "template--18707507806513__dab58ddb-99b0-4fb3-992b-a70040e94f32-1681809610767bc46b-0",
+        "5b09a361-649b-4aeb-9e80-69584fa955eb",
+        "48e962b2-3d3a-45c3-b5c3-01579384467c"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
     "main",
-    "261af643-b5e9-48fb-92a3-0d7dce5c0076"
+    "261af643-b5e9-48fb-92a3-0d7dce5c0076",
+    "dab58ddb-99b0-4fb3-992b-a70040e94f32"
   ]
 }
