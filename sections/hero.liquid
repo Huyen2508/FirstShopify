@@ -3,6 +3,7 @@
     position: relative;
     text-align: center;
     color: white;
+    line-height: 80px;
   }
 
   .banner_mobile {
@@ -55,7 +56,7 @@
     {%- for block in section.blocks -%}
       {%- case block.type -%}
         {%- when 'heading' -%}
-        <h2 class="banner__heading inline-richtext" {{ block.shopify_attributes }}>{{ block.settings.heading }}</h2>
+        <h1 class="banner__heading inline-richtext" {{ block.shopify_attributes }}>{{ block.settings.heading }}</h1>
         {%- when 'text' -%}
         <div class="banner__text rte {{ block.shopify_attributes }}">
           <p>{{ block.settings.subtitle }}</p>
