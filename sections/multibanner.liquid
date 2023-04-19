@@ -1,36 +1,21 @@
-{%- style -%}
-  .column {
-    margin: 10px;
-    position: relative;
-  }
-
-  .row {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-  }
-
-  .multi-banner h2 {
-    position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  }
-{%- endstyle -%}
+{{ 'multi-banner.css' | asset_url | stylesheet_tag }}
 
 <div class="banner page-width page-width--narrow section-{{ section.id }}-padding"></div>
   <div class="multi-banner">
     <div class="row">
       {%- for block in section.blocks -%}
-        <div class="column" style="flex-grow: {% if block.settings.width == 'half' %}2{% else %}1{% endif %}">
-          <a href="{{ block.settings.link }}">
-          <img
-            src="{{ block.settings.image | image_url: height: 200 }}"
-            alt="img_banner"
-            style="width: 100%">
-            </a>
-          <h2>{{ block.settings.title }}</h2>
-        </div>
+        {%- case block.type -%}
+          {%- when 'banner' -%}
+            <div class="column" style="flex-grow: {% if block.settings.width == 'half' %}{{ forloop.length | divided_by: 2.0 }}{% else %}{{ forloop.length | divided_by: 4.0 }}{% endif %}">
+              <a href="{{ block.settings.link }}">
+              <img
+                src="{{ block.settings.image | image_url: height: 1000 }}"
+                alt="img_banner"
+                style="width: 100%">
+              <h2>{{ block.settings.title }}</h2>
+              </a>
+            </div>
+        {%- endcase -%}
       {%- endfor -%}
     </div>
   </div>

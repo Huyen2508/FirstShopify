@@ -1,156 +1,143 @@
 {{ 'hero-banner.css' | asset_url | stylesheet_tag }}
 
 <div class="banner-hero">
+  <img
+    class="banner_desktop"
+    src="{{ section.settings.image_desktop | image_url: width: 1200, height: 600, crop: 'top' }}"
+    alt="image_desktop">
   {%- if section.settings.image_mobile == blank -%}
-    <img
-      class="banner_desktop"
-      src="{{ section.settings.image_desktop | image_url: width: 1200, height: 600, crop: 'top' }}"
-      alt="image_desktop"
-    >
     <img
       class="banner_mobile"
       src="{{ section.settings.image_desktop | image_url: width: 1300, height: 500, crop: 'right' }}"
-      alt="banner_mobile"
-    >
+      alt="banner_mobile">
   {%- else -%}
-    <img
-      class="banner_desktop"
-      src="{{ section.settings.image_desktop | image_url: width: 1200, height: 600, crop: 'top' }}"
-      alt="image_desktop"
-    >
     <img
       class="banner_mobile"
       src="{{ section.settings.image_mobile | image_url: width: 768 }}"
-      alt="banner_mobile"
-    >
+      alt="banner_mobile">
   {%- endif -%}
   <div class="banner-hero-content">
     {%- for block in section.blocks -%}
       {%- case block.type -%}
         {%- when 'heading' -%}
-          <h1 class="banner__heading inline-richtext" {{ block.shopify_attributes }}>{{ block.settings.heading }}</h1>
+        <h1 class="banner__heading inline-richtext" {{ block.shopify_attributes }}>{{ block.settings.heading }}</h1>
         {%- when 'text' -%}
-          <div class="banner__text rte {{ block.shopify_attributes }}">
-            <p>{{ block.settings.subtitle }}</p>
-          </div>
+        <div class="banner__text rte {{ block.shopify_attributes }}">
+          <p>{{ block.settings.subtitle }}</p>
+        </div>
         {%- when 'buttons' -%}
-          <div
-            class="banner__buttons{% if block.settings.button_label_1 != blank and block.settings.button_label_2 != blank %} banner__buttons--multiple{% endif %}"
-            {{ block.shopify_attributes }}
-          >
-            {%- if block.settings.button_label_1 != blank -%}
-              <a
-                {% if block.settings.button_link_1 == blank %}
-                  role="link"
-                  aria-disabled="true"
-                {% else %}
-                  href="{{ block.settings.button_link_1 }}"
-                {% endif %}
-                class="button button--secondary"
-              >
-                {{- block.settings.button_label_1 | escape -}}
-              </a>
-            {%- endif -%}
-            {%- if block.settings.button_label_2 != blank -%}
-              <a
-                {% if block.settings.button_link_2 == blank %}
-                  role="link"
-                  aria-disabled="true"
-                {% else %}
-                  href="{{ block.settings.button_link_2 }}"
-                {% endif %}
-                class="button button--secondary"
-              >
-                {{- block.settings.button_label_2 | escape -}}
-              </a>
-            {%- endif -%}
-          </div>
+        <div class="banner__buttons{% if block.settings.button_label_1 != blank and block.settings.button_label_2 != blank %} banner__buttons--multiple{% endif %}" {{ block.shopify_attributes }}>
+          {%- if block.settings.button_label_1 != blank -%}
+            <a
+              {% if block.settings.button_link_1 == blank %}
+              role="link"
+              aria-disabled="true"
+              {% else %}
+              href="{{ block.settings.button_link_1 }}"
+              {% endif %}
+              class="button button--secondary">
+              {{- block.settings.button_label_1 | escape -}}
+            </a>
+          {%- endif -%}
+          {%- if block.settings.button_label_2 != blank -%}
+            <a
+              {% if block.settings.button_link_2 == blank %}
+              role="link"
+              aria-disabled="true"
+              {% else %}
+              href="{{ block.settings.button_link_2 }}"
+              {% endif %}
+              class="button button--secondary">
+              {{- block.settings.button_label_2 | escape -}}
+            </a>
+          {%- endif -%}
+        </div>
       {%- endcase -%}
     {%- endfor -%}
   </div>
 </div>
 
 {% schema %}
-{
-  "name": "t:sections.hero-banner.name",
-  "tag": "section",
-  "class": "section",
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "image_desktop",
-      "label": "t:sections.hero-banner.settings.image_desktop.label"
-    }, {
-      "type": "image_picker",
-      "id": "image_mobile",
-      "label": "t:sections.hero-banner.settings.image_mobile.label"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "heading",
-      "name": "t:sections.hero-banner.blocks.title.name",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "text",
-          "id": "heading",
-          "default": "Enjoy This Winter Trend",
-          "label": "t:sections.hero-banner.blocks.title.settings.heading.label"
-        }
-      ]
-    }, {
-      "type": "text",
-      "name": "t:sections.hero-banner.blocks.subtitle.name",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "inline_richtext",
-          "id": "subtitle",
-          "default": "Discover now latest collection",
-          "label": "t:sections.hero-banner.blocks.subtitle.settings.text.label"
-        }
-      ]
-    }, {
-      "type": "buttons",
-      "name": "t:sections.hero-banner.blocks.buttons.name",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "text",
-          "id": "button_label_1",
-          "default": "Button 1",
-          "label": "t:sections.hero-banner.blocks.buttons.settings.button_label_1.label"
-        }, {
-          "type": "url",
-          "id": "button_link_1",
-          "label": "t:sections.hero-banner.blocks.buttons.settings.button_link_1.label"
-        }, {
-          "type": "text",
-          "id": "button_label_2",
-          "default": "Button 2",
-          "label": "t:sections.hero-banner.blocks.buttons.settings.button_label_2.label"
-        }, {
-          "type": "url",
-          "id": "button_link_2",
-          "label": "t:sections.hero-banner.blocks.buttons.settings.button_link_2.label"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "t:sections.hero-banner.presets.name",
-      "blocks": [
-        {
-          "type": "heading"
-        }, {
-          "type": "text"
-        }, {
-          "type": "buttons"
-        }
-      ]
-    }
-  ]
-}
+  {
+    "name": "t:sections.hero-banner.name",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image_desktop",
+        "label": "t:sections.hero-banner.settings.image_desktop.label"
+      }, {
+        "type": "image_picker",
+        "id": "image_mobile",
+        "label": "t:sections.hero-banner.settings.image_mobile.label"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "heading",
+        "name": "t:sections.hero-banner.blocks.title.name",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "heading",
+            "default": "Enjoy This Winter Trend",
+            "label": "t:sections.hero-banner.blocks.title.settings.heading.label"
+          }
+        ]
+      }, {
+        "type": "text",
+        "name": "t:sections.hero-banner.blocks.subtitle.name",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "inline_richtext",
+            "id": "subtitle",
+            "default": "Discover now latest collection",
+            "label": "t:sections.hero-banner.blocks.subtitle.settings.text.label"
+          }
+        ]
+      }, {
+        "type": "buttons",
+        "name": "t:sections.hero-banner.blocks.buttons.name",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "button_label_1",
+            "default": "Button 1",
+            "label": "t:sections.hero-banner.blocks.buttons.settings.button_label_1.label"
+          }, {
+            "type": "url",
+            "id": "button_link_1",
+            "label": "t:sections.hero-banner.blocks.buttons.settings.button_link_1.label"
+          }, {
+            "type": "text",
+            "id": "button_label_2",
+            "default": "Button 2",
+            "label": "t:sections.hero-banner.blocks.buttons.settings.button_label_2.label"
+          }, {
+            "type": "url",
+            "id": "button_link_2",
+            "label": "t:sections.hero-banner.blocks.buttons.settings.button_link_2.label"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "t:sections.hero-banner.presets.name",
+        "blocks": [
+          {
+            "type": "heading"
+          }, {
+            "type": "text"
+          }, {
+            "type": "buttons"
+          }
+        ]
+      }
+    ]
+  }
 {% endschema %}
