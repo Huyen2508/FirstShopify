@@ -9,7 +9,7 @@
             <div class="column" style="flex-grow: {% if block.settings.width == 'half' %}{{ forloop.length | divided_by: 2.0 }}{% else %}{{ forloop.length | divided_by: 4.0 }}{% endif %}">
               <a href="{{ block.settings.link }}">
               <img
-                src="{{ block.settings.image | image_url: height: 1000 }}"
+                src="{{ block.settings.image | image_url: height: 400 }}"
                 alt="img_banner"
                 style="width: 100%">
               <h2>{{ block.settings.title }}</h2>
