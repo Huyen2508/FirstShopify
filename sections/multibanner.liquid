@@ -1,12 +1,20 @@
 {%- style -%}
   .column {
     margin: 10px;
+    position: relative;
   }
 
   .row {
     display: flex;
     flex-flow: row nowrap;
-    align-items: stretch;
+    align-items: center;
+  }
+
+  .multi-banner h2 {
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   }
 {%- endstyle -%}
 
@@ -14,12 +22,13 @@
   <div class="multi-banner">
     <div class="row">
       {%- for block in section.blocks -%}
-        <div class="column" style="flex-grow: {% if {{ block.settings.width }} == 'half' %}4{% else %}2{% endif %}">
-          <a href="{{ block.settings.link }}"></a>
+        <div class="column" style="flex-grow: {% if block.settings.width == 'half' %}2{% else %}1{% endif %}">
+          <a href="{{ block.settings.link }}">
           <img
-            src="{{ block.settings.image | image_url: width: 150 }}"
+            src="{{ block.settings.image | image_url: height: 200 }}"
             alt="img_banner"
             style="width: 100%">
+            </a>
           <h2>{{ block.settings.title }}</h2>
         </div>
       {%- endfor -%}
