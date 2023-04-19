@@ -35,6 +35,28 @@
     font-size: 2rem;
 }
 
+@media screen and (max-width: 1440px) {
+    .banner-hero {
+        line-height: inherit;
+    }
+
+    .banner-hero-content {
+        font-size: 15px;
+    }
+
+    .banner__heading {
+        font-size: 4rem;
+    }
+
+    .banner__buttons {
+        margin-top: 30px;
+    }
+
+    .button--secondary {
+        font-size: 1.5rem;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .banner-hero {
         text-align: left;
