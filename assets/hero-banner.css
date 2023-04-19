@@ -21,17 +21,17 @@
     font-size: 20px;
 }
 
-.banner__heading {
+.banner-hero .banner__heading {
     color: white;
     font-weight: 600;
     font-size: 8rem;
 }
 
-.banner__buttons {
+.banner-hero .banner__buttons {
     margin-top: 40px;
 }
 
-.button--secondary {
+.banner-hero .button--secondary {
     font-size: 2rem;
 }
 
@@ -44,15 +44,15 @@
         font-size: 15px;
     }
 
-    .banner__heading {
+    .banner-hero .banner__heading {
         font-size: 4rem;
     }
 
-    .banner__buttons {
+    .banner-hero .banner__buttons {
         margin-top: 30px;
     }
 
-    .button--secondary {
+    .banner-hero .button--secondary {
         font-size: 1.5rem;
     }
 }
@@ -74,7 +74,7 @@
         left: 40%;
     }
 
-    .banner__text {
+    .banner-hero .banner__text {
         line-height: 30px;
     }
 }
