@@ -70,11 +70,11 @@
         display: block;
     }
 
-    .banner__text {
-        line-height: 25px;
+    .banner-hero-content {
+        left: 40%;
     }
 
-    .banner__buttons {
-        margin-top: 10px;
+    .banner__text {
+        line-height: 30px;
     }
 }
