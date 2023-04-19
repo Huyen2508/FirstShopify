@@ -1,6 +1,6 @@
 {{ 'multi-banner.css' | asset_url | stylesheet_tag }}
 
-<div class="banner page-width page-width--narrow section-{{ section.id }}-padding">
+<div class="banner section-{{ section.id }}-padding">
   <div class="multi-banner">
     <div class="row">
       {%- for block in section.blocks -%}
