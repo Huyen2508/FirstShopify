@@ -9,7 +9,7 @@
   {%- else -%}
     <img
       class="banner_desktop"
-      src="{{ section.settings.image_desktop | image_url: width: 1500 }}"
+      src="{{ section.settings.image_desktop | image_url: aspect_ratio: 2 }}"
       alt="image_desktop">
     <img
       class="banner_mobile"
