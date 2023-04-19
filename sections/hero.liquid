@@ -8,7 +8,7 @@
       alt="image_desktop">
     <img
       class="banner_mobile"
-      src="{{ section.settings.image_desktop | image_url: width: 768 }}"
+      src="{{ section.settings.image_desktop | image_url: width: 768, crop: 'right' }}"
       alt="banner_mobile">
   {%- else -%}
     <img
