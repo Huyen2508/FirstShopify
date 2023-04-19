@@ -226,12 +226,52 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "6e8008c6-f65e-4f3d-a5c1-f44b4a2fa96b": {
+      "type": "multibanner",
+      "blocks": {
+        "template--18707507904817__6e8008c6-f65e-4f3d-a5c1-f44b4a2fa96b-168189014803e1c1ed-0": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/woman-in-white-dress-outside.jpg",
+            "title": "<p>Summer<\/p>",
+            "link": "shopify:\/\/collections\/automated-collection",
+            "width": "half"
+          }
+        },
+        "072638bb-a552-4f3a-9d41-cd779306fbaf": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/fashion-model-in-black-white.jpg",
+            "title": "<p>Collection<\/p>",
+            "link": "shopify:\/\/collections\/frontpage",
+            "width": "quarter"
+          }
+        },
+        "4d493b66-7525-428e-8629-3c0eba7e3c92": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/blond-woman-with-winter-pine.jpg",
+            "title": "<p>Winter<\/p>",
+            "link": "shopify:\/\/collections\/hydrogen",
+            "width": "quarter"
+          }
+        }
+      },
+      "block_order": [
+        "template--18707507904817__6e8008c6-f65e-4f3d-a5c1-f44b4a2fa96b-168189014803e1c1ed-0",
+        "072638bb-a552-4f3a-9d41-cd779306fbaf",
+        "4d493b66-7525-428e-8629-3c0eba7e3c92"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
     "main",
     "image-with-text",
     "multicolumn",
-    "related-products"
+    "related-products",
+    "6e8008c6-f65e-4f3d-a5c1-f44b4a2fa96b"
   ]
 }
