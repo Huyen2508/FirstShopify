@@ -217,7 +217,7 @@
         "template--18674694422833__cd505465-9c59-4694-94c2-20ef3e49ee82-1681720661f5916fe6-0": {
           "type": "heading",
           "settings": {
-            "heading": "Enjoy This Winter Trend"
+            "heading": "Enjoy This Summer Trend"
           }
         },
         "template--18674694422833__cd505465-9c59-4694-94c2-20ef3e49ee82-1681720661f5916fe6-1": {
@@ -242,8 +242,7 @@
         "template--18674694422833__cd505465-9c59-4694-94c2-20ef3e49ee82-1681720661f5916fe6-2"
       ],
       "settings": {
-        "image_desktop": "shopify:\/\/shop_images\/stylish-young-woman-posing.jpg",
-        "image_mobile": "shopify:\/\/shop_images\/teaspoons-full-of-spices.jpg"
+        "image_desktop": "shopify:\/\/shop_images\/stylish-young-woman-posing.jpg"
       }
     }
   },
