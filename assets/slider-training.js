@@ -4,5 +4,6 @@ $(document).ready(function(){
         slidesToScroll: 1,
         infinite: true,
         speed: 500,
+        dots: true,
     });
 });

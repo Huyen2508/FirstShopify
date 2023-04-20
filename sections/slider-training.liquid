@@ -18,12 +18,12 @@
         {%- else -%}
           <img
             class="banner_mobile"
-            src="{{ block.settings.image_mobile | image_url: width: 768 }}"
+            src="{{ block.settings.image_mobile | image_url: height: 500 }}"
             alt="banner_mobile">
         {%- endif -%}
         <div class="slide-content">
           <p class="slide-title">{{ block.settings.title }}</p>
-          <p class="slide-subtitle">{{ block.settings.subtitle }}</h1>
+          <p class="slide-subtitle">{{ block.settings.subtitle }}</p>
           <div class="banner__buttons">
             <a href="{{ block.settings.button_link }}" class="button button--secondary">
               {{- block.settings.button_label | escape -}}
@@ -78,7 +78,7 @@
             "label": "t:sections.slider-training.blocks.slide.settings.title.label"
           },
           {
-            "type": "richtext",
+            "type": "inline_richtext",
             "id": "subtitle",
             "label": "t:sections.slider-training.blocks.slide.settings.subtitle.label"
           }, {
