@@ -51,6 +51,17 @@
     "b9cfdcaa-7455-481d-b885-254848d05d30": {
       "type": "slider-training",
       "blocks": {
+        "5f527c15-a55a-4c24-95ca-8ad11b916fb2": {
+          "type": "slide",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/classy-couple-pose.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/fog-on-dark-waters-edge.jpg",
+            "title": "Enjoy This Moment Trend",
+            "subtitle": "Discover This Moment Trend",
+            "button_label": "Shop Now",
+            "button_link": "shopify:\/\/products\/hot-product-2023"
+          }
+        },
         "template--18707507642673__b9cfdcaa-7455-481d-b885-254848d05d30-168195481286bacef0-0": {
           "type": "slide",
           "settings": {
@@ -83,24 +94,13 @@
             "button_label": "Shopppp",
             "button_link": "shopify:\/\/pages\/about-us"
           }
-        },
-        "5f527c15-a55a-4c24-95ca-8ad11b916fb2": {
-          "type": "slide",
-          "settings": {
-            "image_desktop": "shopify:\/\/shop_images\/classy-couple-pose.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/fog-on-dark-waters-edge.jpg",
-            "title": "Enjoy This Moment Trend",
-            "subtitle": "Discover This Moment Trend",
-            "button_label": "Shop Now",
-            "button_link": "shopify:\/\/products\/hot-product-2023"
-          }
         }
       },
       "block_order": [
+        "5f527c15-a55a-4c24-95ca-8ad11b916fb2",
         "template--18707507642673__b9cfdcaa-7455-481d-b885-254848d05d30-168195481286bacef0-0",
         "c604b056-00f6-474b-b5f6-06e0fe699a62",
-        "fe6d9780-31bd-494d-afd2-e77ebf92042b",
-        "5f527c15-a55a-4c24-95ca-8ad11b916fb2"
+        "fe6d9780-31bd-494d-afd2-e77ebf92042b"
       ],
       "settings": {
         "autoplay": true,
