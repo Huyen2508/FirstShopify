@@ -189,7 +189,7 @@
             "image_desktop": "shopify:\/\/shop_images\/stylish-summer-necklace.jpg",
             "image_mobile": "shopify:\/\/shop_images\/fashion-model-in-black-white.jpg",
             "title": "Enjoy This Moment Trend",
-            "subtitle": "<p>Enjoy This Moment Trend<\/p>",
+            "subtitle": "",
             "button_label": "Shopppp",
             "button_link": "shopify:\/\/pages\/about-us"
           }
@@ -200,7 +200,7 @@
             "image_desktop": "shopify:\/\/shop_images\/feet-hanging-over-cliff.jpg",
             "image_mobile": "shopify:\/\/shop_images\/model-in-sunglasses-and-summer-clothes.jpg",
             "title": "Enjoy This Moment Trend",
-            "subtitle": "<p>Enjoy This Moment Trend<\/p>",
+            "subtitle": "",
             "button_label": "Shop Now",
             "button_link": "shopify:\/\/products\/hot-product-2023"
           }
