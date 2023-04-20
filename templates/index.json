@@ -158,6 +158,65 @@
         "padding_bottom": 36
       }
     },
+    "b9cfdcaa-7455-481d-b885-254848d05d30": {
+      "type": "slider-training",
+      "blocks": {
+        "template--18707507642673__b9cfdcaa-7455-481d-b885-254848d05d30-168195481286bacef0-0": {
+          "type": "slide",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/woman-in-white-dress-outside.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/blond-woman-with-winter-pine.jpg",
+            "title": "Enjoy This Moment Trend",
+            "subtitle": "<p>Look This Moment Trend<\/p>",
+            "button_label": "Shop here",
+            "button_link": "shopify:\/\/collections"
+          }
+        },
+        "c604b056-00f6-474b-b5f6-06e0fe699a62": {
+          "type": "slide",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/stylish-man-outdoors.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/fashion-model-in-pink.jpg",
+            "title": "Enjoy This Moment Trend",
+            "subtitle": "<p>Enjoy This Moment Trend<\/p>",
+            "button_label": "Shop here",
+            "button_link": "shopify:\/\/collections\/automated-collection"
+          }
+        },
+        "fe6d9780-31bd-494d-afd2-e77ebf92042b": {
+          "type": "slide",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/stylish-summer-necklace.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/fashion-model-in-black-white.jpg",
+            "title": "Enjoy This Moment Trend",
+            "subtitle": "<p>Enjoy This Moment Trend<\/p>",
+            "button_label": "Shopppp",
+            "button_link": "shopify:\/\/pages\/about-us"
+          }
+        },
+        "5f527c15-a55a-4c24-95ca-8ad11b916fb2": {
+          "type": "slide",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/feet-hanging-over-cliff.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/model-in-sunglasses-and-summer-clothes.jpg",
+            "title": "Enjoy This Moment Trend",
+            "subtitle": "<p>Enjoy This Moment Trend<\/p>",
+            "button_label": "Shop Now",
+            "button_link": "shopify:\/\/products\/hot-product-2023"
+          }
+        }
+      },
+      "block_order": [
+        "template--18707507642673__b9cfdcaa-7455-481d-b885-254848d05d30-168195481286bacef0-0",
+        "c604b056-00f6-474b-b5f6-06e0fe699a62",
+        "fe6d9780-31bd-494d-afd2-e77ebf92042b",
+        "5f527c15-a55a-4c24-95ca-8ad11b916fb2"
+      ],
+      "settings": {
+        "autoplay": false,
+        "time_autoplay": 5
+      }
+    },
     "multicolumn": {
       "type": "multicolumn",
       "blocks": {
@@ -245,65 +304,6 @@
         "image_desktop": "shopify:\/\/shop_images\/stylish-young-woman-posing.jpg",
         "image_mobile": "shopify:\/\/shop_images\/teaspoons-full-of-spices.jpg"
       }
-    },
-    "b9cfdcaa-7455-481d-b885-254848d05d30": {
-      "type": "slider-training",
-      "blocks": {
-        "template--18707507642673__b9cfdcaa-7455-481d-b885-254848d05d30-168195481286bacef0-0": {
-          "type": "slide",
-          "settings": {
-            "image_desktop": "shopify:\/\/shop_images\/woman-in-white-dress-outside.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/blond-woman-with-winter-pine.jpg",
-            "title": "",
-            "subtitle": "",
-            "button_label": "",
-            "button_link": ""
-          }
-        },
-        "c604b056-00f6-474b-b5f6-06e0fe699a62": {
-          "type": "slide",
-          "settings": {
-            "image_desktop": "shopify:\/\/shop_images\/stylish-man-outdoors.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/fashion-model-in-pink.jpg",
-            "title": "",
-            "subtitle": "",
-            "button_label": "",
-            "button_link": ""
-          }
-        },
-        "fe6d9780-31bd-494d-afd2-e77ebf92042b": {
-          "type": "slide",
-          "settings": {
-            "image_desktop": "shopify:\/\/shop_images\/stylish-summer-necklace.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/fashion-model-in-black-white.jpg",
-            "title": "",
-            "subtitle": "",
-            "button_label": "",
-            "button_link": ""
-          }
-        },
-        "5f527c15-a55a-4c24-95ca-8ad11b916fb2": {
-          "type": "slide",
-          "settings": {
-            "image_desktop": "shopify:\/\/shop_images\/feet-hanging-over-cliff.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/model-in-sunglasses-and-summer-clothes.jpg",
-            "title": "",
-            "subtitle": "",
-            "button_label": "",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "template--18707507642673__b9cfdcaa-7455-481d-b885-254848d05d30-168195481286bacef0-0",
-        "c604b056-00f6-474b-b5f6-06e0fe699a62",
-        "fe6d9780-31bd-494d-afd2-e77ebf92042b",
-        "5f527c15-a55a-4c24-95ca-8ad11b916fb2"
-      ],
-      "settings": {
-        "autoplay": false,
-        "time_autoplay": 5
-      }
     }
   },
   "order": [
@@ -312,8 +312,8 @@
     "featured_collection",
     "collage",
     "video",
+    "b9cfdcaa-7455-481d-b885-254848d05d30",
     "multicolumn",
-    "cd505465-9c59-4694-94c2-20ef3e49ee82",
-    "b9cfdcaa-7455-481d-b885-254848d05d30"
+    "cd505465-9c59-4694-94c2-20ef3e49ee82"
   ]
 }
