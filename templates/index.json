@@ -166,10 +166,10 @@
           "settings": {
             "image_desktop": "shopify:\/\/shop_images\/woman-in-white-dress-outside.jpg",
             "image_mobile": "shopify:\/\/shop_images\/blond-woman-with-winter-pine.jpg",
-            "title": "Winter",
-            "subtitle": "",
-            "button_label": "",
-            "button_link": ""
+            "title": "See The Winter Trend",
+            "subtitle": "<p>Look Here Winter<\/p>",
+            "button_label": "Winter",
+            "button_link": "shopify:\/\/collections\/hydrogen"
           }
         },
         "c604b056-00f6-474b-b5f6-06e0fe699a62": {
