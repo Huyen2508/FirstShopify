@@ -167,7 +167,7 @@
             "image_desktop": "shopify:\/\/shop_images\/woman-in-white-dress-outside.jpg",
             "image_mobile": "shopify:\/\/shop_images\/blond-woman-with-winter-pine.jpg",
             "title": "Enjoy This Moment Trend",
-            "subtitle": "<p>Look This Moment Trend<\/p>",
+            "subtitle": "",
             "button_label": "Shop here",
             "button_link": "shopify:\/\/collections"
           }
@@ -178,7 +178,7 @@
             "image_desktop": "shopify:\/\/shop_images\/stylish-man-outdoors.jpg",
             "image_mobile": "shopify:\/\/shop_images\/fashion-model-in-pink.jpg",
             "title": "Enjoy This Moment Trend",
-            "subtitle": "<p>Enjoy This Moment Trend<\/p>",
+            "subtitle": "",
             "button_label": "Shop here",
             "button_link": "shopify:\/\/collections\/automated-collection"
           }
