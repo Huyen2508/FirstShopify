@@ -213,7 +213,7 @@
         "5f527c15-a55a-4c24-95ca-8ad11b916fb2"
       ],
       "settings": {
-        "autoplay": false,
+        "autoplay": true,
         "time_autoplay": 5
       }
     },
