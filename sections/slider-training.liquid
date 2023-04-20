@@ -1,107 +1,113 @@
 <script src="{{ 'slider-training.js' | asset_url }}" defer="defer"></script>
 {{ 'slider-training.css' | asset_url | stylesheet_tag }}
 
-<div class="slider-section" data-slick='{"autoplay": {{ section.settings.autoplay }}, "autoplaySpeed": {{ section.settings.time_autoplay }}000}'>
+<div
+  class="slider-section"
+  data-slick='{"autoplay": {{ section.settings.autoplay }}, "autoplaySpeed": {{ section.settings.time_autoplay }}000}'
+>
   {%- for block in section.blocks -%}
     {%- case block.type -%}
       {%- when 'slide' -%}
-      <div class="slide-item">
-        <img
-          class="banner_desktop"
-          src="{{ block.settings.image_desktop | image_url: width: 1200, height: 600, crop: 'top' }}"
-          alt="image_desktop">
-        {%- if block.settings.image_mobile == blank -%}
+        <div class="slide-item">
           <img
-            class="banner_mobile"
-            src="{{ block.settings.image_desktop | image_url: width: 1300, height: 500, crop: 'right' }}"
-            alt="banner_mobile">
-        {%- else -%}
-          <img
-            class="banner_mobile"
-            src="{{ block.settings.image_mobile | image_url: height: 500 }}"
-            alt="banner_mobile">
-        {%- endif -%}
-        <div class="slide-content">
-          <p class="slide-title">{{ block.settings.title }}</p>
-          <p class="slide-subtitle">{{ block.settings.subtitle }}</p>
-          <div class="banner__buttons">
-            <a href="{{ block.settings.button_link }}" class="button button--secondary">
-              {{- block.settings.button_label | escape -}}
-            </a>
+            class="banner_desktop"
+            src="{{ block.settings.image_desktop | image_url: width: 1200, height: 600, crop: 'top' }}"
+            alt="image_desktop"
+          >
+          {%- if block.settings.image_mobile == blank -%}
+            <img
+              class="banner_mobile"
+              src="{{ block.settings.image_desktop | image_url: width: 1300, height: 500, crop: 'right' }}"
+              alt="banner_mobile"
+            >
+          {%- else -%}
+            <img
+              class="banner_mobile"
+              src="{{ block.settings.image_mobile | image_url: height: 500 }}"
+              alt="banner_mobile"
+            >
+          {%- endif -%}
+          <div class="slide-content">
+            <p class="slide-title">{{ block.settings.title }}</p>
+
+            <div class="banner__buttons">
+              <a href="{{ block.settings.button_link }}" class="button button--secondary">
+                {{- block.settings.button_label | escape -}}
+              </a>
+            </div>
           </div>
         </div>
-      </div>
     {%- endcase -%}
   {%- endfor -%}
 </div>
 
 {% schema %}
-  {
-    "name": "t:sections.slider-training.name",
-    "tag": "section",
-    "class": "section",
-    "settings": [
-      {
-        "type": "checkbox",
-        "id": "autoplay",
-        "default": false,
-        "label": "t:sections.slider-training.settings.autoplay.label"
-      }, {
-        "type": "range",
-        "id": "time_autoplay",
-        "min": 3,
-        "max": 30,
-        "step": 1,
-        "default": 5,
-        "label": "t:sections.slider-training.settings.time_autoplay.label",
-        "info": "t:sections.slider-training.settings.time_autoplay.info"
-      }
-    ],
-    "blocks": [
-      {
-        "type": "slide",
-        "name": "t:sections.slider-training.blocks.slide.name",
-        "settings": [
-          {
-            "type": "image_picker",
-            "id": "image_desktop",
-            "label": "t:sections.slider-training.blocks.slide.settings.image_desktop.label"
-          },
-          {
-            "type": "image_picker",
-            "id": "image_mobile",
-            "label": "t:sections.slider-training.blocks.slide.settings.image_mobile.label"
-          },
-          {
-            "type": "inline_richtext",
-            "id": "title",
-            "label": "t:sections.slider-training.blocks.slide.settings.title.label"
-          },
-          {
-            "type": "richtext",
-            "id": "subtitle",
-            "label": "t:sections.slider-training.blocks.slide.settings.subtitle.label"
-          }, {
-            "type": "text",
-            "id": "button_label",
-            "label": "t:sections.slider-training.blocks.slide.settings.button_label.label"
-          }, {
-            "type": "url",
-            "id": "button_link",
-            "label": "t:sections.slider-training.blocks.slide.settings.button_link.label"
-          }
-        ]
-      }
-    ],
-    "presets": [
-      {
-        "name": "t:sections.slider-training.presets.name",
-        "blocks": [
-          {
-            "type": "slide"
-          }
-        ]
-      }
-    ]
-  }
+{
+  "name": "t:sections.slider-training.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "default": false,
+      "label": "t:sections.slider-training.settings.autoplay.label"
+    }, {
+      "type": "range",
+      "id": "time_autoplay",
+      "min": 3,
+      "max": 30,
+      "step": 1,
+      "default": 5,
+      "label": "t:sections.slider-training.settings.time_autoplay.label",
+      "info": "t:sections.slider-training.settings.time_autoplay.info"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "t:sections.slider-training.blocks.slide.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_desktop",
+          "label": "t:sections.slider-training.blocks.slide.settings.image_desktop.label"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "t:sections.slider-training.blocks.slide.settings.image_mobile.label"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "title",
+          "label": "t:sections.slider-training.blocks.slide.settings.title.label"
+        },
+        {
+          "type": "richtext",
+          "id": "subtitle",
+          "label": "t:sections.slider-training.blocks.slide.settings.subtitle.label"
+        }, {
+          "type": "text",
+          "id": "button_label",
+          "label": "t:sections.slider-training.blocks.slide.settings.button_label.label"
+        }, {
+          "type": "url",
+          "id": "button_link",
+          "label": "t:sections.slider-training.blocks.slide.settings.button_link.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.slider-training.presets.name",
+      "blocks": [
+        {
+          "type": "slide"
+        }
+      ]
+    }
+  ]
+}
 {% endschema %}
