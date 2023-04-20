@@ -35,6 +35,11 @@
     font-size: 2rem;
 }
 
+.slider-section .slick-dots li button:before {
+    font-size: 20px;
+    line-height: 40px;
+}
+
 @media screen and (max-width: 1440px) {
     .slide-item {
         line-height: inherit;
@@ -68,6 +73,7 @@
 
     .slide-item .banner_mobile {
         display: block;
+        width: 100%;
     }
 
     .slide-content {
