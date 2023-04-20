@@ -1,0 +1,27 @@
+.training-collection {
+    margin: 6%;
+}
+
+.training-collection h2 {
+    font-size: 3rem;
+}
+
+.collection-content {
+    margin: 0 auto;
+    max-width: var(--page-width);
+}
+
+@media screen and (min-width: 750px) {
+    .training-collection {
+        margin: 3% 0 0;
+    }
+
+    .training-collection h2 {
+        font-size: 3.5rem;
+        text-align: center;
+    }
+
+    .collection-content {
+        padding: 0 5rem;
+    }
+}
