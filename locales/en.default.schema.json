@@ -3448,6 +3448,46 @@
       "presets": {
         "name": "Multiple Banners"
       }
+    },
+    "slider-training": {
+      "name": "Slider",
+      "settings": {
+        "autoplay": {
+          "label": "Enable Autoplay"
+        },
+        "time_autoplay": {
+          "label": "Time to autoplay",
+          "info": "If enabling autoplay, select the number of seconds to automatically switch the slide"
+        }
+      },
+      "blocks": {
+        "slide": {
+          "name": "Slide",
+          "settings": {
+            "image_desktop": {
+              "label": "Image Desktop"
+            },
+            "image_mobile": {
+              "label": "Image Mobile"
+            },
+            "title": {
+              "label": "Title"
+            },
+            "subtitle": {
+              "label": "Subtitle"
+            },
+            "button_label": {
+              "label": "Button Label"
+            },
+            "button_link": {
+              "label": "Button Link"
+            }
+          }
+        }
+      },
+      "presets": {
+        "name": "Slider Training"
+      }
     }
   }
 }
