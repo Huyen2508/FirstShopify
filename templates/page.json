@@ -33,10 +33,23 @@
         "button_label": "Contact",
         "button_link": "shopify:\/\/pages\/contact"
       }
+    },
+    "e57908ad-4d48-4634-b388-c877b6d4bd40": {
+      "type": "training-collection",
+      "settings": {
+        "title": "Featured collection",
+        "collection": "training",
+        "products_to_show": 6,
+        "columns_desktop": 4,
+        "show_view_all": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false
+      }
     }
   },
   "order": [
     "main",
-    "261af643-b5e9-48fb-92a3-0d7dce5c0076"
+    "261af643-b5e9-48fb-92a3-0d7dce5c0076",
+    "e57908ad-4d48-4634-b388-c877b6d4bd40"
   ]
 }
