@@ -166,10 +166,10 @@
           "settings": {
             "image_desktop": "shopify:\/\/shop_images\/woman-in-white-dress-outside.jpg",
             "image_mobile": "shopify:\/\/shop_images\/blond-woman-with-winter-pine.jpg",
-            "title": "See The Winter Trend",
-            "subtitle": "<p>Look Here Winter<\/p>",
-            "button_label": "Winter",
-            "button_link": "shopify:\/\/collections\/hydrogen"
+            "title": "Enjoy This Moment Trend",
+            "subtitle": "<p>Look This Moment Trend<\/p>",
+            "button_label": "Shop here",
+            "button_link": "shopify:\/\/collections"
           }
         },
         "c604b056-00f6-474b-b5f6-06e0fe699a62": {
@@ -177,10 +177,10 @@
           "settings": {
             "image_desktop": "shopify:\/\/shop_images\/stylish-man-outdoors.jpg",
             "image_mobile": "shopify:\/\/shop_images\/fashion-model-in-pink.jpg",
-            "title": "",
-            "subtitle": "",
-            "button_label": "",
-            "button_link": ""
+            "title": "Enjoy This Moment Trend",
+            "subtitle": "<p>Enjoy This Moment Trend<\/p>",
+            "button_label": "Shop here",
+            "button_link": "shopify:\/\/collections\/automated-collection"
           }
         },
         "fe6d9780-31bd-494d-afd2-e77ebf92042b": {
@@ -188,10 +188,10 @@
           "settings": {
             "image_desktop": "shopify:\/\/shop_images\/stylish-summer-necklace.jpg",
             "image_mobile": "shopify:\/\/shop_images\/fashion-model-in-black-white.jpg",
-            "title": "",
-            "subtitle": "",
-            "button_label": "",
-            "button_link": ""
+            "title": "Enjoy This Moment Trend",
+            "subtitle": "<p>Enjoy This Moment Trend<\/p>",
+            "button_label": "Shopppp",
+            "button_link": "shopify:\/\/pages\/about-us"
           }
         },
         "5f527c15-a55a-4c24-95ca-8ad11b916fb2": {
@@ -199,10 +199,10 @@
           "settings": {
             "image_desktop": "shopify:\/\/shop_images\/feet-hanging-over-cliff.jpg",
             "image_mobile": "shopify:\/\/shop_images\/model-in-sunglasses-and-summer-clothes.jpg",
-            "title": "",
-            "subtitle": "",
-            "button_label": "",
-            "button_link": ""
+            "title": "Enjoy This Moment Trend",
+            "subtitle": "<p>Enjoy This Moment Trend<\/p>",
+            "button_label": "Shop Now",
+            "button_link": "shopify:\/\/products\/hot-product-2023"
           }
         }
       },
