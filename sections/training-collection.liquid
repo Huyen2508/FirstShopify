@@ -4,33 +4,11 @@
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 {{ 'template-collection.css' | asset_url | stylesheet_tag }}
 
-{% if section.settings.image_shape == 'blob' %}
-  {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
-{%- endif -%}
-
 {%- if section.settings.enable_quick_add -%}
   {{ 'quick-add.css' | asset_url | stylesheet_tag }}
   <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
-
-{%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}
-    px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}
-    px;
-  }
-
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}
-      px;
-      padding-bottom: {{ section.settings.padding_bottom }}
-      px;
-    }
-  }
-{%- endstyle -%}
 
 {%- liquid
   assign products_to_display = section.settings.collection.all_products_count
@@ -114,8 +92,8 @@
         <a
           href="{{ section.settings.collection.url }}"
           class="button button--secondary"
-          aria-label="{{ 'sections.huyee_collection.view_all_label' | t: collection_name: section.settings.collection.title }}">
-          {{ 'sections.huyee_collection.view_all' | t }}
+          aria-label="{{ 'sections.training-collection.view_all_label' | t: collection_name: section.settings.collection.title }}">
+          {{ 'sections.training-collection.view_all' | t }}
         </a>
       </div>
     {%- endif -%}
@@ -124,7 +102,7 @@
 
 {% schema %}
   {
-    "name": "t:sections.huyee-collection.name",
+    "name": "t:sections.training-collection.name",
     "tag": "section",
     "class": "section",
     "settings": [
@@ -132,12 +110,12 @@
         "type": "inline_richtext",
         "id": "title",
         "default": "Featured collection",
-        "label": "t:sections.huyee-collection.settings.title.label"
+        "label": "t:sections.training-collection.settings.title.label"
       },
       {
         "type": "collection",
         "id": "collection",
-        "label": "t:sections.huyee-collection.settings.collection.label"
+        "label": "t:sections.training-collection.settings.collection.label"
       },
       {
         "type": "range",
@@ -146,7 +124,7 @@
         "max": 25,
         "step": 1,
         "default": 4,
-        "label": "t:sections.huyee-collection.settings.products_to_show.label"
+        "label": "t:sections.training-collection.settings.products_to_show.label"
       },
       {
         "type": "range",
@@ -155,60 +133,39 @@
         "max": 5,
         "step": 1,
         "default": 4,
-        "label": "t:sections.huyee-collection.settings.columns_desktop.label"
+        "label": "t:sections.training-collection.settings.columns_desktop.label"
       }, {
         "type": "checkbox",
         "id": "show_view_all",
         "default": true,
-        "label": "t:sections.huyee-collection.settings.show_view_all.label"
+        "label": "t:sections.training-collection.settings.show_view_all.label"
       }, {
         "type": "header",
-        "content": "t:sections.huyee-collection.settings.header_mobile.content"
+        "content": "t:sections.training-collection.settings.header_mobile.content"
       }, {
         "type": "select",
         "id": "columns_mobile",
         "default": "2",
-        "label": "t:sections.huyee-collection.settings.columns_mobile.label",
+        "label": "t:sections.training-collection.settings.columns_mobile.label",
         "options": [
           {
             "value": "1",
-            "label": "t:sections.huyee-collection.settings.columns_mobile.options__1.label"
+            "label": "t:sections.training-collection.settings.columns_mobile.options__1.label"
           }, {
             "value": "2",
-            "label": "t:sections.huyee-collection.settings.columns_mobile.options__2.label"
+            "label": "t:sections.training-collection.settings.columns_mobile.options__2.label"
           }
         ]
       }, {
         "type": "checkbox",
         "id": "swipe_on_mobile",
         "default": false,
-        "label": "t:sections.huyee-collection.settings.swipe_on_mobile.label"
-      }, {
-        "type": "header",
-        "content": "t:sections.all.padding.section_padding_heading"
-      }, {
-        "type": "range",
-        "id": "padding_top",
-        "min": 0,
-        "max": 100,
-        "step": 4,
-        "unit": "px",
-        "label": "t:sections.all.padding.padding_top",
-        "default": 36
-      }, {
-        "type": "range",
-        "id": "padding_bottom",
-        "min": 0,
-        "max": 100,
-        "step": 4,
-        "unit": "px",
-        "label": "t:sections.all.padding.padding_bottom",
-        "default": 36
+        "label": "t:sections.training-collection.settings.swipe_on_mobile.label"
       }
     ],
     "presets": [
       {
-        "name": "t:sections.huyee-collection.presets.name"
+        "name": "t:sections.training-collection.presets.name"
       }
     ]
   }
