@@ -6,19 +6,15 @@
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when 'banner' -%}
-            <div
-              class="column"
-              style="flex-grow: {% if block.settings.width == 'half' %}{{ forloop.length | divided_by: 2.0 }}{% else %}{{ forloop.length | divided_by: 4.0 }}{% endif %}"
-            >
-              <a href="{{ block.settings.link }}">
-                <img
-                  src="{{ block.settings.image | image_url: height: 400 }}"
-                  alt="img_banner"
-                  style="width: 100%"
-                >
-                <h2>{{ block.settings.title }}</h2>
-              </a>
-            </div>
+          <div class="column" style="flex-grow: {% if block.settings.width == 'half' %}{{ forloop.length | divided_by: 2.0 }}{% else %}{{ forloop.length | divided_by: 4.0 }}{% endif %}">
+            <a href="{{ block.settings.link }}">
+              <img
+                src="{{ block.settings.image | image_url: height: 1000 }}"
+                alt="img_banner"
+                style="width: 100%">
+              <h2>{{ block.settings.title }}</h2>
+            </a>
+          </div>
         {%- endcase -%}
       {%- endfor -%}
     </div>
@@ -26,53 +22,53 @@
 </div>
 
 {% schema %}
-{
-  "name": "t:sections.multibanner.name",
-  "tag": "section",
-  "class": "section",
-  "blocks": [
-    {
-      "type": "banner",
-      "name": "t:sections.multibanner.blocks.banner.name",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "t:sections.multibanner.blocks.banner.settings.image.label"
-        }, {
-          "type": "richtext",
-          "id": "title",
-          "label": "t:sections.multibanner.blocks.banner.settings.title.label"
-        }, {
-          "type": "url",
-          "id": "link",
-          "label": "t:sections.multibanner.blocks.banner.settings.link.label"
-        }, {
-          "type": "select",
-          "id": "width",
-          "options": [
-            {
-              "value": "half",
-              "label": "t:sections.multibanner.blocks.banner.settings.width.options__1.label"
-            }, {
-              "value": "quarter",
-              "label": "t:sections.multibanner.blocks.banner.settings.width.options__2.label"
-            }
-          ],
-          "label": "t:sections.multibanner.blocks.banner.settings.width.label"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "t:sections.multibanner.presets.name",
-      "blocks": [
-        {
-          "type": "banner"
-        }
-      ]
-    }
-  ]
-}
+  {
+    "name": "t:sections.multibanner.name",
+    "tag": "section",
+    "class": "section",
+    "blocks": [
+      {
+        "type": "banner",
+        "name": "t:sections.multibanner.blocks.banner.name",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "t:sections.multibanner.blocks.banner.settings.image.label"
+          }, {
+            "type": "richtext",
+            "id": "title",
+            "label": "t:sections.multibanner.blocks.banner.settings.title.label"
+          }, {
+            "type": "url",
+            "id": "link",
+            "label": "t:sections.multibanner.blocks.banner.settings.link.label"
+          }, {
+            "type": "select",
+            "id": "width",
+            "options": [
+              {
+                "value": "half",
+                "label": "t:sections.multibanner.blocks.banner.settings.width.options__1.label"
+              }, {
+                "value": "quarter",
+                "label": "t:sections.multibanner.blocks.banner.settings.width.options__2.label"
+              }
+            ],
+            "label": "t:sections.multibanner.blocks.banner.settings.width.label"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "t:sections.multibanner.presets.name",
+        "blocks": [
+          {
+            "type": "banner"
+          }
+        ]
+      }
+    ]
+  }
 {% endschema %}
