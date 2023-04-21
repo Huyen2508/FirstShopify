@@ -245,8 +245,7 @@
       document.documentElement.classList.add('shopify-design-mode');
     }
     </script>
-  {% include 'sca-quick-view-init' %}
- </head>
+  </head>
 
   <body class="gradient">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
@@ -303,6 +302,5 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-  {% include 'sca-quick-view-template' %} 
- </body>
+  </body>
 </html>
