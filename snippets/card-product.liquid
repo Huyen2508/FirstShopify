@@ -20,6 +20,7 @@
 {% endcomment %}
 
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'ajax-addtocart.js' | asset_url }}" defer="defer"></script>
 
 {%- if card_product and card_product != empty -%}
   {%- liquid
@@ -33,6 +34,15 @@
       assign ratio = 1
     endif
   -%}
+  {%- if show_ajax_add -%}
+  <div class="ajax-button">
+  {% if card_product.variants.size > 1 %}
+    <input type="button" id="choose-button" value="CHOOSE OPTION">
+  {% else %}
+    <input type="button" id="add-to-cart-button" value="ADD TO CART" onClick="addItemToCart({{ card_product.variants.first.id }}, 1)">
+  {% endif %}
+  </div>
+{%- endif -%}
   <div class="card-wrapper product-card-wrapper underline-links-hover">
     <div
       class="

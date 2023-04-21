@@ -33,6 +33,7 @@
           {% render 'card-product'
            , card_product: product,
            show_quick_add: section.settings.enable_addtocart,
+           show_ajax_add: section.settings.show_ajax_add,
            section_id: section.id %}
         </li>
       {%- endfor -%}
@@ -95,6 +96,11 @@
         "id": "enable_addtocart",
         "default": false,
         "label": "t:sections.training-collection.settings.enable_addtocart.label"
+      }, {
+        "type": "checkbox",
+        "id": "show_ajax_add",
+        "default": false,
+        "label": "t:sections.training-collection.settings.show_ajax_add.label"
       }, {
         "type": "header",
         "content": "t:sections.training-collection.settings.header_mobile.content"

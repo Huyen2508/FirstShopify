@@ -3510,6 +3510,9 @@
         "enable_addtocart": {
           "label": "Enable quick add button"
         },
+        "show_ajax_add": {
+          "label": "Enable ajax add button"
+        },
         "header_mobile": {
           "content": "MOBILE LAYOUT"
         },
