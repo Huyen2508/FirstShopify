@@ -28,6 +28,7 @@
         "columns_desktop": 4,
         "show_view_all": true,
         "enable_addtocart": true,
+        "show_ajax_add": true,
         "columns_mobile": "2"
       }
     }

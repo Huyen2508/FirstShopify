@@ -20,6 +20,7 @@
 {% endcomment %}
 
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'ajax-addtocart.js' | asset_url }}" defer="defer"></script>
 
 {%- if card_product and card_product != empty -%}
   {%- liquid
@@ -335,6 +336,27 @@
       </div>
     </div>
   </div>
+  {%- if show_ajax_add -%}
+    <div class="ajax-button">
+      {% if card_product.variants.size > 1 %}
+        <button
+        type="submit"
+        id="choose-button"
+        onClick="location.href='{{ card_product.url }}';">
+          {% render 'icon-zoom' %}
+        </button>
+      {% else %}
+        <button
+        type="submit"
+        id="add-to-cart-button"
+        value=""
+        onClick="addItemToCart({{ card_product.variants.first.id }}, 1)">
+          {% render 'icon-cart' %}
+        </button>
+      {% endif %}
+    </div>
+  {% endif %}
+  
 {%- else -%}
   <div class="product-card-wrapper card-wrapper underline-links-hover">
     <div
