@@ -342,6 +342,7 @@
         <button
         type="submit"
         id="choose-button"
+        title="{{ 'products.product.choose_options' | t }}"
         onClick="location.href='{{ card_product.url }}';">
           {% render 'icon-zoom' %}
         </button>
@@ -349,7 +350,7 @@
         <button
         type="submit"
         id="add-to-cart-button"
-        value=""
+        title="{{ 'products.product.add_to_cart' | t }}"
         onClick="addItemToCart({{ card_product.variants.first.id }}, 1)">
           {% render 'icon-cart' %}
         </button>
