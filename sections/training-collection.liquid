@@ -2,12 +2,6 @@
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'training-collection.css' | asset_url | stylesheet_tag }}
 
-{%- if section.settings.enable_addtocart -%}
-  {{ 'quick-add.css' | asset_url | stylesheet_tag }}
-  <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
-{%- endif -%}
-
 {%- liquid
   assign products_to_display = section.settings.collection.all_products_count
 
@@ -32,7 +26,6 @@
           data-cascade>
           {% render 'card-product'
            , card_product: product,
-           show_quick_add: section.settings.enable_addtocart,
            show_ajax_add: section.settings.show_ajax_add,
            section_id: section.id %}
         </li>
@@ -91,11 +84,6 @@
         "id": "show_view_all",
         "default": true,
         "label": "t:sections.training-collection.settings.show_view_all.label"
-      }, {
-        "type": "checkbox",
-        "id": "enable_addtocart",
-        "default": false,
-        "label": "t:sections.training-collection.settings.enable_addtocart.label"
       }, {
         "type": "checkbox",
         "id": "show_ajax_add",

@@ -34,15 +34,6 @@
       assign ratio = 1
     endif
   -%}
-  {%- if show_ajax_add -%}
-  <div class="ajax-button">
-  {% if card_product.variants.size > 1 %}
-    <input type="button" id="choose-button" value="CHOOSE OPTION">
-  {% else %}
-    <input type="button" id="add-to-cart-button" value="ADD TO CART" onClick="addItemToCart({{ card_product.variants.first.id }}, 1)">
-  {% endif %}
-  </div>
-{%- endif -%}
   <div class="card-wrapper product-card-wrapper underline-links-hover">
     <div
       class="
@@ -345,6 +336,27 @@
       </div>
     </div>
   </div>
+  {%- if show_ajax_add -%}
+    <div class="ajax-button">
+      {% if card_product.variants.size > 1 %}
+        <button
+        type="submit"
+        id="choose-button"
+        onClick="location.href='{{ card_product.url }}';">
+          {% render 'icon-zoom' %}
+        </button>
+      {% else %}
+        <button
+        type="submit"
+        id="add-to-cart-button"
+        value=""
+        onClick="addItemToCart({{ card_product.variants.first.id }}, 1)">
+          {% render 'icon-cart' %}
+        </button>
+      {% endif %}
+    </div>
+  {% endif %}
+  
 {%- else -%}
   <div class="product-card-wrapper card-wrapper underline-links-hover">
     <div
