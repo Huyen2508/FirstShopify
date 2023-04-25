@@ -338,20 +338,30 @@
   </div>
   {%- if show_ajax_add -%}
     <div class="ajax-button">
-      {% if card_product.variants.size > 1 %}
-        <button
-        type="submit"
-        id="choose-button"
-        title="{{ 'products.product.choose_options' | t }}"
-        onClick="location.href='{{ card_product.url }}';">
-          {% render 'icon-zoom' %}
-        </button>
+      {%- if card_product.selected_or_first_available_variant.available -%}
+        {% if card_product.variants.size > 1 %}
+          <button
+          type="submit"
+          id="choose-button"
+          title="{{ 'products.product.choose_options' | t }}"
+          onClick="location.href='{{ card_product.url }}';">
+            {% render 'icon-zoom' %}
+          </button>
+        {% else %}
+          <button
+          type="submit"
+          id="add-to-cart-button"
+          title="{{ 'products.product.add_to_cart' | t }}"
+          onClick="addItemToCart({{ card_product.variants.first.id }}, 1)">
+            {% render 'icon-cart' %}
+          </button>
+        {% endif %}
       {% else %}
         <button
         type="submit"
-        id="add-to-cart-button"
-        title="{{ 'products.product.add_to_cart' | t }}"
-        onClick="addItemToCart({{ card_product.variants.first.id }}, 1)">
+        id="sold-out-button"
+        title="{{ 'products.product.sold_out' | t }}"
+        disabled>
           {% render 'icon-cart' %}
         </button>
       {% endif %}
