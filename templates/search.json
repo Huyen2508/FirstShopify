@@ -27,8 +27,8 @@
         "products_to_show": 8,
         "columns_desktop": 4,
         "show_view_all": true,
-        "enable_addtocart": true,
         "show_ajax_add": true,
+        "show_quick_view_button": true,
         "columns_mobile": "2"
       }
     }
