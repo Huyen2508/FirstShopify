@@ -57,11 +57,18 @@ if (!customElements.get('product-form')) {
           if (!this.error) publish(PUB_SUB_EVENTS.cartUpdate, {source: 'product-form', productVariantId: formData.get('id')});
           this.error = false;
           const quickAddModal = this.closest('quick-add-modal');
+          const quickViewModal = this.closest('quick-view-modal');
           if (quickAddModal) {
             document.body.addEventListener('modalClosed', () => {
               setTimeout(() => { this.cart.renderContents(response) });
             }, { once: true });
             quickAddModal.hide(true);
+            quickViewModal.hide(true);
+          } else if (quickViewModal) {
+            document.body.addEventListener('modalClosed', () => {
+              setTimeout(() => { this.cart.renderContents(response) });
+            }, { once: true });
+            quickViewModal.hide(true);
           } else {
             this.cart.renderContents(response);
           }
