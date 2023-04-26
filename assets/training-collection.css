@@ -12,7 +12,11 @@
 }
 
 .collection-content .card-wrapper {
-    height: 85%;
+    height: 84%;
+}
+
+.collection-content ul {
+    row-gap: 3vw;
 }
 
 .ajax-button {
@@ -36,6 +40,19 @@
     transform: scale(1.1);
 }
 
+#add-to-cart-button,
+#sold-out-button {
+    margin-right: .5vw;
+}
+
+#choose-button {
+    margin-right: 1vw;
+}
+
+#choose-button svg {
+    height: 1.7rem;
+}
+
 @media screen and (min-width: 750px) {
     .training-collection {
         margin: 3% 0 0;
@@ -50,7 +67,11 @@
         padding: 0 5rem;
     }
 
+    .collection-content .card-wrapper {
+        height: 90%;
+    }
+
     .collection-content ul {
-        row-gap: 1vw;
+        row-gap: 2vw;
     }
 }

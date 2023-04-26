@@ -336,8 +336,8 @@
       </div>
     </div>
   </div>
-  {%- if show_ajax_add -%}
-    <div class="ajax-button">
+  <div class="ajax-button">
+    {%- if show_ajax_add -%}
       {%- if card_product.selected_or_first_available_variant.available -%}
         {% if card_product.variants.size > 1 %}
           <button
@@ -365,8 +365,56 @@
           {% render 'icon-cart' %}
         </button>
       {% endif %}
+    {% endif %}
+    {%- if show_quick_view_button -%}
+    {%- liquid
+    assign product_view_id = 'quick-view-' | append: section_id | append: card_product.id
+  -%}
+  <modal-opener data-modal="#QuickView-{{ card_product.id }}" id="quick-view">
+    <button
+      id="{{ product_view_id }}-submit"
+      type="submit"
+      name="add"
+      class="quick-view__submit"
+      aria-haspopup="dialog"
+      aria-labelledby="{{ product_view_id }}-submit title-{{ section_id }}-{{ card_product.id }}"
+      data-product-url="{{ card_product.url }}"
+    >
+    {% render 'icon-view' %}
+      <div class="loading-overlay__spinner hidden">
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          class="spinner"
+          viewBox="0 0 66 66"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+        </svg>
+      </div>
+    </button>
+  </modal-opener>
+  <quick-view-modal id="QuickView-{{ card_product.id }}" class="quick-view-modal">
+    <div
+      role="dialog"
+      aria-label="{{ 'products.product.choose_product_options' | t: product_name: card_product.title | escape }}"
+      aria-modal="true"
+      class="quick-view-modal__content global-settings-popup"
+      tabindex="-1"
+    >
+      <button
+        id="ModalClose-{{ card_product.id }}"
+        type="button"
+        class="quick-view-modal__toggle"
+        aria-label="{{ 'accessibility.close' | t }}"
+      >
+        {% render 'icon-close' %}
+      </button>
+      <div id="QuickView-{{ card_product.id }}" class="quick-view-modal__content-info"></div>
     </div>
-  {% endif %}
+  </quick-view-modal>
+    {% endif %}
+  </div>
   
 {%- else -%}
   <div class="product-card-wrapper card-wrapper underline-links-hover">
