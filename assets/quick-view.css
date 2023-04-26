@@ -131,7 +131,6 @@ quick-view-modal .product:not(.featured-product) .product__view-details {
   display: block;
 }
 
-quick-view-modal .quick-view-hidden,
 quick-view-modal .product__modal-opener:not(.product__modal-opener--image),
 quick-view-modal .product__media-item:not(:first-child) {
   display: none !important;
