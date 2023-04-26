@@ -1,6 +1,8 @@
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'training-collection.css' | asset_url | stylesheet_tag }}
+{{ 'quick-view.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'quick-view.js' | asset_url }}" defer="defer"></script>
 
 {%- liquid
   assign products_to_display = section.settings.collection.all_products_count
@@ -27,6 +29,7 @@
           {% render 'card-product'
            , card_product: product,
            show_ajax_add: section.settings.show_ajax_add,
+           show_quick_view_button: section.settings.show_quick_view_button,
            section_id: section.id %}
         </li>
       {%- endfor -%}
@@ -89,6 +92,11 @@
         "id": "show_ajax_add",
         "default": false,
         "label": "t:sections.training-collection.settings.show_ajax_add.label"
+      }, {
+        "type": "checkbox",
+        "id": "show_quick_view_button",
+        "default": false,
+        "label": "t:sections.training-collection.settings.show_quick_view_button.label"
       }, {
         "type": "header",
         "content": "t:sections.training-collection.settings.header_mobile.content"

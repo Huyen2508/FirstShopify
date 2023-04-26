@@ -3507,11 +3507,11 @@
         "show_view_all": {
           "label": "Enable \"View all\" button if list includes more collections than shown"
         },
-        "enable_addtocart": {
-          "label": "Enable quick add button"
-        },
         "show_ajax_add": {
           "label": "Enable ajax add button"
+        },
+        "show_quick_view_button": {
+          "label": "Enable quick view button"
         },
         "header_mobile": {
           "content": "MOBILE LAYOUT"
