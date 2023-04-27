@@ -40,9 +40,22 @@
     font-size: 2rem;
 }
 
+.slider-section .slick-dots {
+    text-align: left;
+    margin-left: 70%;
+}
+
+.slider-section .slick-dots li {
+    margin: 0 12px;
+}
+
 .slider-section .slick-dots li button:before {
-    font-size: 20px;
-    line-height: 40px;
+    font-size: 90px;
+}
+
+.slider-section .slick-dots li button:before {
+    content: "\203E";
+    color: #fff;
 }
 
 @media screen and (max-width: 1440px) {
@@ -87,5 +100,10 @@
 
     .slide-item .slide-subtitle {
         line-height: 30px;
+    }
+
+    .slider-section .slick-dots {
+        text-align: center;
+        margin: 0;
     }
 }
