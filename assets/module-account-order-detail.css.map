@@ -1,0 +1,1 @@
+{"version":3,"file":"./assets/module-account-order-detail.css","mappings":"AAAA","sources":["webpack://gamma/assets/module-account-order-detail.css"],"sourcesContent":["@media print {\r\n  site-header,\r\n  account-sidebar,\r\n  footer,\r\n  newsletter-form,\r\n  .topbar,\r\n  .footer-bottom {\r\n    display: none !important\r\n  }\r\n}\r\n\n"],"names":[],"sourceRoot":""}
