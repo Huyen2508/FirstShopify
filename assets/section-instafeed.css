@@ -1,0 +1,44 @@
+/*!*************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/postcss-loader/dist/cjs.js!./src/components/sections/instafeed/instafeed.css ***!
+  \*************************************************************************************************************************************************************************/
+#insta-feed.custom-insta-feed {
+
+    margin: 0px;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    grid-gap: 1rem;
+
+    gap: 1rem
+}
+
+@media (min-width: 1024px) {
+
+    #insta-feed.custom-insta-feed {
+
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+
+        gap: 1.5rem
+    }
+}
+
+  #insta-feed.custom-insta-feed .instafeed-container {
+
+    width: 100% !important;
+
+    padding-top: 100% !important
+}
+
+  #insta-feed.custom-insta-feed a {
+
+    z-index: 0
+}
+
+  #insta-feed.custom-insta-feed a img,
+    #insta-feed.custom-insta-feed a .instafeed-overlay::before,
+    #insta-feed.custom-insta-feed a .instafeed-overlay::after {
+
+    border-radius: 0.125rem
+}

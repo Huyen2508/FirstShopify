@@ -1,0 +1,72 @@
+/*!***************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/postcss-loader/dist/cjs.js!./src/components/sections/marketing-banner/marketing-banner.css ***!
+  \***************************************************************************************************************************************************************************************/
+.shopify-section-site-header.sticky-header .js-search-bar {
+    display: none
+}
+    @media (min-width: 1200px) {
+    .shopify-section-site-header.sticky-header menu-navigation {
+        order: 2;
+        width: auto;
+        flex-grow: 1
+    }
+}
+    .shopify-section-site-header.sticky-header .header-wrapper-full {
+    padding-top: 1rem;
+    padding-bottom: 1rem
+}
+    @media (min-width: 768px) {
+    .shopify-section-site-header.sticky-header .header-wrapper-full {
+        padding-top: 1.25rem;
+        padding-bottom: 0px
+    }
+}
+    @media (min-width: 1200px) {
+    .shopify-section-site-header.sticky-header .header-wrapper-full {
+        padding-top: 0px;
+        padding-bottom: 0px
+    }
+}
+    .shopify-section-site-header.sticky-header .header-devider {
+    display: none
+}
+    @media (min-width: 768px) {
+    .shopify-section-site-header.sticky-header .menu-lv1 {
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem
+    }
+}
+    @media (min-width: 1280px) {
+    .shopify-section-site-header.sticky-header .menu-lv1 {
+        padding-top: 1.75rem;
+        padding-bottom: 1.75rem
+    }
+}
+    .shopify-section-site-header.sticky-header .wrapper-menu-lv1 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-top: 0.125rem;
+    padding-bottom: 0.125rem
+}
+    @media (min-width: 1280px) {
+    .shopify-section-site-header.sticky-header .wrapper-menu-lv1:first-child {
+        margin-left: 1.5rem
+    }
+}
+    @media (min-width: 768px) {
+    .shopify-section-site-header.sticky-header .location {
+        flex-grow: 1
+    }
+}
+    @media (min-width: 1280px) {
+    .shopify-section-site-header.sticky-header .location {
+        flex-grow: 0
+    }
+}
+    .shopify-section-site-header.sticky-header .location svg {
+    margin-left: auto
+}
+    .shopify-section-site-header.sticky-header .logo-wrapper {
+    padding-top: 0.125rem;
+    padding-bottom: 0.125rem
+}

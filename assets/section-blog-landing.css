@@ -1,0 +1,23 @@
+/*!*******************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/postcss-loader/dist/cjs.js!./src/components/sections/blog-landing/blog-landing.css ***!
+  \*******************************************************************************************************************************************************************************/
+.blog-nav-mobile .carousel-track {
+    max-width: 292px
+}
+    .blog-nav-mobile .carousel-button-disable {
+    display: none
+}
+    .blog-nav-mobile .carousel-buttons {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none
+}
+    .blog-nav-mobile .carousel-button {
+    height: auto;
+    width: auto
+}
+    .blog-nav-mobile .carousel-button-prev {
+    margin-right: 0px;
+    margin-left: 0.75rem
+}

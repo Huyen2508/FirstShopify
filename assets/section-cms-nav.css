@@ -1,0 +1,26 @@
+/*!*********************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/postcss-loader/dist/cjs.js!./src/components/sections/cms-nav/cms-nav.css ***!
+  \*********************************************************************************************************************************************************************/
+.customer-nav-title.active {
+
+    border-bottom-width: 1px;
+
+    --tw-border-opacity: 1;
+
+    border-color: rgba(217, 217, 217, var(--tw-border-opacity));
+
+    padding-bottom: 1.25rem
+}
+
+.customer-nav-content.active {
+
+    display: block
+}
+
+@media (min-width: 768px) {
+
+    .customer-nav-title .nav-minus {
+
+        display: none
+    }
+}

@@ -1,0 +1,226 @@
+/*!****************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/postcss-loader/dist/cjs.js!./src/components/sections/blog-post/blog-article.css ***!
+  \****************************************************************************************************************************************************************************/
+.blog-post .wysiwyg--article-description p {
+
+    margin-bottom: 2rem;
+
+    margin-top: 0.5rem;
+
+    font-size: 16px;
+
+    line-height: 24px
+}
+
+.blog-post .wysiwyg--article-description ol {
+
+    margin-bottom: 1.5rem;
+
+    list-style-type: decimal;
+
+    padding-left: 1.5rem;
+
+    padding-right: 1.5rem
+}
+
+.blog-post .wysiwyg--article-description img {
+
+    margin-bottom: 2rem
+}
+
+.blog-post .wysiwyg--article-description .image-item {
+
+    margin-bottom: 2rem;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    grid-gap: 1rem;
+
+    gap: 1rem
+}
+
+@media (min-width: 768px) {
+
+    .blog-post .wysiwyg--article-description .image-item {
+
+        gap: 1.5rem
+    }
+}
+
+.blog-post .wysiwyg--article-description .image-item-two {
+
+    margin-bottom: 2rem;
+
+    display: grid;
+
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+
+    grid-gap: 1.5rem;
+
+    gap: 1.5rem
+}
+
+@media (min-width: 768px) {
+
+    .blog-post .wysiwyg--article-description .image-item-two {
+
+        grid-template-columns: repeat(3, minmax(0, 1fr))
+    }
+}
+
+.blog-post .wysiwyg--article-description .image-item img {
+
+    margin-bottom: 0px
+}
+
+.blog-post .wysiwyg--article-description .image-item p {
+
+    margin-bottom: 0px;
+
+    margin-top: 0px
+}
+
+.blog-post .wysiwyg--article-description .image-item p.desc {
+
+    margin: 0px;
+
+    --tw-bg-opacity: 1;
+
+    background-color: rgba(252, 247, 244, var(--tw-bg-opacity));
+
+    padding-top: 0.75rem;
+
+    padding-bottom: 0.75rem;
+
+    padding-left: 0.75rem;
+
+    font-size: 14px;
+
+    line-height: 24px;
+
+    font-weight: 600;
+
+    line-height: 1.25rem
+}
+
+@media (min-width: 768px) {
+
+    .blog-post .wysiwyg--article-description .image-item p.desc {
+
+        padding-top: 1rem;
+
+        padding-bottom: 1rem;
+
+        padding-left: 1rem
+    }
+}
+
+.blog-post .wysiwyg--article-description .image-item p.desc-col-3 {
+
+    margin: 0px;
+
+    --tw-bg-opacity: 1;
+
+    background-color: rgba(252, 247, 244, var(--tw-bg-opacity));
+
+    padding-top: 0.75rem;
+
+    padding-bottom: 0.75rem;
+
+    padding-left: 0.75rem;
+
+    font-size: 16px;
+
+    line-height: 24px;
+
+    font-weight: 600;
+
+    line-height: 1.25rem
+}
+
+@media (min-width: 768px) {
+
+    .blog-post .wysiwyg--article-description .image-item p.desc-col-3 {
+
+        padding-top: 1rem;
+
+        padding-bottom: 1rem;
+
+        padding-left: 1rem
+    }
+}
+
+.blog-post .wysiwyg--article-description button {
+
+    min-height: 48px;
+
+    border-width: 1px;
+
+    --tw-border-opacity: 1;
+
+    border-color: rgba(31, 40, 68, var(--tw-border-opacity));
+
+    --tw-bg-opacity: 1;
+
+    background-color: rgba(31, 40, 68, var(--tw-bg-opacity));
+
+    padding-top: 0.75rem;
+
+    padding-bottom: 0.75rem;
+
+    padding-left: 1.5rem;
+
+    padding-right: 1.5rem;
+
+    font-size: 15px;
+
+    line-height: 22px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    --tw-text-opacity: 1;
+
+    color: rgba(255, 255, 255, var(--tw-text-opacity))
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+    .blog-post .wysiwyg--article-description button:hover {
+
+        --tw-bg-opacity: 1;
+
+        background-color: rgba(14, 23, 53, var(--tw-bg-opacity))
+    }
+}
+
+.blog-post .wysiwyg--article-description .desktop {
+
+    display: none
+}
+
+@media (min-width: 768px) {
+
+    .blog-post .wysiwyg--article-description .desktop {
+
+        display: block
+    }
+}
+
+.blog-post .wysiwyg--article-description .mobile {
+
+    display: block
+}
+
+@media (min-width: 768px) {
+
+    .blog-post .wysiwyg--article-description .mobile {
+
+        display: none
+    }
+}
