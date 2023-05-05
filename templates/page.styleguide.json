@@ -1,0 +1,65 @@
+{
+  "sections": {
+    "colour": {
+      "type": "styleguide-colour",
+      "disabled": true,
+      "settings": {
+        "title": "Colours"
+      }
+    },
+    "typo": {
+      "type": "styleguide-typo",
+      "settings": {
+        "title": "Typographys"
+      }
+    },
+    "button": {
+      "type": "styleguide-button",
+      "settings": {
+        "title": "Buttons"
+      }
+    },
+    "form": {
+      "type": "styleguide-form",
+      "settings": {
+        "title": "Forms"
+      }
+    },
+    "module": {
+      "type": "styleguide-module",
+      "settings": {
+        "title": "Modules"
+      }
+    },
+    "additional": {
+      "type": "styleguide-additional",
+      "settings": {
+        "title": "Additionals"
+      }
+    },
+    "carousel": {
+      "type": "styleguide-carousel",
+      "disabled": true,
+      "settings": {
+        "title": "Carousel"
+      }
+    },
+    "icon": {
+      "type": "styleguide-icon",
+      "disabled": true,
+      "settings": {
+        "title": "Icons"
+      }
+    }
+  },
+  "order": [
+    "colour",
+    "typo",
+    "button",
+    "form",
+    "module",
+    "additional",
+    "carousel",
+    "icon"
+  ]
+}

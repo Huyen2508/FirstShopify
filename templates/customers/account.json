@@ -1,12 +1,13 @@
 {
   "sections": {
-    "main": {
-      "type": "main-account",
+    "account_details": {
+      "type": "account-details",
       "settings": {
+        "account_sidebar": "account-sidebar"
       }
     }
   },
   "order": [
-    "main"
+    "account_details"
   ]
 }

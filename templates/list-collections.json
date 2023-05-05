@@ -1,15 +1,18 @@
 {
   "sections": {
-    "main": {
-      "type": "main-list-collections",
+    "breadcrumb": {
+      "type": "breadcrumbs",
       "settings": {
-        "title": "Collections",
-        "sort": "alphabetical",
-        "image_ratio": "square"
+      }
+    },
+    "template": {
+      "type": "template-list-collections",
+      "settings": {
       }
     }
   },
   "order": [
-    "main"
+    "breadcrumb",
+    "template"
   ]
 }

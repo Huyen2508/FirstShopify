@@ -1,0 +1,72 @@
+{
+  "sections": {
+    "template": {
+      "type": "template-faqs",
+      "blocks": {
+        "09a639cb-0cc6-4429-8544-87cc8b7b2b45": {
+          "type": "faq",
+          "settings": {
+            "faq_question_text": "How do I place an order online?",
+            "faq_answer_text": "<p><em><strong>Step 1: Adding Items To Your Shopping Bag<\/strong><\/em><\/p><p>Browse through the Rodney Clark website and click on a product image for more detailed information. On most items, you have a size and\/ or colour option. select the size and\/ or colour you would like to order and click on the \"ADD TO BAG\" button.<\/p><p>If a specific size in a colour is greyed out, then it is currently out of stock or has been sold out online.<\/p><p><em><strong>Step 2: Viewing Your Shopping Bag<\/strong><\/em><\/p><p>You can view the items in your bag at any time by clicking the \"Shopping Bag\" button in the top right hand corner of every page of our website:<\/p><ul><li>To change the quantity of items you wish to purchase, change the number in the \"Qty\" box, and click the \" update Qty\" link.<\/li><li>To delete an item from your bag, click the \"Remove\" link next to the item you wish to remove OR set the \"Qty\" to 0 and click the \" update Qty\" link.<\/li><li>Once you are happy with the items in your bag please press the \"CHECKOUT\" button.<\/li><\/ul><p><em><strong>Step 3: Checkout - Payment & Delivery Details<\/strong><\/em><\/p><p>Our checkout will prompt you with 2 options:<\/p><p><em><strong>Login<\/strong><\/em><\/p><ul><li>This is for Rodney Clark Members or Existing Online Customers.<\/li><li>If you have placed an order online please enter your Login & Password;<\/li><li>After you provide us with your Login & Password, we will retrieve your details to make your purchase faster, OR<\/li><\/ul><p><em><strong>New Customers<\/strong><\/em><\/p><ul><li>Please enter your contact, delivery and payment details.<\/li><li>Once you have completed all the fields marked with an asterisk(*), please select the \"SUBMIT\" button.<\/li><li>After completing one of the above options you will go through to Step 4 – Order Confirmation.<\/li><\/ul><p><em><strong>Step 4: Order Confirmation (Secure Area)<\/strong><\/em><\/p><p>It is important to confirm your order & delivery details.<br\/><br\/>You will notice a security padlock in your web browser AND the website address will start with \"https\". This security ensures your order & payment details are encrypted over the internet and remain secure. If this lock is not present, please contact us immediately at <a href=\"mailto:info@rodneyclark.com\">info@rodneyclark.com<\/a><\/p><ul><li>Please check your Billing and Delivery Details. If you need to change these details click the \"update MY DETAILS\" button.<\/li><li>If applicable, add your promotional code and press the \"APPLY\" button to re-calculate your final order total.<\/li><li>Please note: Promotion Code box only appears after you Login or enter your Billing and Delivery information.<\/li><li>If you have Rodney Clark Rewards, these will be available to redeem soon.<\/li><li>If you have a Voucher or a Gift Card, please enter the details in the Voucher and Gift Card boxes and click the \"APPLY\" button to confirm the validity and value<\/li><li>Enter your credit card details.<\/li><li>When you are satisfied with the information please select the \"COMPLETE ORDER\" button to confirm your order.<\/li><\/ul><p>We will send you an email confirming the details of your order. We recommend you print out a copy of your order for future reference.<br\/><br\/>If you have any problems with your order please check your browser settings and make sure you allow first party cookies.<br\/><br\/>Contact us on 1300 217 768 or email us at <a href=\"mailto:info@rodneyclark.com\">info@rodneyclark.com<\/a><\/p>"
+          }
+        },
+        "e91a4f07-c585-4f3f-87e3-685fbf624970": {
+          "type": "faq",
+          "settings": {
+            "faq_question_text": "How do I shop with Afterpay?",
+            "faq_answer_text": "<p>Afterpay is an alternative method of payment available through Rodney Clark Online. Afterpay enables you to pay in 4 easy payments giving you more time to pay for everything you need. You receive your order immediately and there is no interest if paid on time.<\/p><p>Essentially, you can purchase an item today and pay for it later.<\/p><p>SHOP IN 3 EASY STEPS WITH AFTERPAY<\/p><p>1. SHOP & CHECKOUT<\/p><p>Shop and proceed to check out as usual.<\/p><p>2. select AFTERPAY AS YOUR PAYMENT OPTION ON THE CHECKOUT PAGE<\/p><p>You will be re-directed to Afterpay to complete your purchase.<\/p><p>3. REGISTER OR LOGIN TO FINALISE YOUR PLAN<\/p><p>If you are 18 years or older and a permanent resident of Australia all you need is - Photo id - Debit or credit card - Email address - Mobile phone.<\/p><p>Please Note:<\/p><p>Rodney Clark only accepts AFTERPAY transaction when the amount is over $70.00<\/p><p>*At this time, Afterpay is available on online orders only<\/p><p>Read the full terms and conditions: <a href=\"https:\/\/www.afterpay.com\/en-AU\/terms-of-service\" title=\"Afterpay Terms\">https:\/\/www.afterpay.com\/en-AU\/terms-of-service<\/a><\/p>"
+          }
+        },
+        "75087a48-8cf3-4af8-9a96-61a26cc26a4f": {
+          "type": "faq",
+          "settings": {
+            "faq_question_text": "How long does my order take to ship?",
+            "faq_answer_text": "<p>Text here<\/p>"
+          }
+        },
+        "d1e400de-e25a-4389-9a97-e952fe90d26d": {
+          "type": "faq",
+          "settings": {
+            "faq_question_text": "How do I find my right size?",
+            "faq_answer_text": "<p>Text here<\/p>"
+          }
+        },
+        "604e1b26-dc07-4b27-8869-74fb954a49b9": {
+          "type": "faq",
+          "settings": {
+            "faq_question_text": "How do I shop with Afterpay?",
+            "faq_answer_text": "<p>Text here<\/p>"
+          }
+        },
+        "c82841cd-69c5-41a0-8317-c1e4d65db1b8": {
+          "type": "faq",
+          "settings": {
+            "faq_question_text": "How long does my order take to ship?",
+            "faq_answer_text": "<p>Text here<\/p>"
+          }
+        },
+        "81069bb9-6e78-4916-8dab-448c6677985b": {
+          "type": "faq",
+          "settings": {
+            "faq_question_text": "How do I find my right size?",
+            "faq_answer_text": "<p>Text here<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "09a639cb-0cc6-4429-8544-87cc8b7b2b45",
+        "e91a4f07-c585-4f3f-87e3-685fbf624970",
+        "75087a48-8cf3-4af8-9a96-61a26cc26a4f",
+        "d1e400de-e25a-4389-9a97-e952fe90d26d",
+        "604e1b26-dc07-4b27-8869-74fb954a49b9",
+        "c82841cd-69c5-41a0-8317-c1e4d65db1b8",
+        "81069bb9-6e78-4916-8dab-448c6677985b"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "template"
+  ]
+}

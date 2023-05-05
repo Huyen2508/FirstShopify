@@ -1,0 +1,136 @@
+{
+  "sections": {
+    "template": {
+      "type": "template-about-us",
+      "settings": {
+      }
+    },
+    "8cde7014-cba8-4837-9ad3-6af4fa0d6107": {
+      "type": "banner-text-image-video",
+      "settings": {
+        "banner_type": "2",
+        "bg_color": "#ffdfee",
+        "title": "",
+        "text_color": "#090f24",
+        "message": "",
+        "cta_text": "",
+        "cta_url": "",
+        "image_desktop": "shopify:\/\/shop_images\/Hero_Banner_2_22113ba7-023c-4f37-9a17-0fa4828bb9cf.png",
+        "image_mobile": "shopify:\/\/shop_images\/Hero_Banner_3_5316025f-29bb-411f-8b67-19306d1aef5b.png",
+        "video": "",
+        "video_ratio": "56.25"
+      }
+    },
+    "68da5d71-1aac-42f6-b022-a8a279b539e1": {
+      "type": "text-button",
+      "settings": {
+        "bg_color": "#ffffff",
+        "title_color": "#090f24",
+        "content_color": "#404346",
+        "heading": "Australian Family-Owned",
+        "content": "<p>Rodney Clark is an Australian family-owned business consisting of three talented women at the helm of the Sorbet Group. With over 40 years’ experience in the fashion industry, they display their passion for fashion every day and are energised by the support & trust shown by our customers.<br\/>Fun, family, and business is our culture!<\/p>",
+        "text_link": "",
+        "text_link_url": ""
+      }
+    },
+    "d5b40031-0457-407f-886d-85472fca5876": {
+      "type": "banner-half-image-text",
+      "settings": {
+        "banner_type": "2",
+        "text_color": "#090f24",
+        "bg_color": "#fcf7f4",
+        "title": "<p>Our Stores<\/p>",
+        "show_title": true,
+        "message": "<p>Rodney Clark has 23 stores Australia wide, including an online store, which guarantees you will always be able to access our fantastic range! With a focus on customer service and styling, Rodney Clark offers a unique shopping experience, and we strive to continually build on what makes Rodney Clark a great place for you to shop, both in store and online.<\/p>",
+        "image": "shopify:\/\/shop_images\/Image_4_e79effb4-fbd8-49e1-ad8a-466f0c8a959d.png",
+        "cta_text": "FIND YOUR NEAREST STORE",
+        "cta_url": "shopify:\/\/pages\/store-locator",
+        "show_link": true
+      }
+    },
+    "7c562e18-da0d-4cd5-bc4a-158750359000": {
+      "type": "text-image-multi-column",
+      "blocks": {
+        "template--18751397593406__7c562e18-da0d-4cd5-bc4a-158750359000-1682491616c3c538c7-0": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Tile.jpg",
+            "sub_title": "",
+            "title": "",
+            "description": "",
+            "cta_text": "Shop Collection",
+            "cta_url": "shopify:\/\/collections"
+          }
+        },
+        "template--18751397593406__7c562e18-da0d-4cd5-bc4a-158750359000-1682491616c3c538c7-1": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Tile_949e80f0-57c3-4a5d-9da0-bc3a9812bc0b.png",
+            "sub_title": "",
+            "title": "",
+            "description": "",
+            "cta_text": "Shop Collection",
+            "cta_url": "shopify:\/\/collections"
+          }
+        },
+        "template--18751397593406__7c562e18-da0d-4cd5-bc4a-158750359000-1682491616c3c538c7-2": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Tile_a316ecb9-553a-4011-80b8-9d8464aa12ea.png",
+            "sub_title": "",
+            "title": "",
+            "description": "",
+            "cta_text": "Shop Collection",
+            "cta_url": "shopify:\/\/collections"
+          }
+        }
+      },
+      "block_order": [
+        "template--18751397593406__7c562e18-da0d-4cd5-bc4a-158750359000-1682491616c3c538c7-0",
+        "template--18751397593406__7c562e18-da0d-4cd5-bc4a-158750359000-1682491616c3c538c7-1",
+        "template--18751397593406__7c562e18-da0d-4cd5-bc4a-158750359000-1682491616c3c538c7-2"
+      ],
+      "settings": {
+        "heading": "Our Collections",
+        "content": "With a collection of our own in-house fashion brands Threadz, Gordon Smith, Hammock &Vine, and Clarity we offer a comprehensive range of exciting fashion pieces for the contemporary woman's lifestyle. We design and make timeless clothes that last. We pair our styles season to season, brand to brand. We love creating contemporary looks that are modern with feel good colours, prints, stripes, and checks.",
+        "enable_casrousel": true
+      }
+    },
+    "0231f014-087f-4f24-b274-d01790d0763f": {
+      "type": "banner-half-image-text",
+      "settings": {
+        "banner_type": "1",
+        "text_color": "#090f24",
+        "bg_color": "#fcf7f4",
+        "title": "<p>Reducing Our<\/p><p>Environmental Impact<\/p>",
+        "show_title": true,
+        "message": "<p>We also know that we have a responsibility to the planet and to humanity to choose eco-friendly fabrics. We support our families in the factories, our stores, and our online and head office staff in finding ways to reduce our impact on the environment.<br\/>•Our in-store bags are made from recycled paper.<\/p>",
+        "image": "shopify:\/\/shop_images\/Image_5_9ef5f24d-305b-4e9e-a6ee-74c016403e5f.png",
+        "cta_text": "CONTACT US",
+        "cta_url": "shopify:\/\/pages\/contact",
+        "show_link": true
+      }
+    },
+    "a31cc4ee-cac3-4f1b-bf4a-772783eb97ff": {
+      "type": "text-button",
+      "settings": {
+        "bg_color": "#ffffff",
+        "title_color": "#090f24",
+        "content_color": "#404346",
+        "heading": "Your security is our top priority",
+        "content": "<p>Under Australian and International law, your rights to privacy are protected. At Rodney Clark we collect personal information in the normal course of providing our services to you and we endeavour always to protect and maintain your privacy. For more information, please see our <a href=\"https:\/\/www.rodneyclark.com\/contents\/1-privacy\" title=\"https:\/\/www.rodneyclark.com\/contents\/1-privacy\">Privacy page<\/a><\/p>",
+        "text_link": "start shopping",
+        "text_link_url": "\/"
+      }
+    }
+  },
+  "order": [
+    "template",
+    "8cde7014-cba8-4837-9ad3-6af4fa0d6107",
+    "68da5d71-1aac-42f6-b022-a8a279b539e1",
+    "d5b40031-0457-407f-886d-85472fca5876",
+    "7c562e18-da0d-4cd5-bc4a-158750359000",
+    "0231f014-087f-4f24-b274-d01790d0763f",
+    "a31cc4ee-cac3-4f1b-bf4a-772783eb97ff"
+  ]
+}

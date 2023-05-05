@@ -1,320 +1,421 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
-      "disabled": true,
+    "fb7371f9-2109-441f-8686-1d9cd2f1dae7": {
+      "type": "hero-banner",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "b797089d-3067-44ff-85d0-821d6b76c353": {
+          "type": "item",
           "settings": {
-            "heading": "Image banner",
-            "heading_size": "h0"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify:\/\/collections\/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "banner_type": "2",
+            "enable_overlay": false,
+            "overlay_percent_full": 10,
+            "overlay_percent_left": 10,
+            "overlay_percent_right": 10,
+            "overlay_percent_mb": 10,
+            "content_position": "2",
+            "background_color_full": "rgba(0,0,0,0)",
+            "text_color_full": "#ffffff",
+            "title_full": "Title",
+            "description_full": "Description",
+            "cta_text_full": "",
+            "cta_url_full": "",
+            "image_dt_right": "shopify:\/\/shop_images\/Hero_Banner_3.png",
+            "background_color_right": "rgba(0,0,0,0)",
+            "text_color_right": "#ffffff",
+            "title_right": "",
+            "description_right": "",
+            "cta_text_right": "",
+            "cta_url_right": "",
+            "image_dt_left": "shopify:\/\/shop_images\/Hero_Banner_2.png",
+            "background_color_left": "rgba(0,0,0,0)",
+            "text_color_left": "#ffffff",
+            "title_left": "Super Sale",
+            "description_left": "Get ahead of the trends with new season styles.",
+            "cta_text_left": "Shop SALE",
+            "cta_url_left": "shopify:\/\/pages\/contact",
+            "image_mb": "shopify:\/\/shop_images\/Hero_Banner_4.png",
+            "background_color_mb": "rgba(0,0,0,0)",
+            "text_color_mb": "#ffffff",
+            "title_mb": "Super Sale",
+            "description_mb": "",
+            "cta_text_mb": "Shop SALE",
+            "cta_url_mb": "shopify:\/\/pages\/contact"
           }
         }
       },
       "block_order": [
-        "heading",
-        "text",
-        "button"
+        "b797089d-3067-44ff-85d0-821d6b76c353"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "background-1",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "enable_casrousel": false,
+        "enable_max_width": false,
+        "max_width": 1440,
+        "margin_top_desktop": 0,
+        "margin_bottom_desktop": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_mobile": 0
       }
     },
-    "b9cfdcaa-7455-481d-b885-254848d05d30": {
-      "type": "slider-training",
+    "0cd071ec-45e2-4aae-b22d-d25e2dd83f16": {
+      "type": "usp",
       "blocks": {
-        "5f527c15-a55a-4c24-95ca-8ad11b916fb2": {
-          "type": "slide",
+        "template--18679620960574__0cd071ec-45e2-4aae-b22d-d25e2dd83f16-1681887739c1209451-0": {
+          "type": "item",
           "settings": {
-            "image_desktop": "shopify:\/\/shop_images\/classy-couple-pose.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/fog-on-dark-waters-edge.jpg",
-            "title": "Enjoy This Moment Trend",
-            "subtitle": "Discover This Moment Trend",
-            "button_label": "Shop Now",
-            "button_link": "shopify:\/\/products\/hot-product-2023"
+            "content": "<p>FLASH SALE NOTHING OVER $59*<\/p>",
+            "cta_text": "shop now",
+            "cta_url": "shopify:\/\/pages\/contact",
+            "text_color": "#090f24"
           }
         },
-        "template--18707507642673__b9cfdcaa-7455-481d-b885-254848d05d30-168195481286bacef0-0": {
-          "type": "slide",
+        "cd98218f-07a5-4e7f-ae28-19a25e0ac338": {
+          "type": "item",
           "settings": {
-            "image_desktop": "shopify:\/\/shop_images\/model-looks-at-the-ground.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/fashion-model-in-black-white.jpg",
-            "title": "Enjoy This Moment Trend",
-            "subtitle": "Discover This Moment Trend",
-            "button_label": "Shop here",
-            "button_link": "shopify:\/\/collections"
+            "content": "<p>50% OFF ALL DRESSES & SKIRTS<\/p>",
+            "cta_text": "shop now",
+            "cta_url": "shopify:\/\/pages\/contact",
+            "text_color": "#090f24"
           }
         },
-        "c604b056-00f6-474b-b5f6-06e0fe699a62": {
-          "type": "slide",
+        "d308d619-628a-4560-9a79-f5ec689b0307": {
+          "type": "item",
           "settings": {
-            "image_desktop": "shopify:\/\/shop_images\/stylish-man-outdoors.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/hiking-above-clouds-at-sunset.jpg",
-            "title": "Enjoy This Moment Trend",
-            "subtitle": "Discover This Moment Trend",
-            "button_label": "Shop here",
-            "button_link": "shopify:\/\/collections\/automated-collection"
-          }
-        },
-        "fe6d9780-31bd-494d-afd2-e77ebf92042b": {
-          "type": "slide",
-          "settings": {
-            "image_desktop": "shopify:\/\/shop_images\/three-piece-suit.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/woman-cross-legged-with-her-eyes-closed.jpg",
-            "title": "Enjoy This Moment Trend",
-            "subtitle": "Discover This Moment Trend",
-            "button_label": "Shopppp",
-            "button_link": "shopify:\/\/pages\/about-us"
+            "content": "<p>SUMMER SALE NOTHING OVER $150<\/p>",
+            "cta_text": "shop now",
+            "cta_url": "shopify:\/\/pages\/contact",
+            "text_color": "#090f24"
           }
         }
       },
       "block_order": [
-        "5f527c15-a55a-4c24-95ca-8ad11b916fb2",
-        "template--18707507642673__b9cfdcaa-7455-481d-b885-254848d05d30-168195481286bacef0-0",
-        "c604b056-00f6-474b-b5f6-06e0fe699a62",
-        "fe6d9780-31bd-494d-afd2-e77ebf92042b"
+        "template--18679620960574__0cd071ec-45e2-4aae-b22d-d25e2dd83f16-1681887739c1209451-0",
+        "cd98218f-07a5-4e7f-ae28-19a25e0ac338",
+        "d308d619-628a-4560-9a79-f5ec689b0307"
       ],
       "settings": {
-        "autoplay": true,
-        "time_autoplay": 5
+        "bg_color": "#fcf7f4"
       }
     },
-    "rich_text": {
-      "type": "rich-text",
+    "a3fcf70d-5f78-4379-81ec-4b35ade28ac5": {
+      "type": "product-carousel",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "af44c2be-dc16-4090-88ec-287564851055": {
+          "type": "item",
           "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
+            "title": "Best Sellers",
+            "collection": "clothing"
           }
         },
-        "text": {
-          "type": "text",
+        "7838fbf8-905c-4af9-a36d-f89d3933a09c": {
+          "type": "item",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+            "title": "Linen Collection",
+            "collection": "dresses"
+          }
+        },
+        "1786386a-83c7-4732-b8d5-444f3f880cf4": {
+          "type": "item",
+          "settings": {
+            "title": "Accessories",
+            "collection": "accessories"
           }
         }
       },
       "block_order": [
-        "heading",
-        "text"
+        "af44c2be-dc16-4090-88ec-287564851055",
+        "7838fbf8-905c-4af9-a36d-f89d3933a09c",
+        "1786386a-83c7-4732-b8d5-444f3f880cf4"
       ],
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "background-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
-      }
-    },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": false,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "background-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": true,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 28,
-        "padding_bottom": 36
-      }
-    },
-    "collage": {
-      "type": "collage",
-      "blocks": {
-        "collection-0": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "product": {
-          "type": "product",
-          "settings": {
-            "product": "",
-            "second_image": false
-          }
-        },
-        "collection-1": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        }
-      },
-      "block_order": [
-        "collection-0",
-        "product",
-        "collection-1"
-      ],
-      "settings": {
-        "heading": "Multimedia collage",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "card_styles": "product-card-wrapper",
-        "color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "video": {
-      "type": "video",
       "settings": {
         "heading": "",
-        "heading_size": "h1",
-        "enable_video_looping": false,
-        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "message": "",
+        "text_position": "1"
       }
     },
-    "multicolumn": {
-      "type": "multicolumn",
+    "fb7eb6bc-b6a3-4b26-82a6-3503ae22a9c2": {
+      "type": "divide-line",
+      "settings": {
+        "line_color": "#d9d9d9",
+        "line_height_dt": 1,
+        "line_height_mb": 1,
+        "enable_mobile": true,
+        "enable_tablet": true,
+        "enable_desktop": true,
+        "enable_max_width": true,
+        "max_width": 1280
+      }
+    },
+    "2ca0803d-48d4-45f9-be04-1f59bb58a4c0": {
+      "type": "text-image-multi-column",
       "blocks": {
-        "column1": {
-          "type": "column",
+        "80283e4e-180f-496f-a858-e6ef7e93429e": {
+          "type": "item",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "image": "shopify:\/\/shop_images\/Product_Image.png",
+            "sub_title": "",
+            "title": "",
+            "description": "",
+            "cta_text": "Shop Collection",
+            "cta_url": "shopify:\/\/pages\/contact"
           }
         },
-        "column2": {
-          "type": "column",
+        "029c8d24-8765-4e5b-8411-2796963bda74": {
+          "type": "item",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column3": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "image": "shopify:\/\/shop_images\/Product_Image_1.png",
+            "sub_title": "",
+            "title": "",
+            "description": "",
+            "cta_text": "Shop Collection",
+            "cta_url": "shopify:\/\/pages\/contact"
           }
         }
       },
       "block_order": [
-        "column1",
-        "column2",
-        "column3"
+        "80283e4e-180f-496f-a858-e6ef7e93429e",
+        "029c8d24-8765-4e5b-8411-2796963bda74"
       ],
       "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "third",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "background-1",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "heading": "Say hello to your new fave",
+        "content": "",
+        "enable_casrousel": true
       }
     },
-    "cd505465-9c59-4694-94c2-20ef3e49ee82": {
-      "type": "hero",
+    "776f5b0c-a697-4124-8910-1caff3ebb5e1": {
+      "type": "banner-text-image-video",
+      "settings": {
+        "banner_type": "1",
+        "bg_color": "#ffdfee",
+        "title": "Up to 50% Off",
+        "text_color": "#090f24",
+        "message": "<p>Starts Now - All Your Favourite Collections<\/p>",
+        "cta_text": "Shop SALE",
+        "cta_url": "shopify:\/\/pages\/contact",
+        "video": "",
+        "video_ratio": "56.25"
+      }
+    },
+    "0ec1ac2b-aaa3-46ed-a5c4-231ecf59c28d": {
+      "type": "brand-logos",
       "blocks": {
-        "template--18674694422833__cd505465-9c59-4694-94c2-20ef3e49ee82-1681720661f5916fe6-0": {
-          "type": "heading",
+        "template--18657837613374__0ec1ac2b-aaa3-46ed-a5c4-231ecf59c28d-168214805742f503bd-0": {
+          "type": "item",
           "settings": {
-            "heading": "Enjoy This Summer Trend"
+            "image": "shopify:\/\/shop_images\/Logo.png",
+            "cta_url": "shopify:\/\/pages\/contact"
           }
         },
-        "template--18674694422833__cd505465-9c59-4694-94c2-20ef3e49ee82-1681720661f5916fe6-1": {
-          "type": "text",
+        "template--18657837613374__0ec1ac2b-aaa3-46ed-a5c4-231ecf59c28d-168214805742f503bd-1": {
+          "type": "item",
           "settings": {
-            "subtitle": "Discover now latest collection"
+            "image": "shopify:\/\/shop_images\/Logo_1.png",
+            "cta_url": "shopify:\/\/pages\/contact"
           }
         },
-        "template--18674694422833__cd505465-9c59-4694-94c2-20ef3e49ee82-1681720661f5916fe6-2": {
-          "type": "buttons",
+        "template--18657837613374__0ec1ac2b-aaa3-46ed-a5c4-231ecf59c28d-168214805742f503bd-2": {
+          "type": "item",
           "settings": {
-            "button_label_1": "Shop Now",
-            "button_link_1": "shopify:\/\/collections\/all",
-            "button_label_2": "",
-            "button_link_2": ""
+            "image": "shopify:\/\/shop_images\/Logo_2.png",
+            "cta_url": "shopify:\/\/pages\/contact"
+          }
+        },
+        "template--18657837613374__0ec1ac2b-aaa3-46ed-a5c4-231ecf59c28d-168214805742f503bd-3": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/logo_b41e4858-e82d-4dae-91a7-d939caf888a0.png",
+            "cta_url": "shopify:\/\/pages\/contact"
           }
         }
       },
       "block_order": [
-        "template--18674694422833__cd505465-9c59-4694-94c2-20ef3e49ee82-1681720661f5916fe6-0",
-        "template--18674694422833__cd505465-9c59-4694-94c2-20ef3e49ee82-1681720661f5916fe6-1",
-        "template--18674694422833__cd505465-9c59-4694-94c2-20ef3e49ee82-1681720661f5916fe6-2"
+        "template--18657837613374__0ec1ac2b-aaa3-46ed-a5c4-231ecf59c28d-168214805742f503bd-0",
+        "template--18657837613374__0ec1ac2b-aaa3-46ed-a5c4-231ecf59c28d-168214805742f503bd-1",
+        "template--18657837613374__0ec1ac2b-aaa3-46ed-a5c4-231ecf59c28d-168214805742f503bd-2",
+        "template--18657837613374__0ec1ac2b-aaa3-46ed-a5c4-231ecf59c28d-168214805742f503bd-3"
       ],
       "settings": {
-        "image_desktop": "shopify:\/\/shop_images\/stylish-young-woman-posing.jpg",
-        "image_mobile": "shopify:\/\/shop_images\/teaspoons-full-of-spices.jpg"
+        "title": "Shop our beloved brands",
+        "bg_color": "rgba(0,0,0,0)"
+      }
+    },
+    "c3c8793e-729e-4a15-9822-586c4b3aa70d": {
+      "type": "5-title-grid",
+      "settings": {
+        "grid_type": "1",
+        "big_title": "Shop linen dresses",
+        "big_show_text": true,
+        "image_big": "shopify:\/\/shop_images\/Image_1_5a1f6314-8742-4a45-8f4b-d930524adfc4.png",
+        "url_big": "shopify:\/\/pages\/contact",
+        "small_1_title": "Shop JACKETS",
+        "small_1_show_text": true,
+        "image_small_1": "shopify:\/\/shop_images\/Image_2_e52a7adb-0c83-4e0a-8a18-6bafed3b848e.png",
+        "cta_url_small_1": "shopify:\/\/pages\/contact",
+        "small_2_title": "Shop BASICS",
+        "small_2_show_text": true,
+        "image_small_2": "shopify:\/\/shop_images\/Image_3_8a3f7b3f-78cc-442f-bf56-94f5a3496ba5.png",
+        "cta_url_small_2": "shopify:\/\/collections\/basics",
+        "small_3_title": "Shop SHORTS",
+        "small_3_show_text": true,
+        "image_small_3": "shopify:\/\/shop_images\/Image_4_a2f9f44d-d3c7-4576-9f15-ce7c93df32ff.png",
+        "cta_url_small_3": "shopify:\/\/pages\/contact",
+        "small_4_title": "Shop DENIM",
+        "small_4_show_text": true,
+        "image_small_4": "shopify:\/\/shop_images\/Image_5_dbe0f9a0-1cc6-4510-9fb0-5ecc4619db1f.png",
+        "cta_url_small_4": "shopify:\/\/pages\/contact"
+      }
+    },
+    "bf0109ea-e4c8-4a20-987f-46f4dc2b4b39": {
+      "type": "banner-half-image-text",
+      "settings": {
+        "banner_type": "2",
+        "text_color": "#ffffff",
+        "bg_color": "#1f2844",
+        "title": "<p>OUR BOUTIQUES<\/p>",
+        "show_title": true,
+        "message": "<p>Hit refresh on your spring wardrobe and let bright colours and delicate florals do the talking<\/p>",
+        "image": "shopify:\/\/shop_images\/Image_6.png",
+        "cta_text": "Shop Collection",
+        "cta_url": "shopify:\/\/pages\/contact",
+        "show_link": true
+      }
+    },
+    "f480d523-0723-4d85-ab93-ce2ad4c75449": {
+      "type": "text-image-multi-column",
+      "blocks": {
+        "template--18679620960574__f480d523-0723-4d85-ab93-ce2ad4c75449-1681890045d7df50bb-0": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Tile-3-1.png",
+            "sub_title": "KAITLYN’S CORNER",
+            "title": "New Spring Linens",
+            "description": "Get ahead of the style game this season. See our in-house stylist Kaitlyn introduce our linen styles for Spring!",
+            "cta_text": "Shop Collection",
+            "cta_url": "shopify:\/\/pages\/contact"
+          }
+        },
+        "74f28629-ee97-405f-bd5b-7fd5ab885780": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Tile-3-2.png",
+            "sub_title": "NEW SEASON TREND",
+            "title": "Denim Destination",
+            "description": "Get ahead of the style game this season. See our in-house stylist Kaitlyn introduce our linen styles for Spring!",
+            "cta_text": "Shop Collection",
+            "cta_url": "shopify:\/\/pages\/contact"
+          }
+        },
+        "d2daa283-7656-4cfc-b6f7-488b7f179e9f": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Tile-3-3.png",
+            "sub_title": "CAPSULE WARDROBE",
+            "title": "Spring\/Summer Lookbook",
+            "description": "Get ahead of the style game this season. See our in-house stylist Kaitlyn introduce our linen styles for Spring!",
+            "cta_text": "Shop Collection",
+            "cta_url": "shopify:\/\/pages\/contact"
+          }
+        }
+      },
+      "block_order": [
+        "template--18679620960574__f480d523-0723-4d85-ab93-ce2ad4c75449-1681890045d7df50bb-0",
+        "74f28629-ee97-405f-bd5b-7fd5ab885780",
+        "d2daa283-7656-4cfc-b6f7-488b7f179e9f"
+      ],
+      "settings": {
+        "heading": "Styles to Know",
+        "content": "",
+        "enable_casrousel": true
+      }
+    },
+    "213bca8b-1ab7-4995-8d71-80cf28d77420": {
+      "type": "shop-the-look",
+      "blocks": {
+        "template--18657837613374__213bca8b-1ab7-4995-8d71-80cf28d77420-16822237006172fc07-0": {
+          "type": "product",
+          "settings": {
+            "product": "retro-cord-blazer"
+          }
+        },
+        "template--18657837613374__213bca8b-1ab7-4995-8d71-80cf28d77420-16822237006172fc07-1": {
+          "type": "product",
+          "settings": {
+            "product": "check-linen-shirt-dress"
+          }
+        },
+        "template--18657837613374__213bca8b-1ab7-4995-8d71-80cf28d77420-16822237006172fc07-2": {
+          "type": "product",
+          "settings": {
+            "product": "fringed-denim-jean"
+          }
+        },
+        "template--18657837613374__213bca8b-1ab7-4995-8d71-80cf28d77420-16822237006172fc07-3": {
+          "type": "product",
+          "settings": {
+            "product": "black-ruffle-dress"
+          }
+        }
+      },
+      "block_order": [
+        "template--18657837613374__213bca8b-1ab7-4995-8d71-80cf28d77420-16822237006172fc07-0",
+        "template--18657837613374__213bca8b-1ab7-4995-8d71-80cf28d77420-16822237006172fc07-1",
+        "template--18657837613374__213bca8b-1ab7-4995-8d71-80cf28d77420-16822237006172fc07-2",
+        "template--18657837613374__213bca8b-1ab7-4995-8d71-80cf28d77420-16822237006172fc07-3"
+      ],
+      "settings": {
+        "position": "1",
+        "text_color": "#090f24",
+        "bg_color": "#f2e8e0",
+        "title": "Love the outfit? Shop it!",
+        "image": "shopify:\/\/shop_images\/Image_7.png"
+      }
+    },
+    "59090899-9a1d-481a-809a-f702e43cb434": {
+      "type": "instafeed-custom",
+      "settings": {
+        "title": "As seen in @rodneyclarkstores",
+        "link_label": "Follow us",
+        "link_insta": "https:\/\/www.instagram.com\/rodneyclarkstores\/"
+      }
+    },
+    "931c872a-fe45-4214-abd3-b9dfbff5dd46": {
+      "type": "divide-line",
+      "settings": {
+        "line_color": "#d9d9d9",
+        "line_height_dt": 1,
+        "line_height_mb": 1,
+        "enable_mobile": true,
+        "enable_tablet": true,
+        "enable_desktop": true,
+        "enable_max_width": true,
+        "max_width": 1280
+      }
+    },
+    "8248229d-5fd3-40bb-8e76-3576172ddfed": {
+      "type": "readmore-text",
+      "settings": {
+        "heading": "About Rodney Clark",
+        "content": "<p>With a collection of our own in-house fashion brands Threadz, Gordon Smith, Hammock &Vine, and Clarity we offer a comprehensive range of exciting fashion pieces for the contemporary woman's lifestyle. Rodney Clark is an Australian family-owned business consisting of three talented women at the helm of the Sorbet Group. With over 40 years’ experience in the fashion industry, they display their passion for fashion every day and are energised by the support & trust shown by our customers. Rodney Clark has 23 stores Australia wide, including an online store, which guarantees you will always be able to access our fantastic range! With a focus on customer service and styling, Rodney Clark offers a unique shopping experience, and we strive to continually build on what makes Rodney Clark a great place for you to shop, both in store and online.<br\/><\/p>",
+        "margin_top_desktop": 0,
+        "margin_bottom_desktop": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_mobile": 0
       }
     }
   },
   "order": [
-    "image_banner",
-    "b9cfdcaa-7455-481d-b885-254848d05d30",
-    "rich_text",
-    "featured_collection",
-    "collage",
-    "video",
-    "multicolumn",
-    "cd505465-9c59-4694-94c2-20ef3e49ee82"
+    "fb7371f9-2109-441f-8686-1d9cd2f1dae7",
+    "0cd071ec-45e2-4aae-b22d-d25e2dd83f16",
+    "a3fcf70d-5f78-4379-81ec-4b35ade28ac5",
+    "fb7eb6bc-b6a3-4b26-82a6-3503ae22a9c2",
+    "2ca0803d-48d4-45f9-be04-1f59bb58a4c0",
+    "776f5b0c-a697-4124-8910-1caff3ebb5e1",
+    "0ec1ac2b-aaa3-46ed-a5c4-231ecf59c28d",
+    "c3c8793e-729e-4a15-9822-586c4b3aa70d",
+    "bf0109ea-e4c8-4a20-987f-46f4dc2b4b39",
+    "f480d523-0723-4d85-ab93-ce2ad4c75449",
+    "213bca8b-1ab7-4995-8d71-80cf28d77420",
+    "59090899-9a1d-481a-809a-f702e43cb434",
+    "931c872a-fe45-4214-abd3-b9dfbff5dd46",
+    "8248229d-5fd3-40bb-8e76-3576172ddfed"
   ]
 }

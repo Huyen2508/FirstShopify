@@ -5,14 +5,14 @@
       "settings": {
       }
     },
-    "template": {
-      "type": "template-search",
+    "main": {
+      "type": "store-locator",
       "settings": {
       }
     }
   },
   "order": [
     "breadcrumb",
-    "template"
+    "main"
   ]
 }

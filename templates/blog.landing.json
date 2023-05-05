@@ -1,9 +1,10 @@
 {
-  "layout": "password",
   "sections": {
     "template": {
-      "type": "password-signup",
+      "type": "template-blog-landing",
       "settings": {
+        "title": "Our Blog",
+        "menu": "nav-blog"
       }
     }
   },

@@ -1,9 +1,11 @@
 {
-  "layout": "password",
   "sections": {
     "template": {
-      "type": "password-signup",
+      "type": "template-page",
+      "disabled": true,
       "settings": {
+        "title": "",
+        "description": ""
       }
     }
   },

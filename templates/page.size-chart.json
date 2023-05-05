@@ -1,0 +1,175 @@
+{
+  "sections": {
+    "template": {
+      "type": "template-page",
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "description": ""
+      }
+    },
+    "e839932c-d7dd-4957-9326-8c1e321d6f3b": {
+      "type": "size-charts",
+      "blocks": {
+        "85bef3a3-dd80-4d5d-a943-f991de138944": {
+          "type": "tablerow",
+          "settings": {
+            "size_conversion": "Size",
+            "size": "8 \/ XS;80-87;75-81;100-105"
+          }
+        },
+        "dbf59d8e-4917-4b38-939d-aae7411a7220": {
+          "type": "tablerow",
+          "settings": {
+            "size_conversion": "Size",
+            "size": "10 \/ S;88-95;82-87;105-110"
+          }
+        },
+        "077ee5d7-c387-49bc-b4a9-213408b94ec1": {
+          "type": "tablerow",
+          "settings": {
+            "size_conversion": "Size",
+            "size": "12 \/ M;96-105;88-102;110-115"
+          }
+        },
+        "791e5b7d-6e95-416b-94f3-897d4bb67692": {
+          "type": "tablerow",
+          "settings": {
+            "size_conversion": "Size",
+            "size": "14 \/ L;106-110;102-107;115-120"
+          }
+        },
+        "41a85e00-6b5e-4766-916a-bdeb73f82acb": {
+          "type": "tablerow",
+          "settings": {
+            "size_conversion": "Size",
+            "size": "16 \/ XL;111-116;108-112;120-125"
+          }
+        },
+        "4a32605b-9cc2-4342-a103-ee4992e165f0": {
+          "type": "tablerow",
+          "settings": {
+            "size_conversion": "Size",
+            "size": "18 \/ XXL;117-122;113-117;125-130"
+          }
+        },
+        "27b3a494-d47c-45d5-acc0-b5cef034d777": {
+          "type": "tablerow",
+          "settings": {
+            "size_conversion": "Size",
+            "size": "20 \/ XXXL;123-130;118-122;130-135"
+          }
+        },
+        "4ba3c7a1-6560-4743-a4aa-df2b6fa2aaa2": {
+          "type": "tablerow",
+          "settings": {
+            "size_conversion": "internationalSize",
+            "size": "8 \/ XS;5;9;37"
+          }
+        },
+        "28fe0a65-dd84-49b7-a3d6-8aa52d9d0f10": {
+          "type": "tablerow",
+          "settings": {
+            "size_conversion": "internationalSize",
+            "size": "10 \/ S;6;10;38"
+          }
+        },
+        "ce34d782-68e3-4c00-8ed9-6be3d81cc318": {
+          "type": "tablerow",
+          "settings": {
+            "size_conversion": "internationalSize",
+            "size": "12 \/ M;8;12;40"
+          }
+        },
+        "876d5557-ddd8-4e21-b984-877499b24b01": {
+          "type": "tablerow",
+          "settings": {
+            "size_conversion": "internationalSize",
+            "size": "14 \/ L;10;14;42"
+          }
+        },
+        "bbf02f6f-8cff-4b95-bb39-8752e6d963ce": {
+          "type": "tablerow",
+          "settings": {
+            "size_conversion": "internationalSize",
+            "size": "16 \/ XL;12;16;42"
+          }
+        },
+        "cdcd219b-0a3f-4102-aa36-d4ca13d58978": {
+          "type": "tablerow",
+          "settings": {
+            "size_conversion": "internationalSize",
+            "size": "18 \/ XXL;14;18;46"
+          }
+        },
+        "5af8c1ad-ea0b-4d2f-9e59-185fbf11ca29": {
+          "type": "tablerow",
+          "settings": {
+            "size_conversion": "internationalSize",
+            "size": "20 \/ XXXL;16;20;48"
+          }
+        },
+        "f11d44d0-ed82-499e-99b0-1f5443f21f9f": {
+          "type": "tutorialsItem",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/size-cutborder_30f6f3b6-5ba1-4b2a-81dd-81061d57d620.png",
+            "title": "Bust",
+            "description": "Measure under your arms at the fuller part of your bust. Keep tape level across your shoulder blades.",
+            "cta_text": "",
+            "cta_url": ""
+          }
+        },
+        "61004cbe-01c4-4feb-b1f4-bacf58ee2ca5": {
+          "type": "tutorialsItem",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/size-cutborder_30f6f3b6-5ba1-4b2a-81dd-81061d57d620.png",
+            "title": "Natural Waist",
+            "description": "Measure around your natural waistline, keeping the tape comfortably loose.",
+            "cta_text": "",
+            "cta_url": ""
+          }
+        },
+        "b2e9f0fd-533c-4cd1-864b-b0278dcb85ac": {
+          "type": "tutorialsItem",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/size-cutborder_30f6f3b6-5ba1-4b2a-81dd-81061d57d620.png",
+            "title": "Hips",
+            "description": "Stand with your feet together and measure around the fullest part of your hips.",
+            "cta_text": "",
+            "cta_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "85bef3a3-dd80-4d5d-a943-f991de138944",
+        "dbf59d8e-4917-4b38-939d-aae7411a7220",
+        "077ee5d7-c387-49bc-b4a9-213408b94ec1",
+        "791e5b7d-6e95-416b-94f3-897d4bb67692",
+        "41a85e00-6b5e-4766-916a-bdeb73f82acb",
+        "4a32605b-9cc2-4342-a103-ee4992e165f0",
+        "27b3a494-d47c-45d5-acc0-b5cef034d777",
+        "4ba3c7a1-6560-4743-a4aa-df2b6fa2aaa2",
+        "28fe0a65-dd84-49b7-a3d6-8aa52d9d0f10",
+        "ce34d782-68e3-4c00-8ed9-6be3d81cc318",
+        "876d5557-ddd8-4e21-b984-877499b24b01",
+        "bbf02f6f-8cff-4b95-bb39-8752e6d963ce",
+        "cdcd219b-0a3f-4102-aa36-d4ca13d58978",
+        "5af8c1ad-ea0b-4d2f-9e59-185fbf11ca29",
+        "f11d44d0-ed82-499e-99b0-1f5443f21f9f",
+        "61004cbe-01c4-4feb-b1f4-bacf58ee2ca5",
+        "b2e9f0fd-533c-4cd1-864b-b0278dcb85ac"
+      ],
+      "settings": {
+        "table_size_name": "Size Chart",
+        "column_size_name": "Size;Bust (cm);Waist (cm);Hip (cm)",
+        "table_conversion_name": "International Size Conversion",
+        "column_conversion_name": "AUST;US;UK;EUR",
+        "tutorials_size_name": "How to measure"
+      }
+    }
+  },
+  "order": [
+    "template",
+    "e839932c-d7dd-4957-9326-8c1e321d6f3b"
+  ]
+}

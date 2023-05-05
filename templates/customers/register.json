@@ -1,12 +1,16 @@
 {
   "sections": {
-    "main": {
-      "type": "main-register",
+    "register_form": {
+      "type": "account-tab",
       "settings": {
+        "login_background_right": "#fcf7f4",
+        "title_right": "",
+        "sub_content_register": "Provide us with your billing and shipping details for a faster checkout and ability to track orders.",
+        "custom_description": "<p>By subscribing you accept that you would like to hear about products, services, events, sales, and messaging from Rodney Clark. Sign up to receive $20 off your next order on any full-priced items.<\/p><p><strong>SMS TERMS<\/strong>: By entering your phone number and submitting this form, you consent to receive marketing text messages such as promotions, sales, new arrivals, and cart abandonment from Rodney Clark at the number provided, including messages sent by the autodialer. Consent is not a condition of any purchase. Message and data rates may apply. Message frequency varies. You can unsubscribe at any time by replying STOP or clicking the unsubscribe link (where available) in one of our messages. View our <a href=\"#\" title=\"#\">Privacy Policy<\/a> and <a href=\"#\" title=\"#\">Terms of Service<\/a><\/p>"
       }
     }
   },
   "order": [
-    "main"
+    "register_form"
   ]
 }

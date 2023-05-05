@@ -1,12 +1,12 @@
 {
   "sections": {
-    "main": {
-      "type": "main-activate-account",
+    "activate_account_form": {
+      "type": "account-form",
       "settings": {
       }
     }
   },
   "order": [
-    "main"
+    "activate_account_form"
   ]
 }

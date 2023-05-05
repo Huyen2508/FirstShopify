@@ -1,0 +1,815 @@
+{
+  "sections": {
+    "452f47a1-5256-4d1b-b4a0-a54b44309d38": {
+      "type": "hero-banner",
+      "blocks": {
+        "template--18776282693950__452f47a1-5256-4d1b-b4a0-a54b44309d38-1682567235c6a5233e-0": {
+          "type": "item",
+          "settings": {
+            "banner_type": "2",
+            "enable_overlay": false,
+            "overlay_percent_full": 10,
+            "overlay_percent_left": 10,
+            "overlay_percent_right": 10,
+            "overlay_percent_mb": 10,
+            "content_position": "2",
+            "background_color_full": "rgba(0,0,0,0)",
+            "text_color_full": "#ffffff",
+            "title_full": "Title",
+            "description_full": "Description",
+            "cta_text_full": "",
+            "cta_url_full": "",
+            "image_dt_right": "shopify:\/\/shop_images\/Hero_Banner_3.png",
+            "background_color_right": "rgba(0,0,0,0)",
+            "text_color_right": "#ffffff",
+            "title_right": "",
+            "description_right": "",
+            "cta_text_right": "",
+            "cta_url_right": "",
+            "image_dt_left": "shopify:\/\/shop_images\/Hero_Banner_2.png",
+            "background_color_left": "rgba(0,0,0,0)",
+            "text_color_left": "#ffffff",
+            "title_left": "Super Sale",
+            "description_left": "Get ahead of the trends with new season styles.",
+            "cta_text_left": "Shop sale",
+            "cta_url_left": "shopify:\/\/pages\/contact",
+            "image_mb": "shopify:\/\/shop_images\/Hero_Banner_4.png",
+            "background_color_mb": "rgba(0,0,0,0)",
+            "text_color_mb": "#ffffff",
+            "title_mb": "Super Sale",
+            "description_mb": "",
+            "cta_text_mb": "Shop SALE",
+            "cta_url_mb": "shopify:\/\/pages\/contact"
+          }
+        }
+      },
+      "block_order": [
+        "template--18776282693950__452f47a1-5256-4d1b-b4a0-a54b44309d38-1682567235c6a5233e-0"
+      ],
+      "settings": {
+        "enable_casrousel": false,
+        "enable_max_width": false,
+        "max_width": 1440,
+        "margin_top_desktop": 0,
+        "margin_bottom_desktop": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "b8c0466d-720a-4f24-ba85-904ecf26a664": {
+      "type": "hero-banner",
+      "blocks": {
+        "template--18776282693950__b8c0466d-720a-4f24-ba85-904ecf26a664-1682567235c6a5233e-0": {
+          "type": "item",
+          "settings": {
+            "banner_type": "1",
+            "enable_overlay": false,
+            "overlay_percent_full": 0,
+            "overlay_percent_left": 0,
+            "overlay_percent_right": 0,
+            "overlay_percent_mb": 0,
+            "content_position": "2",
+            "background_color_full": "rgba(0,0,0,0)",
+            "text_color_full": "#ffffff",
+            "title_full": "Super Sale",
+            "description_full": "Get ahead of the trends with new season styles.",
+            "cta_text_full": "Shop sale",
+            "cta_url_full": "shopify:\/\/pages\/contact",
+            "background_color_right": "rgba(0,0,0,0)",
+            "text_color_right": "#ffffff",
+            "title_right": "Title",
+            "description_right": "Description",
+            "cta_text_right": "",
+            "cta_url_right": "",
+            "background_color_left": "rgba(0,0,0,0)",
+            "text_color_left": "#ffffff",
+            "title_left": "Title",
+            "description_left": "Description",
+            "cta_text_left": "",
+            "cta_url_left": "",
+            "background_color_mb": "rgba(0,0,0,0)",
+            "text_color_mb": "#ffffff",
+            "title_mb": "Super Sale",
+            "description_mb": "Shop SALE",
+            "cta_text_mb": "",
+            "cta_url_mb": ""
+          }
+        },
+        "1b131d57-1e39-41da-a828-507b5e35bd40": {
+          "type": "item",
+          "settings": {
+            "banner_type": "1",
+            "enable_overlay": false,
+            "overlay_percent_full": 0,
+            "overlay_percent_left": 0,
+            "overlay_percent_right": 0,
+            "overlay_percent_mb": 0,
+            "content_position": "3",
+            "background_color_full": "rgba(0,0,0,0)",
+            "text_color_full": "#ffffff",
+            "title_full": "Super Sale",
+            "description_full": "Get ahead of the trends with new season styles.",
+            "cta_text_full": "Shop sale",
+            "cta_url_full": "shopify:\/\/pages\/contact",
+            "background_color_right": "rgba(0,0,0,0)",
+            "text_color_right": "#ffffff",
+            "title_right": "Title",
+            "description_right": "Description",
+            "cta_text_right": "",
+            "cta_url_right": "",
+            "background_color_left": "rgba(0,0,0,0)",
+            "text_color_left": "#ffffff",
+            "title_left": "Title",
+            "description_left": "Description",
+            "cta_text_left": "",
+            "cta_url_left": "",
+            "background_color_mb": "rgba(0,0,0,0)",
+            "text_color_mb": "#ffffff",
+            "title_mb": "Super Sale",
+            "description_mb": "Shop SALE",
+            "cta_text_mb": "",
+            "cta_url_mb": ""
+          }
+        },
+        "74821d7b-133e-4e5f-a8b4-92b1663985e4": {
+          "type": "item",
+          "settings": {
+            "banner_type": "1",
+            "enable_overlay": false,
+            "overlay_percent_full": 0,
+            "overlay_percent_left": 0,
+            "overlay_percent_right": 0,
+            "overlay_percent_mb": 0,
+            "content_position": "1",
+            "background_color_full": "rgba(0,0,0,0)",
+            "text_color_full": "#ffffff",
+            "title_full": "Super Sale",
+            "description_full": "Get ahead of the trends with new season styles.",
+            "cta_text_full": "Shop sale",
+            "cta_url_full": "shopify:\/\/pages\/contact",
+            "background_color_right": "rgba(0,0,0,0)",
+            "text_color_right": "#ffffff",
+            "title_right": "Title",
+            "description_right": "Description",
+            "cta_text_right": "",
+            "cta_url_right": "",
+            "background_color_left": "rgba(0,0,0,0)",
+            "text_color_left": "#ffffff",
+            "title_left": "Title",
+            "description_left": "Description",
+            "cta_text_left": "",
+            "cta_url_left": "",
+            "background_color_mb": "rgba(0,0,0,0)",
+            "text_color_mb": "#ffffff",
+            "title_mb": "Super Sale",
+            "description_mb": "Shop SALE",
+            "cta_text_mb": "",
+            "cta_url_mb": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--18776282693950__b8c0466d-720a-4f24-ba85-904ecf26a664-1682567235c6a5233e-0",
+        "1b131d57-1e39-41da-a828-507b5e35bd40",
+        "74821d7b-133e-4e5f-a8b4-92b1663985e4"
+      ],
+      "settings": {
+        "enable_casrousel": true,
+        "enable_max_width": false,
+        "max_width": 1440,
+        "margin_top_desktop": 0,
+        "margin_bottom_desktop": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "a4612ff8-101a-4179-af02-ae2a28f442d2": {
+      "type": "hero-banner",
+      "blocks": {
+        "a9f9e992-1bba-4519-9279-bc06b2417dac": {
+          "type": "item",
+          "settings": {
+            "banner_type": "2",
+            "enable_overlay": true,
+            "overlay_percent_full": 10,
+            "overlay_percent_left": 10,
+            "overlay_percent_right": 20,
+            "overlay_percent_mb": 10,
+            "content_position": "2",
+            "background_color_full": "rgba(0,0,0,0)",
+            "text_color_full": "#ffffff",
+            "title_full": "Title",
+            "description_full": "Description",
+            "cta_text_full": "",
+            "cta_url_full": "",
+            "image_dt_right": "shopify:\/\/shop_images\/Hero_Banner_3.png",
+            "background_color_right": "rgba(0,0,0,0)",
+            "text_color_right": "#ffffff",
+            "title_right": "Super Sale",
+            "description_right": "Get ahead of the trends with new season styles.",
+            "cta_text_right": "Shop sale",
+            "cta_url_right": "shopify:\/\/pages\/contact",
+            "image_dt_left": "shopify:\/\/shop_images\/Hero_Banner_2.png",
+            "background_color_left": "rgba(0,0,0,0)",
+            "text_color_left": "#ffffff",
+            "title_left": "Super Sale",
+            "description_left": "Get ahead of the trends with new season styles.",
+            "cta_text_left": "Shop sale",
+            "cta_url_left": "shopify:\/\/pages\/contact",
+            "image_mb": "shopify:\/\/shop_images\/Hero_Banner_4.png",
+            "background_color_mb": "rgba(0,0,0,0)",
+            "text_color_mb": "#ffffff",
+            "title_mb": "Super Sale",
+            "description_mb": "",
+            "cta_text_mb": "Shop SALE",
+            "cta_url_mb": "shopify:\/\/pages\/contact"
+          }
+        }
+      },
+      "block_order": [
+        "a9f9e992-1bba-4519-9279-bc06b2417dac"
+      ],
+      "settings": {
+        "enable_casrousel": false,
+        "enable_max_width": false,
+        "max_width": 1440,
+        "margin_top_desktop": 0,
+        "margin_bottom_desktop": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "c4349ad4-10c5-4753-8de3-2c47fdbe3be2": {
+      "type": "usp",
+      "blocks": {
+        "template--18776282693950__c4349ad4-10c5-4753-8de3-2c47fdbe3be2-16825676976911860e-0": {
+          "type": "item",
+          "settings": {
+            "content": "<p>FLASH SALE NOTHING OVER $59*<\/p>",
+            "cta_text": "Shop NOW",
+            "cta_url": "shopify:\/\/pages\/contact",
+            "text_color": "#090f24"
+          }
+        },
+        "62f1eb86-8640-4a2f-87d6-b5d0fb6d82ba": {
+          "type": "item",
+          "settings": {
+            "content": "<p>50% OFF ALL DRESSES & SKIRTS<\/p>",
+            "cta_text": "Shop NOW",
+            "cta_url": "shopify:\/\/pages\/contact",
+            "text_color": "#090f24"
+          }
+        },
+        "2a0df39f-03fa-4164-9b8f-2ee84d9bcbca": {
+          "type": "item",
+          "settings": {
+            "content": "<p>SUMMER SALE NOTHING OVER $150<\/p>",
+            "cta_text": "Shop NOW",
+            "cta_url": "shopify:\/\/pages\/contact",
+            "text_color": "#090f24"
+          }
+        }
+      },
+      "block_order": [
+        "template--18776282693950__c4349ad4-10c5-4753-8de3-2c47fdbe3be2-16825676976911860e-0",
+        "62f1eb86-8640-4a2f-87d6-b5d0fb6d82ba",
+        "2a0df39f-03fa-4164-9b8f-2ee84d9bcbca"
+      ],
+      "settings": {
+        "bg_color": "#fcf7f4"
+      }
+    },
+    "0a19f2db-e077-46ac-b7e1-626f094dd12b": {
+      "type": "divide-line",
+      "settings": {
+        "line_color": "#ffffff",
+        "line_height_dt": 81,
+        "line_height_mb": 20,
+        "enable_mobile": true,
+        "enable_tablet": true,
+        "enable_desktop": true,
+        "enable_max_width": true,
+        "max_width": 1280
+      }
+    },
+    "5026eccf-d4cb-4135-badd-5d7bc52799bb": {
+      "type": "readmore-text",
+      "settings": {
+        "heading": "Dresses by Rodney Clark",
+        "content": "<p>With a collection of our own in-house fashion brands Threadz, Gordon Smith, Hammock &Vine, and Clarity we offer a comprehensive range of exciting fashion pieces for the contemporary woman's lifestyle. Rodney Clark is an Australian family-owned business consisting of three talented women at the helm of the Sorbet Group. With over 40 years’ experience in the fashion industry, they display their passion for fashion every day and are energised by the support & trust shown by our customers. Rodney Clark has 23 stores Australia wide, including an online store, which guarantees you will always be able to access our fantastic range! With a focus on customer service and styling, Rodney Clark offers a unique shopping experience, and we strive to continually build on what makes Rodney Clark a great place for you to shop, both in store and online.<\/p>",
+        "margin_top_desktop": 0,
+        "margin_bottom_desktop": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "15b1fa57-5925-4c29-b3dd-37a6b9740d93": {
+      "type": "brand-logos",
+      "blocks": {
+        "template--18776282693950__15b1fa57-5925-4c29-b3dd-37a6b9740d93-16825679412e8e881c-0": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Logo.png",
+            "cta_url": ""
+          }
+        },
+        "template--18776282693950__15b1fa57-5925-4c29-b3dd-37a6b9740d93-16825679412e8e881c-1": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Logo_1.png",
+            "cta_url": ""
+          }
+        },
+        "template--18776282693950__15b1fa57-5925-4c29-b3dd-37a6b9740d93-16825679412e8e881c-2": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Logo_2.png",
+            "cta_url": ""
+          }
+        },
+        "template--18776282693950__15b1fa57-5925-4c29-b3dd-37a6b9740d93-16825679412e8e881c-3": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/logo_b41e4858-e82d-4dae-91a7-d939caf888a0.png",
+            "cta_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--18776282693950__15b1fa57-5925-4c29-b3dd-37a6b9740d93-16825679412e8e881c-0",
+        "template--18776282693950__15b1fa57-5925-4c29-b3dd-37a6b9740d93-16825679412e8e881c-1",
+        "template--18776282693950__15b1fa57-5925-4c29-b3dd-37a6b9740d93-16825679412e8e881c-2",
+        "template--18776282693950__15b1fa57-5925-4c29-b3dd-37a6b9740d93-16825679412e8e881c-3"
+      ],
+      "settings": {
+        "title": "Shop our beloved brands",
+        "bg_color": "#ffffff"
+      }
+    },
+    "21df2697-7704-4785-a5dd-79ea14b5bd04": {
+      "type": "simple-banner",
+      "settings": {
+        "bg_color": "#fcf7f4",
+        "title": "Sign Up & Save",
+        "title_color": "#090f24",
+        "message": "<p>Sign up to our newsletter to receive your $20 voucher, first access to sales & promotions, and invitations to styling events.<\/p>",
+        "message_color": "#404346",
+        "cta_text": "sign me up",
+        "cta_url": "",
+        "margin_top_desktop": 0,
+        "margin_bottom_desktop": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "bf768854-1a39-4748-952d-1398f74c7e88": {
+      "type": "product-carousel",
+      "blocks": {
+        "template--18776282693950__bf768854-1a39-4748-952d-1398f74c7e88-16825681004cf19696-2": {
+          "type": "item",
+          "settings": {
+            "title": "",
+            "collection": "clothing"
+          }
+        }
+      },
+      "block_order": [
+        "template--18776282693950__bf768854-1a39-4748-952d-1398f74c7e88-16825681004cf19696-2"
+      ],
+      "settings": {
+        "heading": "You may like",
+        "message": "",
+        "text_position": "1"
+      }
+    },
+    "cccd80f9-1ff4-448b-8fcc-05b84bc1fa1d": {
+      "type": "product-carousel",
+      "blocks": {
+        "template--18776282693950__cccd80f9-1ff4-448b-8fcc-05b84bc1fa1d-16825681004cf19696-0": {
+          "type": "item",
+          "settings": {
+            "title": "Best Sellers",
+            "collection": "clothing"
+          }
+        },
+        "template--18776282693950__cccd80f9-1ff4-448b-8fcc-05b84bc1fa1d-16825681004cf19696-1": {
+          "type": "item",
+          "settings": {
+            "title": "Linen Collection",
+            "collection": "dresses"
+          }
+        },
+        "template--18776282693950__cccd80f9-1ff4-448b-8fcc-05b84bc1fa1d-16825681004cf19696-2": {
+          "type": "item",
+          "settings": {
+            "title": "Accessories",
+            "collection": "accessories"
+          }
+        }
+      },
+      "block_order": [
+        "template--18776282693950__cccd80f9-1ff4-448b-8fcc-05b84bc1fa1d-16825681004cf19696-0",
+        "template--18776282693950__cccd80f9-1ff4-448b-8fcc-05b84bc1fa1d-16825681004cf19696-1",
+        "template--18776282693950__cccd80f9-1ff4-448b-8fcc-05b84bc1fa1d-16825681004cf19696-2"
+      ],
+      "settings": {
+        "heading": "",
+        "message": "",
+        "text_position": "1"
+      }
+    },
+    "3af5164c-0467-4e7f-bce6-9545a232cac5": {
+      "type": "product-carousel",
+      "blocks": {
+        "a7d4c5d8-ca01-4755-b62a-d4ca4e588925": {
+          "type": "item",
+          "settings": {
+            "title": "",
+            "collection": "clothing"
+          }
+        }
+      },
+      "block_order": [
+        "a7d4c5d8-ca01-4755-b62a-d4ca4e588925"
+      ],
+      "settings": {
+        "heading": "You may like",
+        "message": "<p>This is a sub-heading or paragraph of text explaining the product collection below.<\/p>",
+        "text_position": "2"
+      }
+    },
+    "2c05c2ed-9d5b-4eca-8f66-91ea9facbae3": {
+      "type": "text-image-multi-column",
+      "blocks": {
+        "template--18776282693950__2c05c2ed-9d5b-4eca-8f66-91ea9facbae3-1682568309cb619639-0": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Product_Image.png",
+            "sub_title": "",
+            "title": "",
+            "description": "",
+            "cta_text": "Shop Collection",
+            "cta_url": "shopify:\/\/pages\/contact"
+          }
+        },
+        "036f8ebd-d1ac-4d62-8f10-542355d7b709": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Product_Image_1.png",
+            "sub_title": "",
+            "title": "",
+            "description": "",
+            "cta_text": "Shop Collection",
+            "cta_url": "shopify:\/\/pages\/contact"
+          }
+        }
+      },
+      "block_order": [
+        "template--18776282693950__2c05c2ed-9d5b-4eca-8f66-91ea9facbae3-1682568309cb619639-0",
+        "036f8ebd-d1ac-4d62-8f10-542355d7b709"
+      ],
+      "settings": {
+        "heading": "Say hello to your new fave",
+        "content": "",
+        "enable_casrousel": true
+      }
+    },
+    "0e85896d-7feb-4ded-a682-b3d85640449c": {
+      "type": "text-image-multi-column",
+      "blocks": {
+        "template--18776282693950__0e85896d-7feb-4ded-a682-b3d85640449c-1682568309cb619639-0": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Tile-3-1.png",
+            "sub_title": "KAITLYN’S CORNER",
+            "title": "New Spring Linens",
+            "description": "Get ahead of the style game this season. See our in-house stylist Kaitlyn introduce our linen styles for Spring!",
+            "cta_text": "Shop Collection",
+            "cta_url": "shopify:\/\/pages\/contact"
+          }
+        },
+        "230e12f2-7843-4685-8586-3ad3bc55a45e": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Tile-3-2.png",
+            "sub_title": "NEW SEASON TREND",
+            "title": "Denim Destination",
+            "description": "Get ahead of the style game this season. See our in-house stylist Kaitlyn introduce our linen styles for Spring!",
+            "cta_text": "Shop Collection",
+            "cta_url": "shopify:\/\/pages\/contact"
+          }
+        },
+        "878bae66-adfc-4c98-8cba-1ea203410fcc": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Tile-3-3.png",
+            "sub_title": "CAPSULE WARDROBE",
+            "title": "Spring\/Summer Lookbook",
+            "description": "Get ahead of the style game this season. See our in-house stylist Kaitlyn introduce our linen styles for Spring!",
+            "cta_text": "Shop Collection",
+            "cta_url": "shopify:\/\/pages\/contact"
+          }
+        }
+      },
+      "block_order": [
+        "template--18776282693950__0e85896d-7feb-4ded-a682-b3d85640449c-1682568309cb619639-0",
+        "230e12f2-7843-4685-8586-3ad3bc55a45e",
+        "878bae66-adfc-4c98-8cba-1ea203410fcc"
+      ],
+      "settings": {
+        "heading": "Styles to Know",
+        "content": "",
+        "enable_casrousel": true
+      }
+    },
+    "c6a5b1c4-af27-4494-83a2-c9d60cd12498": {
+      "type": "banner-text-image-video",
+      "settings": {
+        "banner_type": "1",
+        "bg_color": "#ffdfee",
+        "title": "Up to 50% Off",
+        "text_color": "#090f24",
+        "message": "<p>Starts Now - All Your Favourite Collections<\/p>",
+        "cta_text": "Shop SALE",
+        "cta_url": "shopify:\/\/pages\/contact",
+        "video": "",
+        "video_ratio": "56.25"
+      }
+    },
+    "18bc989c-325b-487a-890d-8e05068bbbdc": {
+      "type": "banner-text-image-video",
+      "settings": {
+        "banner_type": "2",
+        "bg_color": "#ffdfee",
+        "title": "",
+        "text_color": "#090f24",
+        "message": "",
+        "cta_text": "",
+        "cta_url": "shopify:\/\/pages\/contact",
+        "image_desktop": "shopify:\/\/shop_images\/Hero_Banner_1.png",
+        "image_mobile": "shopify:\/\/shop_images\/Text_2.png",
+        "video": "",
+        "video_ratio": "56.25"
+      }
+    },
+    "c4b8af68-3766-41e8-82bd-6b21efb5223b": {
+      "type": "banner-text-image-video",
+      "settings": {
+        "banner_type": "3",
+        "bg_color": "rgba(0,0,0,0)",
+        "title": "",
+        "text_color": "#090f24",
+        "message": "",
+        "cta_text": "",
+        "cta_url": "",
+        "video": "<iframe width=\"560\" height=\"315\" src=\"https:\/\/www.youtube.com\/embed\/yTcmSCzRx14\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen><\/iframe>",
+        "video_ratio": "56.25"
+      }
+    },
+    "8d07572f-19d2-4140-bb1f-ae164d5df998": {
+      "type": "5-title-grid",
+      "settings": {
+        "grid_type": "1",
+        "big_title": "Shop linen dresses",
+        "big_show_text": true,
+        "image_big": "shopify:\/\/shop_images\/Image_1_5a1f6314-8742-4a45-8f4b-d930524adfc4.png",
+        "url_big": "shopify:\/\/pages\/contact",
+        "small_1_title": "Shop JACKETS",
+        "small_1_show_text": true,
+        "image_small_1": "shopify:\/\/shop_images\/Image_2_e52a7adb-0c83-4e0a-8a18-6bafed3b848e.png",
+        "cta_url_small_1": "shopify:\/\/pages\/contact",
+        "small_2_title": "Shop BASICS",
+        "small_2_show_text": true,
+        "image_small_2": "shopify:\/\/shop_images\/Image_3_8a3f7b3f-78cc-442f-bf56-94f5a3496ba5.png",
+        "cta_url_small_2": "shopify:\/\/pages\/contact",
+        "small_3_title": "Shop SHORTS",
+        "small_3_show_text": true,
+        "image_small_3": "shopify:\/\/shop_images\/Image_4_a2f9f44d-d3c7-4576-9f15-ce7c93df32ff.png",
+        "cta_url_small_3": "shopify:\/\/pages\/contact",
+        "small_4_title": "Shop DENIM",
+        "small_4_show_text": true,
+        "image_small_4": "shopify:\/\/shop_images\/Image_5_dbe0f9a0-1cc6-4510-9fb0-5ecc4619db1f.png",
+        "cta_url_small_4": "shopify:\/\/pages\/contact"
+      }
+    },
+    "3e743bd9-faca-4048-a227-065020a4cbaa": {
+      "type": "5-title-grid",
+      "settings": {
+        "grid_type": "2",
+        "big_title": "Shop linen dresses",
+        "big_show_text": true,
+        "image_big": "shopify:\/\/shop_images\/Image_1_5a1f6314-8742-4a45-8f4b-d930524adfc4.png",
+        "url_big": "shopify:\/\/pages\/contact",
+        "small_1_title": "Shop JACKETS",
+        "small_1_show_text": false,
+        "image_small_1": "shopify:\/\/shop_images\/Image_2_e52a7adb-0c83-4e0a-8a18-6bafed3b848e.png",
+        "cta_url_small_1": "shopify:\/\/pages\/contact",
+        "small_2_title": "Shop BASICS",
+        "small_2_show_text": true,
+        "image_small_2": "shopify:\/\/shop_images\/Image_3_8a3f7b3f-78cc-442f-bf56-94f5a3496ba5.png",
+        "cta_url_small_2": "shopify:\/\/pages\/contact",
+        "small_3_title": "Shop SHORTS",
+        "small_3_show_text": true,
+        "image_small_3": "shopify:\/\/shop_images\/Image_4_a2f9f44d-d3c7-4576-9f15-ce7c93df32ff.png",
+        "cta_url_small_3": "shopify:\/\/pages\/contact",
+        "small_4_title": "Shop DENIM",
+        "small_4_show_text": true,
+        "image_small_4": "shopify:\/\/shop_images\/Image_5_dbe0f9a0-1cc6-4510-9fb0-5ecc4619db1f.png",
+        "cta_url_small_4": "shopify:\/\/pages\/contact"
+      }
+    },
+    "e1c999e6-5627-4857-a82e-75b68837054d": {
+      "type": "4-title-grid",
+      "settings": {
+        "grid_type": "2",
+        "big_title": "Shop linen dresses",
+        "big_show_text": true,
+        "image_big": "shopify:\/\/shop_images\/Image_1_5a1f6314-8742-4a45-8f4b-d930524adfc4.png",
+        "url_big": "shopify:\/\/pages\/contact",
+        "small_1_title": "Shop JACKETS",
+        "small_1_show_text": true,
+        "image_small_1": "shopify:\/\/shop_images\/Image_2_e52a7adb-0c83-4e0a-8a18-6bafed3b848e.png",
+        "cta_url_small_1": "shopify:\/\/pages\/contact",
+        "small_2_title": "Shop BASICS",
+        "small_2_show_text": true,
+        "image_small_2": "shopify:\/\/shop_images\/Image_3_8a3f7b3f-78cc-442f-bf56-94f5a3496ba5.png",
+        "cta_url_small_2": "shopify:\/\/pages\/contact",
+        "small_3_title": "Shop DENIM",
+        "small_3_show_text": true,
+        "image_small_3": "shopify:\/\/shop_images\/Image_69c5f4fe-a038-429b-9cf3-a0a148c12860.png",
+        "cta_url_small_3": "shopify:\/\/pages\/contact"
+      }
+    },
+    "8b033691-c91e-4105-ae48-2f3a823ec59e": {
+      "type": "4-title-grid",
+      "settings": {
+        "grid_type": "1",
+        "big_title": "Shop linen dresses",
+        "big_show_text": true,
+        "image_big": "shopify:\/\/shop_images\/Image_1_5a1f6314-8742-4a45-8f4b-d930524adfc4.png",
+        "url_big": "shopify:\/\/pages\/contact",
+        "small_1_title": "Shop JACKETS",
+        "small_1_show_text": true,
+        "image_small_1": "shopify:\/\/shop_images\/Image_2_e52a7adb-0c83-4e0a-8a18-6bafed3b848e.png",
+        "cta_url_small_1": "shopify:\/\/pages\/contact",
+        "small_2_title": "Shop BASICS",
+        "small_2_show_text": true,
+        "image_small_2": "shopify:\/\/shop_images\/Image_3_8a3f7b3f-78cc-442f-bf56-94f5a3496ba5.png",
+        "cta_url_small_2": "shopify:\/\/pages\/contact",
+        "small_3_title": "Shop DENIM",
+        "small_3_show_text": true,
+        "image_small_3": "shopify:\/\/shop_images\/Image_1_2f4b59aa-04bd-4cb2-ac4e-1fc05c0c000b.png",
+        "cta_url_small_3": "shopify:\/\/pages\/contact"
+      }
+    },
+    "c2e16c4b-efb1-495c-9c89-33f6a4f2e455": {
+      "type": "instafeed-custom",
+      "settings": {
+        "title": "As seen in @rodneyclarkstores",
+        "link_label": "follow uS",
+        "link_insta": "https:\/\/www.instagram.com\/rodneyclarkstores\/"
+      }
+    },
+    "3a7591a0-6893-4229-adbb-834fa47833bd": {
+      "type": "banner-half-image-text",
+      "settings": {
+        "banner_type": "2",
+        "text_color": "#FFFFFF",
+        "bg_color": "#1F2844",
+        "title": "<p>OUR BOUTIQUES<\/p>",
+        "show_title": true,
+        "message": "<p>Hit refresh on your spring wardrobe and let bright colours and delicate florals do the talking<\/p>",
+        "image": "shopify:\/\/shop_images\/Image_6.png",
+        "cta_text": "Shop Collection",
+        "cta_url": "shopify:\/\/pages\/contact",
+        "show_link": true
+      }
+    },
+    "6f7c8982-fdc7-4e7f-a2b0-b33d32833d88": {
+      "type": "banner-half-image-text",
+      "settings": {
+        "banner_type": "1",
+        "text_color": "#090f24",
+        "bg_color": "#ffdfee",
+        "title": "<p>OUR BOUTIQUES<\/p>",
+        "show_title": true,
+        "message": "<p>Hit refresh on your spring wardrobe and let bright colours and delicate florals do the talking<\/p>",
+        "image": "shopify:\/\/shop_images\/Image_6.png",
+        "cta_text": "Shop Collection",
+        "cta_url": "shopify:\/\/pages\/contact",
+        "show_link": true
+      }
+    },
+    "ea666b02-5688-4b0b-b05f-6f471a27cf87": {
+      "type": "shop-the-look",
+      "blocks": {
+        "template--18776282693950__ea666b02-5688-4b0b-b05f-6f471a27cf87-1682576102acf8b0c4-0": {
+          "type": "product",
+          "settings": {
+            "product": "retro-cord-blazer"
+          }
+        },
+        "template--18776282693950__ea666b02-5688-4b0b-b05f-6f471a27cf87-1682576102acf8b0c4-1": {
+          "type": "product",
+          "settings": {
+            "product": "fringed-denim-jean"
+          }
+        },
+        "template--18776282693950__ea666b02-5688-4b0b-b05f-6f471a27cf87-1682576102acf8b0c4-2": {
+          "type": "product",
+          "settings": {
+            "product": "check-linen-shirt-dress"
+          }
+        },
+        "template--18776282693950__ea666b02-5688-4b0b-b05f-6f471a27cf87-1682576102acf8b0c4-3": {
+          "type": "product",
+          "settings": {
+            "product": "frilled-tiered-floral-dress"
+          }
+        }
+      },
+      "block_order": [
+        "template--18776282693950__ea666b02-5688-4b0b-b05f-6f471a27cf87-1682576102acf8b0c4-0",
+        "template--18776282693950__ea666b02-5688-4b0b-b05f-6f471a27cf87-1682576102acf8b0c4-1",
+        "template--18776282693950__ea666b02-5688-4b0b-b05f-6f471a27cf87-1682576102acf8b0c4-2",
+        "template--18776282693950__ea666b02-5688-4b0b-b05f-6f471a27cf87-1682576102acf8b0c4-3"
+      ],
+      "settings": {
+        "position": "1",
+        "text_color": "#090F24",
+        "bg_color": "#F2E8E0",
+        "title": "Love the outfit? Shop it!",
+        "image": "shopify:\/\/shop_images\/Image_7.png"
+      }
+    },
+    "e3d85198-67ed-45c3-a998-46d146ba2729": {
+      "type": "shop-the-look",
+      "blocks": {
+        "4a2d1e53-1b9c-4e90-b490-64731fa10879": {
+          "type": "product",
+          "settings": {
+            "product": "retro-cord-blazer"
+          }
+        },
+        "d7c8c98d-7902-4886-886c-16ba73f190e1": {
+          "type": "product",
+          "settings": {
+            "product": "fringed-denim-jean"
+          }
+        },
+        "54a9bcc8-cb3f-4e92-b415-45e265ce9f75": {
+          "type": "product",
+          "settings": {
+            "product": "check-linen-shirt-dress"
+          }
+        },
+        "68a9e579-dd07-4740-963a-71d3cea5389a": {
+          "type": "product",
+          "settings": {
+            "product": "frilled-tiered-floral-dress"
+          }
+        }
+      },
+      "block_order": [
+        "4a2d1e53-1b9c-4e90-b490-64731fa10879",
+        "d7c8c98d-7902-4886-886c-16ba73f190e1",
+        "54a9bcc8-cb3f-4e92-b415-45e265ce9f75",
+        "68a9e579-dd07-4740-963a-71d3cea5389a"
+      ],
+      "settings": {
+        "position": "2",
+        "text_color": "#090F24",
+        "bg_color": "#F2E8E0",
+        "title": "Love the outfit? Shop it!",
+        "image": "shopify:\/\/shop_images\/Image_7.png"
+      }
+    }
+  },
+  "order": [
+    "452f47a1-5256-4d1b-b4a0-a54b44309d38",
+    "b8c0466d-720a-4f24-ba85-904ecf26a664",
+    "a4612ff8-101a-4179-af02-ae2a28f442d2",
+    "c4349ad4-10c5-4753-8de3-2c47fdbe3be2",
+    "0a19f2db-e077-46ac-b7e1-626f094dd12b",
+    "5026eccf-d4cb-4135-badd-5d7bc52799bb",
+    "15b1fa57-5925-4c29-b3dd-37a6b9740d93",
+    "21df2697-7704-4785-a5dd-79ea14b5bd04",
+    "bf768854-1a39-4748-952d-1398f74c7e88",
+    "cccd80f9-1ff4-448b-8fcc-05b84bc1fa1d",
+    "3af5164c-0467-4e7f-bce6-9545a232cac5",
+    "2c05c2ed-9d5b-4eca-8f66-91ea9facbae3",
+    "0e85896d-7feb-4ded-a682-b3d85640449c",
+    "c6a5b1c4-af27-4494-83a2-c9d60cd12498",
+    "18bc989c-325b-487a-890d-8e05068bbbdc",
+    "c4b8af68-3766-41e8-82bd-6b21efb5223b",
+    "8d07572f-19d2-4140-bb1f-ae164d5df998",
+    "3e743bd9-faca-4048-a227-065020a4cbaa",
+    "e1c999e6-5627-4857-a82e-75b68837054d",
+    "8b033691-c91e-4105-ae48-2f3a823ec59e",
+    "c2e16c4b-efb1-495c-9c89-33f6a4f2e455",
+    "3a7591a0-6893-4229-adbb-834fa47833bd",
+    "6f7c8982-fdc7-4e7f-a2b0-b33d32833d88",
+    "ea666b02-5688-4b0b-b05f-6f471a27cf87",
+    "e3d85198-67ed-45c3-a998-46d146ba2729"
+  ]
+}
