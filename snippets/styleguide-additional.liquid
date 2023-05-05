@@ -1,0 +1,12 @@
+<div class="py-2">
+  <div class="container">
+    <div class="grid gap-6 md:grid-cols-2">
+      <div class="flex flex-col">
+        <h4 class="h5 mb-2">Pagination</h4>
+        {% paginate collections.all.products by 4 %}
+          {%- render 'pagination', pagination: paginate -%}
+        {% endpaginate %}
+      </div>
+    </div>
+  </div>
+</div>

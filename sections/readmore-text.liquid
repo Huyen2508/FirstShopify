@@ -1,0 +1,118 @@
+{{- 'section-readmore-custom.css' | asset_url | stylesheet_tag -}}
+
+{% liquid
+  assign heading = section.settings.heading
+  assign content = section.settings.content
+
+  assign margin_top_mobile = section.settings.margin_top_mobile
+  assign margin_bottom_mobile = section.settings.margin_bottom_mobile
+  assign margin_top_desktop = section.settings.margin_top_desktop
+  assign margin_bottom_desktop = section.settings.margin_bottom_desktop
+  assign class_readmore_button = " btnReadMoreSeo read-more flex underline cursor-pointer mt-2 md:mt-4 text-primary md:text-grey-700 hover:text-primary-hover "
+%}
+
+<div class="read-more-wrapper pb-8 lg:pb-20 mt-{{ margin_top_mobile }} mb-{{ margin_bottom_mobile }} lg:mt-{{ margin_top_desktop }} lg:mb-{{ margin_bottom_desktop }}">
+  <div class="content px-4 2xl:px-0 read-more-custom max-w-7xl mx-auto">
+    <h5 class="text-xl font-bold text-grey-900 tracking-xsSpacing mb-2 md:mb-4">{{ heading }}</h5>
+    <div class="text_more hidden md:block text-base tracking-xsSpacing" id="seotextMoreBot">
+      {% assign size = content | size %}
+      {% if size <= 513 %}
+        {{ content | strip_html }}
+      {% else %}
+        <span>{{ content | slice: 0, 513 }}</span>
+        <span class="dotSeo">...</span>
+        <span class="moreContentSeo hidden">{{ content | slice: 513, size }}</span>
+        <a
+          class="{{ class_readmore_button }}"
+          href="javascript:void(0)"
+          id="seobtnMore">Read more</a>
+      {% endif %}
+    </div>
+    <div class="text_more md:hidden text-base tracking-xsSpacing" id="seotextMoreBot">
+      {% assign size = content | size %}
+      {% if size <= 171 %}
+        {{ content | strip_html }}
+      {% else %}
+        <span>{{ content | slice: 0, 171 }}</span>
+        <span class="dotSeo">...</span>
+        <span class="moreContentSeo hidden">{{ content | slice: 171, size }}</span>
+        <a
+          class="{{ class_readmore_button }}"
+          href="javascript:void(0)"
+          id="seobtnMore">Read more</a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{%- capture readmore -%}
+  {{- 'section-readmore-custom.js' | asset_url -}}
+{%- endcapture -%}
+{%- render 'atom_script', src: readmore, priority: 'important', type: 'defer' -%}
+
+{% schema %}
+
+
+  {
+    "name": "Seo Text",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      },
+      {
+        "type": "richtext",
+        "id": "content",
+        "label": "Content",
+        "default": "<p>Custom text</p>"
+      },
+      {
+        "type": "header",
+        "content": "Margin (1 pt = 4px)"
+      },
+      {
+        "type": "range",
+        "id": "margin_top_desktop",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "unit": "pts",
+        "label": "Margin Top Desktop",
+        "default": 0
+      }, {
+        "type": "range",
+        "id": "margin_bottom_desktop",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "unit": "pts",
+        "label": "Margin Bottom Desktop",
+        "default": 0
+      }, {
+        "type": "range",
+        "id": "margin_top_mobile",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "unit": "pts",
+        "label": "Margin Top Mobile",
+        "default": 0
+      }, {
+        "type": "range",
+        "id": "margin_bottom_mobile",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "unit": "pts",
+        "label": "Margin Bottom Mobile",
+        "default": 0
+      }
+    ],
+    "presets": [
+      {
+        "name": "Seo Text"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,598 @@
+{% liquid
+  assign blocks = section.blocks
+
+  if section.settings.enable_max_width
+    assign max_width = section.settings.max_width
+  endif
+
+  assign margin_top_mobile = section.settings.margin_top_mobile
+  assign margin_bottom_mobile = section.settings.margin_bottom_mobile
+  assign margin_top_desktop = section.settings.margin_top_desktop
+  assign margin_bottom_desktop = section.settings.margin_bottom_desktop
+
+  assign enable_casrousel = section.settings.enable_casrousel
+%}
+
+
+
+<div class="card-wrapper mt-{{ margin_top_mobile }} mb-{{ margin_bottom_mobile }} lg:mt-{{ margin_top_desktop }} lg:mb-{{ margin_bottom_desktop }}" style="max-width: {{ max_width }}px">
+  <div class="relative">
+    {%- liquid
+      assign image_class = image_class | prepend: 'hover:zoom duration-500 fit '
+      assign class = '' | prepend: ' overflow-hidden '
+      assign image_wrapper_class = ' aspect-[376/430] lg:aspect-[720.5/600] ' | prepend: ' relative w-full overflow-hidden '
+      assign mobile_width = 376
+      assign title_class = ' tracking-mdSpacing lg:tracking-normal text-4xl lg:text-5xl text-white font-extrabold mb-4 md:mb-3'
+      assign cta_class = ' text-sm text-grey-900 uppercase tracking-lgSpacing font-bold button-outlined border-0 bg-white '
+      assign description_class = ' text-xl leading-6 text-white font-medium tracking-xsSpacing mb-8 '
+      assign box_text_class = ' center-item text-center w-full px-4 '
+      assign two_banner_class = ' w-1/2 relative '
+      assign custom_bg = ' absolute top-0 left-0 w-full h-full pointer-events-none '
+      assign custom_overlay = ' absolute top-0 left-0 w-full h-full pointer-events-none bg-black '
+    -%}
+
+    {%- capture all_banners_desktop -%}
+      {% for block in blocks %}
+        {%- liquid
+          assign banner_type = block.settings.banner_type
+        -%}
+        {%- if banner_type == "1" -%}
+          {%- liquid
+            assign url_full = block.settings.cta_url_full | default: nil
+            assign image_full = block.settings.image_full
+            assign title_full = block.settings.title_full | default: nil
+            assign cta_text_full = block.settings.cta_text_full | default: nil
+            assign description_full = block.settings.description_full | default: nil
+            assign bg_full = block.settings.background_color_full
+            assign text_color_full = block.settings.text_color_full
+            assign image_wrapper_class_single_image = image_wrapper_class | remove: "lg:aspect-[720.5/600]" | append: ' md:aspect-[720/600]  lg:aspect-[1440/600] '
+
+            assign content_position = ' lg:px-20 md:px-5'
+            assign content_position_value = block.settings.content_position
+            if content_position_value == "3"
+              assign content_position = content_position | append: ' center-item-vertically left-0  text-left max-w-lg '
+            elsif content_position_value == "2"
+              assign content_position = content_position | append: ' center-item  text-center '
+            else
+              assign content_position = content_position | append: ' center-item-vertically right-0  text-left max-w-lg '
+            endif
+            -%}
+          <div class="relative item carousel-item snap-start shrink-0 w-full" style="background: {{ bg_full }};">
+            {%- if url_full != blank -%}
+              <a
+                href="{{ url_full }}"
+                class="{{ class }}"
+                title="{{- title_full -}}">
+              {%- else -%}
+                <div class="{{ class }}">
+                {%- endif -%}
+                <div class="{{ image_wrapper_class_single_image }}">
+                  {%- render 'image' 
+                    , image: image_full,
+                    class: image_class,
+                    mobile_width: mobile_width,
+                    sm_width: sm_width,
+                    md_width: md_width,
+                    lg_width: lg_width, -%}
+
+                  {%- if block.settings.enable_overlay -%}
+                    <div class="overlay {{ custom_overlay }} {{ 'opacity-' | append: block.settings.overlay_percent_full  }}"></div>
+                  {%- endif -%}
+                </div>
+                <div class="custom-bg {{ custom_bg }}" style="background: {{ bg_full }};"></div>
+                <div class="{{ content_position }}">
+                  {%- if title_full != blank -%}
+                    <h3
+                      class="{{ title_class }}"
+                      style="color: {{ text_color_full }}">{{- title_full -}}</h3>
+                  {%- endif -%}
+                  {%- if description_full != blank -%}
+                    <p class="{{ description_class }}" style="color: {{ text_color_full }}">{{- description_full -}}</p>
+                  {%- endif -%}
+                  {%- if cta_text_full != blank -%}
+                    <button type="button" class="{{ cta_class }}">{{- cta_text_full -}}</button>
+                  {%- endif -%}
+
+                </div>
+                {%- if url_full != blank -%}
+                </a>
+            {%- else -%}
+              </div>
+            {%- endif -%}
+          </div>
+        {%- else -%}
+          <div class="two-images-per-banner w-full flex item carousel-item snap-start shrink-0">
+            {%- liquid
+            assign url_left = block.settings.cta_url_left | default: nil
+            assign image_dt_left = block.settings.image_dt_left
+            assign title_left = block.settings.title_left | default: nil
+            assign cta_text_left = block.settings.cta_text_left | default: nil
+            assign description_left = block.settings.description_left | default: nil
+            assign bg_left = block.settings.background_color_left
+            assign text_color_left = block.settings.text_color_left
+          -%}
+            <div class="left-banner {{ two_banner_class }}">
+              {%- if url_left != blank -%}
+                <a
+                  href="{{ url_left }}"
+                  class="{{ class }}"
+                  title="{{- title -}}">
+                {%- else -%}
+                  <div class="{{ class }}">
+                  {%- endif -%}
+                  <div class="{{ image_wrapper_class }}">
+                    {%- render 'image' 
+                      , image: image_dt_left,
+                      class: image_class,
+                      mobile_width: mobile_width,
+                      sm_width: sm_width,
+                      md_width: md_width,
+                      lg_width: lg_width, -%}
+
+                    {%- if block.settings.enable_overlay -%}
+                      <div class="overlay {{ custom_overlay }} {{ 'opacity-' | append: block.settings.overlay_percent_left  }}"></div>
+                    {%- endif -%}
+                  </div>
+                  <div class="custom-bg {{ custom_bg }}" style="background: {{ bg_left }};"></div>
+                  <div class="{{ box_text_class }}">
+                    {%- if title_left != blank -%}
+                      <h3 class="{{ title_class }}" style="color: {{ text_color_left }};">{{- title_left -}}</h3>
+                    {%- endif -%}
+                    {%- if description_left != blank -%}
+                      <p class="{{ description_class }}" style="color: {{ text_color_left }};">{{- description_left -}}</p>
+                    {%- endif -%}
+                    {%- if cta_text_left != blank -%}
+                      <button type="button" class="{{ cta_class }}">{{- cta_text_left -}}</button>
+                    {%- endif -%}
+
+                  </div>
+                  {%- if url_left != blank -%}
+                  </a>
+              {%- else -%}
+                </div>
+              {%- endif -%}
+            </div>
+
+            {%- liquid
+              assign url_right = block.settings.cta_url_right | default: nil
+              assign image_dt_right = block.settings.image_dt_right
+              assign title_right = block.settings.title_right | default: nil
+              assign cta_text_right = block.settings.cta_text_right | default: nil
+              assign description_right = block.settings.description_right | default: nil
+              assign bg_right = block.settings.background_color_right
+              assign text_color_right = block.settings.text_color_right
+            -%}
+            <div class="right-banner {{ two_banner_class }}" style="background: {{ bg_right }};">
+              {%- if url_right != blank -%}
+                <a
+                  href="{{ url_right }}"
+                  class="{{ class }}"
+                  title="{{- title_right -}}">
+                {%- else -%}
+                  <div class="{{ class }}">
+                  {%- endif -%}
+                  <div class="{{ image_wrapper_class }}">
+                    {%- render 'image' 
+                      , image: image_dt_right,
+                      class: image_class,
+                      mobile_width: mobile_width,
+                      sm_width: sm_width,
+                      md_width: md_width,
+                      lg_width: lg_width, -%}
+
+                    {%- if block.settings.enable_overlay -%}
+                      <div class="overlay {{ custom_overlay }} {{ 'opacity-' | append: block.settings.overlay_percent_right  }}"></div>
+                    {%- endif -%}
+                  </div>
+                  <div class="custom-bg {{ custom_bg }}" style="background: {{ bg_right }};"></div>
+                  <div class="{{ box_text_class }}">
+                    {%- if title_right != blank -%}
+                      <h3 class="{{ title_class }}" style="color: {{ text_color_right }};">{{- title_right -}}</h3>
+                    {%- endif -%}
+                    {%- if description_right != blank -%}
+                      <p class="{{ description_class }}" style="color: {{ text_color_right }};">{{- description_right -}}</p>
+                    {%- endif -%}
+                    {%- if cta_text_right != blank -%}
+                      <button type="button" class="{{ cta_class }}">{{- cta_text_right -}}</button>
+                    {%- endif -%}
+                  </div>
+                  {%- if url_right != blank -%}
+                  </a>
+              {%- else -%}
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endif -%}
+      {% endfor %}
+    {%- endcapture -%}
+
+    {%- if enable_casrousel and blocks.size != 1 -%}
+      <div class="banners-carousel hidden md:block">
+        {%- render 'carousel', class_buttons: ' bottom-8 ', class_wrap: '', class_main: '', class_inner: '', class: 'carousel-enable', class_dots: '', content: all_banners_desktop -%}
+      </div>
+    {%- else -%}
+      <div class="banner-on-desktop hidden md:block">
+        {{ all_banners_desktop }}
+      </div>
+    {%- endif -%}
+
+    {%- capture all_banners_mobile -%}
+      {% for block in blocks %}
+        {%- liquid
+          assign url_mb = block.settings.cta_url_mb | default: nil
+          assign image_mb = block.settings.image_mb
+          assign title_mb = block.settings.title_mb | default: nil
+          assign cta_text_mb = block.settings.cta_text_mb | default: nil
+          assign description_mb = block.settings.description_mb | default: nil
+          assign bg_mb = block.settings.background_color_mb
+          assign text_color_mb = block.settings.text_color_mb
+        -%}
+        <div class="relative item carousel-item snap-start shrink-0 w-full" style="background: {{ bg_mb }};">
+          {%- if url_mb != blank -%}
+            <a
+              href="{{ url_mb }}"
+              class="{{ class }}"
+              title="{{- title_mb -}}">
+            {%- else -%}
+              <div class="{{ class }}">
+              {%- endif -%}
+              <div class="{{ image_wrapper_class }}">
+                {%- render 'image' 
+                  , image: image_mb,
+                  class: image_class,
+                  mobile_width: mobile_width,
+                  sm_width: sm_width,
+                  md_width: md_width,
+                  lg_width: lg_width, -%}
+                {%- if block.settings.enable_overlay -%}
+                  <div class="overlay {{ custom_overlay }} {{ 'opacity-' | append: block.settings.overlay_percent_mb  }}"></div>
+                {%- endif -%}
+              </div>
+              <div class="custom-bg {{ custom_bg }}" style="background: {{ bg_mb }};"></div>
+              <div class="{{ box_text_class }}">
+                {%- if title_mb != blank -%}
+                  <h3 class="{{ title_class }}" style="color: {{ text_color_mb }}">{{- title_mb -}}</h3>
+                {%- endif -%}
+                {%- if description_mb != blank -%}
+                  <p class="{{ description_class }}" style="color: {{ text_color_mb }}">{{- description_mb -}}</p>
+                {%- endif -%}
+                {%- if cta_text_mb != blank -%}
+                  <button type="button" class="{{ cta_class }}">{{- cta_text_mb -}}</button>
+                {%- endif -%}
+
+              </div>
+              {%- if url_mb != blank -%}
+              </a>
+          {%- else -%}
+            </div>
+          {%- endif -%}
+
+        </div>
+      {% endfor %}
+    {%- endcapture -%}
+
+    {%- if enable_casrousel or blocks.size == 1 -%}
+      <div class="banners-carousel md:hidden">
+        {%- render 'carousel', class_buttons: ' mb-1 ', class_wrap: '', class_main: '', class_inner: '', class: 'carousel-enable', class_dots: '', content: all_banners_mobile -%}
+      </div>
+    {%- else -%}
+      <div class="banner-on-mobile md:hidden">
+        {{ all_banners_mobile }}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Hero Banner",
+    "max_blocks": 4,
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_casrousel",
+        "label": "Enable Carousel",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Max Width"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_max_width",
+        "label": "Enable Max Width",
+        "default": false
+      },
+      {
+        "type": "number",
+        "id": "max_width",
+        "label": "Max Width(px)",
+        "default": 1440
+      }, {
+        "type": "header",
+        "content": "Margin (1 pt = 4px)"
+      }, {
+        "type": "range",
+        "id": "margin_top_desktop",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "unit": "pts",
+        "label": "Margin Top Desktop",
+        "default": 0
+      }, {
+        "type": "range",
+        "id": "margin_bottom_desktop",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "unit": "pts",
+        "label": "Margin Bottom Desktop",
+        "default": 0
+      }, {
+        "type": "range",
+        "id": "margin_top_mobile",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "unit": "pts",
+        "label": "Margin Top Mobile",
+        "default": 0
+      }, {
+        "type": "range",
+        "id": "margin_bottom_mobile",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "unit": "pts",
+        "label": "Margin Bottom Mobile",
+        "default": 0
+      }
+    ],
+    "blocks": [
+      {
+        "type": "item",
+        "name": "Item",
+        "settings": [
+          {
+            "type": "select",
+            "id": "banner_type",
+            "label": "Banner Type",
+            "options": [
+              {
+                "value": "1",
+                "label": "A Full Width Image"
+              }, {
+                "value": "2",
+                "label": "Two Images"
+              }
+            ],
+            "default": "2"
+          },
+          {
+            "type": "header",
+            "content": "Overlay For Image"
+          },
+          {
+            "type": "checkbox",
+            "id": "enable_overlay",
+            "label": "Enable Overlay",
+            "default": false
+          },
+          {
+            "type": "range",
+            "id": "overlay_percent_full",
+            "min": 0,
+            "max": 100,
+            "step": 10,
+            "unit": "%",
+            "label": "Overlay Percent A Full Image",
+            "default": 10
+          }, {
+            "type": "range",
+            "id": "overlay_percent_left",
+            "min": 0,
+            "max": 100,
+            "step": 10,
+            "unit": "%",
+            "label": "Overlay Percent Left Image",
+            "default": 10
+          }, {
+            "type": "range",
+            "id": "overlay_percent_right",
+            "min": 0,
+            "max": 100,
+            "step": 10,
+            "unit": "%",
+            "label": "Overlay Percent Right Image",
+            "default": 10
+          }, {
+            "type": "range",
+            "id": "overlay_percent_mb",
+            "min": 0,
+            "max": 100,
+            "step": 10,
+            "unit": "%",
+            "label": "Overlay Percent Mobile Image",
+            "default": 10
+          }, {
+            "type": "header",
+            "content": "Banner Single Image"
+          }, {
+            "type": "image_picker",
+            "id": "image_full",
+            "label": "Image"
+          }, {
+            "type": "select",
+            "id": "content_position",
+            "label": "Content Position",
+            "options": [
+              {
+                "value": "1",
+                "label": "Right"
+              }, {
+                "value": "2",
+                "label": "Center"
+              }, {
+                "value": "3",
+                "label": "Left"
+              }
+            ],
+            "default": "2"
+          }, {
+            "type": "color",
+            "id": "background_color_full",
+            "label": "Background Color",
+            "default": "rgba(0,0,0,0)"
+          }, {
+            "type": "color",
+            "id": "text_color_full",
+            "label": "Text Color",
+            "default": "#ffffff"
+          }, {
+            "type": "text",
+            "id": "title_full",
+            "label": "Title",
+            "default": "Title"
+          }, {
+            "type": "textarea",
+            "id": "description_full",
+            "label": "Description",
+            "default": "Description"
+          }, {
+            "type": "text",
+            "id": "cta_text_full",
+            "label": "Cta text"
+          }, {
+            "type": "url",
+            "id": "cta_url_full",
+            "label": "Cta url"
+          }, {
+            "type": "header",
+            "content": "Right Content"
+          }, {
+            "type": "image_picker",
+            "id": "image_dt_right",
+            "label": "Image"
+          }, {
+            "type": "color",
+            "id": "background_color_right",
+            "label": "Background Color",
+            "default": "rgba(0,0,0,0)"
+          }, {
+            "type": "color",
+            "id": "text_color_right",
+            "label": "Text Color",
+            "default": "#ffffff"
+          }, {
+            "type": "text",
+            "id": "title_right",
+            "label": "Title",
+            "default": "Title"
+          }, {
+            "type": "textarea",
+            "id": "description_right",
+            "label": "Description",
+            "default": "Description"
+          }, {
+            "type": "text",
+            "id": "cta_text_right",
+            "label": "Cta text"
+          }, {
+            "type": "url",
+            "id": "cta_url_right",
+            "label": "Cta url"
+          }, {
+            "type": "header",
+            "content": "Left Content"
+          }, {
+            "type": "image_picker",
+            "id": "image_dt_left",
+            "label": "Image Desktop"
+          }, {
+            "type": "color",
+            "id": "background_color_left",
+            "label": "Background Color",
+            "default": "rgba(0,0,0,0)"
+          }, {
+            "type": "color",
+            "id": "text_color_left",
+            "label": "Text Color",
+            "default": "#ffffff"
+          }, {
+            "type": "text",
+            "id": "title_left",
+            "label": "Title",
+            "default": "Title"
+          }, {
+            "type": "textarea",
+            "id": "description_left",
+            "label": "Description",
+            "default": "Description"
+          }, {
+            "type": "text",
+            "id": "cta_text_left",
+            "label": "Cta text"
+          }, {
+            "type": "url",
+            "id": "cta_url_left",
+            "label": "Cta url"
+          }, {
+            "type": "header",
+            "content": "Mobile"
+          }, {
+            "type": "image_picker",
+            "id": "image_mb",
+            "label": "Image"
+          }, {
+            "type": "color",
+            "id": "background_color_mb",
+            "label": "Background Color",
+            "default": "rgba(0,0,0,0)"
+          }, {
+            "type": "color",
+            "id": "text_color_mb",
+            "label": "Text Color",
+            "default": "#ffffff"
+          }, {
+            "type": "text",
+            "id": "title_mb",
+            "label": "Title",
+            "default": "Title"
+          }, {
+            "type": "textarea",
+            "id": "description_mb",
+            "label": "Description",
+            "default": "Description"
+          }, {
+            "type": "text",
+            "id": "cta_text_mb",
+            "label": "Cta text"
+          }, {
+            "type": "url",
+            "id": "cta_url_mb",
+            "label": "Cta url"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Hero Banner",
+        "blocks": [
+          {
+            "type": "item"
+          }, {
+            "type": "item"
+          }, {
+            "type": "item"
+          }, {
+            "type": "item"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

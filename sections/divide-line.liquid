@@ -1,0 +1,106 @@
+{% liquid
+  if section.settings.enable_mobile
+    assign display_mobile_class = ' block '
+  else
+    assign display_mobile_class = ' hidden '
+  endif
+
+  if section.settings.enable_tablet
+    assign display_tablet_class = ' md:block '
+  else
+    assign display_tablet_class = ' md:hidden '
+  endif
+
+  if section.settings.enable_desktop
+    assign display_desktop_class = ' xl:block '
+  else
+    assign display_desktop_class = ' xl:hidden '
+  endif
+
+  if section.settings.enable_max_width
+    assign max_width = section.settings.max_width
+  endif
+%}
+
+<div class="mx-auto w-full {{ display_mobile_class }} {{ display_tablet_class }} {{ display_desktop_class }}">
+  <div class="mb-8 lg:mb-20 px-4 lg:px-0">
+    <div class="divide-dt mx-auto hidden md:block" style="background-color: {{- section.settings.line_color -}}; height: {{- section.settings.line_height_dt -}}px; width: 100%; max-width: {{ max_width }}px"></div>
+    <div class="didide-mb mx-auto md:hidden" style="background-color: {{- section.settings.line_color -}}; height: {{- section.settings.line_height_mb -}}px; width: 100%; max-width: {{ max_width }}px"></div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Divider",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Divide Line"
+      },
+      {
+        "type": "header",
+        "content": "Color"
+      },
+      {
+        "type": "color",
+        "id": "line_color",
+        "label": "Background Colour",
+        "default": "#D9D9D9"
+      },
+      {
+        "type": "header",
+        "content": "Height"
+      }, {
+        "type": "range",
+        "id": "line_height_dt",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Height Of Divider Desktop",
+        "default": 1
+      }, {
+        "type": "range",
+        "id": "line_height_mb",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Height Of Divider Mobile",
+        "default": 1
+      }, {
+        "type": "checkbox",
+        "id": "enable_mobile",
+        "label": "Enable Mobile",
+        "default": true
+      }, {
+        "type": "checkbox",
+        "id": "enable_tablet",
+        "label": "Enable Tablet",
+        "default": true
+      }, {
+        "type": "checkbox",
+        "id": "enable_desktop",
+        "label": "Enable Desktop",
+        "default": true
+      }, {
+        "type": "header",
+        "content": "Max Width"
+      }, {
+        "type": "checkbox",
+        "id": "enable_max_width",
+        "label": "Enable Max Width",
+        "default": true
+      }, {
+        "type": "number",
+        "id": "max_width",
+        "label": "Max Width(px)",
+        "default": 1280
+      }
+    ],
+    "presets": [
+      {
+        "name": "Divider"
+      }
+    ]
+  }
+{% endschema %}

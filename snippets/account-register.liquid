@@ -1,0 +1,145 @@
+{{- 'module-account-register.css' | asset_url | stylesheet_tag -}}
+
+{%- liquid
+  assign form_class = form_class | prepend: 'relative '
+  assign title_class = 'xl:text-3xl text-2xl font-bold text-grey-900 tracking-mdSpacing text-center'
+  assign first_name_label = 'customer.register.first_name' | t
+  assign last_name_label = 'customer.register.last_name' | t
+  assign email_label = 'customer.register.email' | t
+  assign password_label = 'customer.register.password' | t
+  assign postal_code_label = 'customer.register.postal_code' | t
+  assign phone_number_label = 'customer.register.phone_number' | t
+  assign gender_label = 'customer.register.gender' | t
+  assign submit_label = 'customer.register.submit' | t
+  assign birthday_label = 'customer.register.birthday' | t
+  assign gender_options = settings.gender_options | split: '|'
+  assign custom_description = custom_description | default: ''
+  assign sub_content_register = sub_content_register | default: ''
+-%}
+<div class="max-w-560 mx-auto">
+  <div class="px-4 md:mx-3.5 md:my-20 md:pt-0.5 mt-5 mb-8 pt-1">
+    <validate-form data-submit-delay>
+      <account-form-custom>
+        {%- form 'create_customer', class: form_class -%}
+          <h1 class="{{ title_class }}">{{- 'customer.register.title' | t -}}</h1>
+          <div class="pt-px mt-1.5 text-center md:mb-4 mb-3 pb-0.5">
+            <p class="text-base text-grey-700 font-normal tracking-xsSpacing md:mb-5 mb-4">{{- sub_content_register -}}</p>
+            <a
+              href="/account/login"
+              title="Login"
+              class="text-base font-bold text-primary tracking-xsSpacing hover:underline hover:text-primary-hover">
+              {{- 'customer.register.sign_in' | t -}}
+            </a>
+          </div>
+          {%- if form.errors -%}
+            <notice-main class="notice-main mb-4 notice-main-error js-auto-close-notice">
+              <button type="button" class="notice-main-icon "><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14Z" fill="#FF3F2E"></path>
+              <path d="M10 6L6 10" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M10 10L6 6" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></button><div class="notice-main-content "><ul>
+                  <li>
+                    {{ form.errors | default_errors }}
+                  </li>
+              </ul></div>
+            </notice-main>
+          {%- endif -%}
+          {% comment %}theme-check-disable{% endcomment %}
+          <div>
+            <div class="row w-full">
+              {%- render 'text-input',
+                id: 'customer_first_name',
+                class: 'mb-3.5 pb-px',
+                name: 'customer[first_name]',
+                type: 'text',
+                label: first_name_label,
+                placeholder: first_name_label,
+                show_label: true,
+                required: true
+              -%}
+              {%- render 'text-input',
+                id: 'customer_last_name',
+                class: 'mb-3.5 pb-px',
+                name: 'customer[last_name]',
+                type: 'text',
+                label: last_name_label,
+                placeholder: last_name_label,
+                show_label: true,
+                required: true
+              -%}
+            </div>
+            <div class="row w-full">
+              {%- render 'text-input',
+                name: 'customer[email]',
+                id: 'customer_email',
+                class: 'mb-3.5 pb-px',
+                type: 'email',
+                label: email_label,
+                placeholder: email_label,
+                show_label: true,
+                required: true
+              -%}
+            </div>
+            <div class="row w-full">
+              {%- render 'text-input',
+                name: 'customer[phone]',
+                id: 'customer_phone',
+                class: 'mb-3.5 pb-px',
+                type: 'text',
+                label: phone_number_label,
+                placeholder: phone_number_label,
+                show_label: true
+              -%}
+            </div>
+            <div class="row w-full">
+              {%- render 'text-input',
+                name: 'customer[password]',
+                id: 'customer_password',
+                class: 'mb-4',
+                type: 'password',
+                label: password_label,
+                placeholder: password_label,
+                show_label: true,
+                required: true
+              -%}
+            </div>
+          </div>
+          <div class="row w-full flex mb-4">
+            <input
+              id="checkbox-newletter"
+              name="customer[accepts_marketing]"
+              class="checkbox-input__input cursor-pointer"
+              type="checkbox">
+            <label for="checkbox-newletter" class="pl-3">{{- 'customer.register.custom_email_subcribe' | t -}}</label>
+          </div>
+          <div class="row w-full flex">
+            <input
+              id="checkbox-sms"
+              name="customer[sms_marketing_consent]"
+              class="checkbox-input__input cursor-pointer"
+              type="checkbox">
+            <label for="checkbox-sms" class="pl-3">{{- 'customer.register.custom_sms_subcribe' | t -}}</label>
+          </div>
+          <button type="submit" class="button-primary my-4 w-full">
+            <span>{{- submit_label -}}</span> 
+          </button>
+          <div class="description-register">
+            {{- custom_description -}}
+          </div>
+
+          {% comment %}theme-check-enable{% endcomment %}
+        {%- endform -%}
+      </account-form-custom>
+    </validate-form>
+  </div>
+</div>
+
+{%- capture src_url_1 -%}
+  {{- 'module-account-register.js' | asset_url -}}
+{%- endcapture -%}
+{%- render 'atom_script', src: src_url_1, priority: 'normal', type: 'defer' -%} 
+
+{%- capture src_url -%}
+  {{- 'section-account-form.js' | asset_url -}}
+{%- endcapture -%}
+{%- render 'atom_script', src: src_url, priority: 'normal', type: 'defer' -%} 

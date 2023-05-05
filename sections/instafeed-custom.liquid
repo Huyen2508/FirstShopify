@@ -1,0 +1,72 @@
+{{- 'section-instafeed.css' | asset_url | stylesheet_tag -}}
+
+{% liquid
+  assign class_link = " uppercase text-sm border-b border-grey-900 text-grey-900 tracking-lgSpacing font-bold inline-block w-max pb-1.5 hover:text-primary-hover "
+%}
+
+<div class="instafeed max-w-7xl mx-auto px-4 2xl:px-0">
+  <div class="mb-8 lg:mb-20">
+    <div class="insta-title mb-5 lg:mb-8 flex justify-between items-end">
+      {%- if section.settings.title -%}
+        <div class="w-full text-2xl md:text-3xl text-grey-900 font-bold tracking-mdSpacing text-center md:text-left">
+          {{ section.settings.title }}
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.link_insta -%}
+        <div class="hidden w-max md:inline-block h-max">
+          <a
+            class="{{ class_link }}"
+            target="_blank"
+            href="{{ section.settings.link_insta }}">
+            {{ section.settings.link_label }}
+          </a>
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div id="insta-feed" class="custom-insta-feed"></div>
+
+    {%- if section.settings.link_insta -%}
+      <div class="inline-block w-full text-center md:hidden mt-4">
+        <a
+          class="{{ class_link }}"
+          target="_blank"
+          href="{{ section.settings.link_insta }}">
+          {{ section.settings.link_label }}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{%- capture readmore -%}
+  {{- 'section-instafeed.js' | asset_url -}}
+{%- endcapture -%}
+{%- render 'atom_script', src: readmore, priority: 'important', type: 'defer' -%}
+
+{% schema %}
+  {
+    "name": "Instagram Feed",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      }, {
+        "type": "text",
+        "id": "link_label",
+        "label": "Label For Link"
+      }, {
+        "type": "text",
+        "id": "link_insta",
+        "label": "Instagram Link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Instagram Feed"
+      }
+    ]
+  }
+{% endschema %}

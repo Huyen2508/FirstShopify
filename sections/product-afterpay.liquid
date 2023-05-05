@@ -1,0 +1,75 @@
+{%- liquid
+  assign blocks = section.blocks
+  assign slideout_button = 'product.general.info' | t
+  assign slideout_heading = 'product.general.bnpl' | t
+-%}
+
+{%- capture content -%}
+  <div class="w-full relative">
+    <div class="payment content-desktop [&>img]:w-full hidden sm:block">
+      {%- if section.settings.afterpay_page_desktop != blank -%}
+        {{ section.settings.afterpay_page_desktop.content }}
+      {%- endif -%}
+    </div>
+    <div class="payment content-mobile [&>img]:w-full sm:hidden">
+      {%- if section.settings.afterpay_page_mobile != blank -%}
+        {{ section.settings.afterpay_page_mobile.content }}
+      {%- endif -%}
+    </div>
+  </div>
+{%- endcapture -%}
+
+
+{%- capture content_paypal -%}
+  <div class="w-full [&>img]:w-full relative">
+    {%- if section.settings.paypal_page != blank -%}
+      {{ section.settings.paypal_page.content }}
+    {%- endif -%}
+  </div>
+{%- endcapture -%}
+
+{%- if settings.product_afterpay_enable -%}
+  <div class="flex flex-row items-center">
+    {%- render 'modal-dialog' 
+      , id: 'afterpay-popup',
+      class: 'w-full max-w-sm max-h-[90vh] overflow-y-scroll sm:overflow-auto sm:max-w-2xl sm:mx-10',
+      close_button_class: 'absolute top-4 right-4 sm:top-[25px] sm:right-6 z-10'
+      icon_close_class: 'w-4 h-4 text-info-content',
+      content: content,
+      content_class: '' -%}
+
+    {%- render 'modal-dialog' 
+      , id: 'paypal-popup',
+      class: 'w-full max-w-sm sm:max-w-2xl sm:mx-10',
+      close_button_class: 'absolute top-4 right-4 sm:top-[25px] sm:right-6 z-10'
+      icon_close_class: 'w-4 h-4 text-info-content',
+      content: content_paypal,
+      content_class: '' -%}
+  </div>
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Product Afterpay",
+    "settings": [
+      {
+        "type": "page",
+        "id": "afterpay_page_desktop",
+        "label": "Link a page for Afterpay Popup (Desktop)"
+      }, {
+        "type": "page",
+        "id": "afterpay_page_mobile",
+        "label": "Link a page for Afterpay Popup (Mobile)"
+      }, {
+        "type": "page",
+        "id": "paypal_page",
+        "label": "Link a page for Paypal Popup"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product Afterpay"
+      }
+    ]
+  }
+{% endschema %}

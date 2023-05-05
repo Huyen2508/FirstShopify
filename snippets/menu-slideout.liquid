@@ -1,0 +1,339 @@
+{%- liquid
+  assign blocks = blocks
+  assign menu_handle = menu_handle | default: 'main-menu'
+  assign menu_second_handle = menu_second_handle | default: nil
+  assign menu = linklists[menu_handle]
+  assign menu_second = linklists[menu_second_handle]
+  assign account_url = routes.account_url
+  assign mega_item_class = 'border-b border-header-menu w-full last:border-0'
+  assign sub_header_class = 'flex items-center justify-between w-full px-4 pt-5 pr-11 bg-grey-100 pb-[18px] border-b border-header-heading min-h-[63px]'
+  assign sub_header_title_class = 'block mx-auto text-base tracking-xsSpacing font-bold text-grey-900 mt-0.5'
+  assign menu_list_class = 'w-full p-6 pt-0'
+  assign menu_list_item_class = 'inline-block link w-full text-grey-900 no-underline hover:underline mb-[18px]'
+  assign banner_background = settings.banner_background
+  assign banner_image = settings.banner_image
+  assign banner_image_class = ''
+
+  assign banner_title = settings.banner_title
+  assign banner_cta = settings.banner_cta
+  assign banner_url = settings.banner_url | default: '/'
+  assign banner_text_color = settings.banner_text_color
+
+  if banner_background != blank
+    if banner_title == blank and banner_cta == blank
+      assign banner_image_class = banner_image_class | append: 'absolute inset-0 w-full h-full object-cover pointer-events-none'
+    endif
+  endif
+
+  assign _prefix_icon = '[icon-'
+  assign _prefix_icon_start = '['
+  assign _prefix_icon_end = ']'
+
+  if customer
+    assign account_title = 'customer.account.logged' | t
+  else
+    assign account_title = 'menu_slideout.login_register' | t
+  endif
+
+  capture sub_header_icon
+    render 'icon' with 'icon-chevron-back-outline', class: 'w-6 h-6 mr-2'
+  endcapture
+-%}
+
+{%- capture menu_slideout_ctas -%}
+  {%- if settings.cta_image_1 != blank or settings.cta_image_2 != blank -%}
+    <div class="grid grid-cols-2 gap-x-4 gap-y-3">
+      {%- for i in (1..2) -%}
+        {%- capture cta_image_settings -%}cta_image_{{ i }}{%- endcapture -%}
+        {%- capture cta_text_settings -%}cta_text_{{ i }}{%- endcapture -%}
+        {%- capture cta_url_settings -%}cta_url_{{ i }}{%- endcapture -%}
+        {%- assign cta_image = settings[cta_image_settings] -%}
+        {%- assign cta_text = settings[cta_text_settings] -%}
+        {%- assign cta_url = settings[cta_url_settings] | default: '#' -%}
+
+        {%- if cta_image != blank -%}
+          <a href="{{ cta_url }}" class="block overflow-hidden rounded-t">
+            <div class="relative aspect-[156/114]">
+              {%- render 'image', image: cta_image, class: 'fit' -%}
+            </div>
+            {%- if cta_text != blank -%}
+              <div class="py-3 text-center border border-t-0 rounded-b border-default">
+                <p class="font-bold tracking-normal text-sm text-grey-900">{{ cta_text }}</p>
+              </div>
+            {%- endif -%}
+          </a>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+{%- endcapture -%}
+
+{%- capture second_menu_content -%}
+  <div class="flex flex-col">
+    <div class="px-4 py-8 pb-2">
+      {%- for block in blocks -%}
+        {%- if block.settings.mobile_icon -%}
+          <div class="item item flex items-center mb-6">
+            <div class="icon">
+              <img
+                src="{{ block.settings.mobile_icon | img_url: 'master'}}"
+                alt="{{- block.settings.title -}}"
+                class="w-full h-full"
+                loading="lazy">
+            </div>
+            <div class="link ml-4 no-underline hover:underline">
+              <a href="{{- block.settings.link -}}" class="no-underline hover:underline text-base">{{- block.settings.mobile_title -}}</a>
+            </div>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+{%- endcapture -%}
+
+<menu-slideout class="fixed top-menu-mobile height-menu-mobile bottom-0 pointer-events-none left-0 opacity-0 w-full -translate-x-full [&.open-slideout]:translate-x-0 [&.open-slideout]:opacity-100 [&.open-slideout]:pointer-events-auto transition-all overflow-hidden lg:hidden duration-300 bg-grey-100 z-40 before:content-empty before:absolute before:top-0 before:shadow-mobileNavigation before:w-full before:h-0.5 before:z-30">
+  <div class="relative z-20 w-full h-full overflow-x-hidden overflow-y-auto js-menu-list">
+    <div class="bg-white">
+      {%- if banner_image != blank -%}
+        {%- if banner_title != blank or banner_cta != blank -%}
+          <div class="relative rounded h-[90px] flex items-center justify-between w-full mb-2 pl-6 pt-2 pb-[5px] pr-[15px]" style="background-color: {{ banner_background }}">
+          {%- else -%}
+            <a
+              href="{{ banner_url }}"
+              class="relative rounded h-[90px] flex items-center justify-between w-full"
+              style="background-color: {{ banner_background }}">
+            {%- endif -%}
+
+            {%- if banner_title != blank or banner_cta != blank -%}
+              <div class="flex flex-col mr-1.5" style="color: {{ banner_text_color }}">
+                {%- if banner_title != blank -%}
+                  <b class="text-inherit mb-0.5">{{ banner_title }}</b>
+                {%- endif -%}
+                {%- if banner_cta != blank -%}
+                  <a href="{{ banner_url }}" class="block tracking-normal underline w-fit text-inherit text-sm">{{ banner_cta }}</a>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+            <img
+              class="{{ banner_image_class }}"
+              src="{{ banner_image | image_url }}"
+              alt="{{ banner_title }}"
+              width="{{- banner_image.width -}}"
+              height="{{- banner_image.height -}}"
+              loading="lazy">
+
+            {%- if banner_title != blank or banner_cta != blank -%}
+            </div>
+        {%- else -%}
+          </a>
+        {%- endif -%}
+      {%- endif -%}
+      {%- for link in menu.links -%}
+        {%- for block in blocks -%}
+          {%- if link.title == block.settings.title and block.settings.featured_image != blank -%}
+            {%- capture second_menu_featured -%}
+              <img
+                src="{{- block.settings.featured_image | image_url -}}"
+                alt="{{- link.title | escape -}}"
+                class="block"
+                width="{{- block.settings.featured_image.width -}}"
+                height="{{- block.settings.featured_image.height -}}"
+                loading="lazy">
+            {%- endcapture -%}
+          {%- endif -%}
+        {%- endfor -%}
+        <div class="{{ mega_item_class }} is-mega">
+          <button class="relative flex items-center justify-between w-full py-6" onclick="this.closest('.is-mega').classList.toggle('is-active');">
+            <div class="max-w-16 max-h-16">
+              {{ second_menu_featured }}
+            </div>
+            <p class="block ml-4 mr-auto font-bold text-grey-900 text-menu-item-mobile w-fit text-base tracking-xsSpacing {% if link.url contains "sale" %} text-red-special {% endif %}">{{- link.title | escape -}}</p>
+            {%- render 'icon' with 'icon-chevron-forward-outline', class: 'w-6 h-6 mr-4' -%}
+          </button>
+          <div class="fixed w-full z-20 top-0 left-full bottom-0 duration-300 [.is-active>&]:left-0 bg-grey-100 overflow-x-hidden overflow-y-auto js-sub-menu-slideout bg-white">
+            <div class="bg-white">
+              <button class="{{ sub_header_class }}" onclick="this.closest('.is-mega').classList.toggle('is-active');">
+                {{ sub_header_icon }}
+                <span class="{{ sub_header_title_class }}">{{- link.title | escape -}}</span>
+              </button>
+              {%- for block in blocks -%}
+                {%- if block.settings.menu_item_column == 'menu1' -%}
+                  {% assign limitCollection = 4 %}
+                  {% assign gridColumn = 2 %}
+                  {% assign class = 'sm:max-w-xs' %}
+                  {% assign classCategory = 'ml-3' %}
+                  {% assign layoutCollection = 'justify-start' %}
+                  {% assign layoutBanner = 'sm:pt-6 sm:border-t sm:border-header-menu' %}
+                {%- else -%}
+                  {% assign layoutCollection = 'justify-between' %}
+                {%- endif -%}
+
+                {%- if block.settings.menu_item_column == 'menu2' -%}
+                  {% assign layoutMenu = 'flex' %}
+                  {% assign layoutBanner = 'pt-6 sm:pt-0' %}
+                {%- else -%}
+                  {% assign layoutMenu = 'block' %}
+                {%- endif -%}
+
+                {%- if block.settings.menu_item_column == 'menu3' -%}
+                  {% assign limitCollection = 6 %}
+                  {% assign gridColumn = 3 %}
+                  {% assign class = 'sm:max-w-482' %}
+                  {% assign classCategory = 'ml-3 -mt-5' %}
+                {%- endif -%}
+                {%- if link.title == block.settings.title -%}
+                  <div class="mx-auto pt-6 md:pt-12 w-full block max-w-7xl sm:justify-between sm:{{ layoutMenu }}">
+                    <div class="menu-left md:mr-1.5 block max-w-full w-full sm:flex sm:{{layoutCollection}} ">
+                      {% comment %} Shop by Category {% endcomment %}
+                      <div class="shop-by-category {{class}} flex w-full border-b border-header-menu sm:border-0">
+                        {%- if block.settings.featured_navigation != blank -%}
+                          <div class="content w-full sm:max-w-xs pb-6 px-4">
+                            <h3 class="heading-title tracking-lgSpacing text-xxxs font-bold uppercase text-grey-900">{{- 'menu.shop_by_category' | t -}}</h3>
+                            <ul class="mega-menu1">
+                              {%- for link in block.settings.featured_navigation.links -%}
+                                <li class="item">
+                                  <a href="{{- link.url -}}" class="block mt-4 mt-3 w-full text-base font-normal text-grey-700 hover:underline">
+                                    {{- link.title -}}
+                                  </a>
+                                </li>
+                              {%- endfor -%}
+                            </ul>
+                          </div>
+                        {%- endif -%}
+
+                        {%- if block.settings.featured_navigation_two != blank -%}
+                          {%- if block.settings.menu_item_column == 'menu2' or block.settings.menu_item_column == 'menu3' -%}
+                            <div class="content w-full md:max-w-xs {{classCategory}}">
+                              {%- if block.settings.menu_item_column == 'menu2' -%}
+                                <h3 class="heading-title tracking-lgSpacing text-xxxs font-bold uppercase text-grey-900">{{- 'menu.shop_by_category' | t -}}</h3>
+                              {%- endif -%}
+                              <ul class="mega-menu2">
+                                {%- for link in block.settings.featured_navigation_two.links -%}
+                                  <li class="item">
+                                    <a href="{{- link.url -}}" class="block mt-4 mt-3 w-full text-base font-normal text-grey-700 hover:underline">{{- link.title -}}</a>
+                                  </li>
+                                {%- endfor -%}
+                              </ul>
+                            </div>
+                          {%- endif -%}
+                        {%- endif -%}
+                      </div>
+                      {% comment %} End Shop by category {% endcomment %}
+
+                      {% comment %} Shop by Collection {% endcomment %}
+                      {%- if block.settings.menu_item_column == 'menu1' or block.settings.menu_item_column == 'menu3' -%}
+                        <div class="shop-by-collection {{class}} w-full pt-6 px-4 sm:pt-0">
+                          {%- for collection in linklists['shop-by-collection'].links -%}
+                            {%- if collection.title == block.settings.title -%}
+                              {% comment %} check length array collection {% endcomment %}
+                              {% assign array_collection = collection.links | size %}
+                              {% comment %} End check length array collection {% endcomment %}
+                              {%- if array_collection > 0 -%}
+                                <h3 class="heading-title tracking-lgSpacing text-xxxs font-bold uppercase text-grey-900 mb-3 md:mb-4">{{- 'menu.shop_by_collection' | t -}}</h3>
+                              {%- endif -%}
+                            {%- endif -%}
+                          {%- endfor -%}
+                          <div class="content grid col-span-{{gridColumn}} grid-cols-{{gridColumn}} pb-6 sm:pb-0 gap-y-3 gap-x-4">
+                            {%- for collection in linklists['shop-by-collection'].links -%}
+                              {%- if collection.title == block.settings.title -%}
+                                {% comment %} check length array collection {% endcomment %}
+                                {% assign array_collection = collection.links | size %}
+                                {% comment %} End check length array collection {% endcomment %}
+                                {%- if array_collection > 0 -%}
+                                  {%- for child_link in collection.links limit: limitCollection -%}
+                                    {% if child_link.title contains "image:" %}
+                                      {% assign files = 'files/' %}
+                                      {% assign splitChildLink = child_link.title | split: 'image:' %}
+                                      {% assign typeImg = splitChildLink.last %}
+                                      {% assign linkImg = files | append: typeImg %}
+                                      {% for block in blocks %}
+                                        {% if block.type == 'shop_by_collection' %}
+                                          {% if block.settings.collectiom_image == linkImg %}
+                                            <div class="item">
+                                              <div class="img rounded-sm overflow-hidden">
+                                                <img
+                                                  src="{{ block.settings.collectiom_image | img_url: 'master'}}"
+                                                  class="w-full h-full rounded-sm overflow-hidden"
+                                                  loading="lazy">
+                                              </div>
+                                              <div class="title mt-3">
+                                                <a href="{{- child_link.link -}}" class="w-full block text-base font-normal text-grey-700 hover:underline">{{- block.settings.collection_item_title -}}</a>
+                                              </div>
+                                            </div>
+                                          {% endif %}
+                                        {% endif %}
+                                      {% endfor %}
+                                    {% endif %}
+                                  {%- endfor -%}
+                                {%- endif -%}
+                              {%- endif -%}
+                            {%- endfor -%}
+                          </div>
+                        </div>
+                      {%- endif -%}
+                      {% comment %} End Shop by Collection {% endcomment %}
+                    </div>
+
+                    {%- if block.settings.menu_item_column == 'menu1' or block.settings.menu_item_column == 'menu2' -%}
+                      <div class="menu-right w-full md:pl-1 px-4 pb-6 {{layoutBanner}}">
+                        {% comment %} Menu Banner {% endcomment %}
+                        <div class="banner-menu block sm:max-w-xs">
+                          <div class="banner-menu__left block">
+                            {%- for banner in linklists['banner-menu'].links -%}
+                              {%- if banner.title == block.settings.title -%}
+                                {% assign beatles = banner.links | slice: 0 %}
+                                {%- for child_link in beatles -%}
+                                  {% if child_link.title contains "image:" %}
+                                    {% assign files = 'files/' %}
+                                    {% assign splitChildLink = child_link.title | split: 'image:' %}
+                                    {% assign typeImg = splitChildLink.last %}
+                                    {% assign linkImg = files | append: typeImg %}
+                                    {% for block in blocks %}
+                                      {% if block.type == 'menu_banner' %}
+                                        {% if block.settings.banner_image == linkImg %}
+                                          <a href="{{- child_link.link -}}" class="rounded-sm overflow-hidden">
+                                            <img
+                                              src="{{ block.settings.banner_image | img_url: 'master'}}"
+                                              alt="{{- block.settings.banner_alt -}}"
+                                              class="w-full h-full rounded-sm overflow-hidden"
+                                              loading="lazy">
+                                          </a>
+                                        {% endif %}
+                                      {% endif %}
+                                    {% endfor %}
+                                  {% endif %}
+                                {%- endfor -%}
+                              {%- endif -%}
+                            {%- endfor -%}
+                          </div>
+                        </div>
+                        {% comment %} End Menu Banner {% endcomment %}
+                      </div>
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+      {%- if menu_slideout_ctas != blank -%}
+        <div class="mt-7">
+          {{ menu_slideout_ctas }}
+        </div>
+      {%- endif -%}
+    </div>
+    {{ second_menu_content }}
+  </div>
+</menu-slideout>
+
+{%- unless ignore_script == true -%}
+  {%- capture src_url -%}
+    {{- 'module-menu-slideout.js' | asset_url -}}
+  {%- endcapture -%}
+
+  {%- render 'atom_script' 
+    , src: src_url,
+    priority: 'normal',
+    type: "defer" -%}
+{%- endunless -%}

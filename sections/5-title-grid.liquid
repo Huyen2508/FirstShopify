@@ -1,0 +1,236 @@
+{% liquid
+  if section.settings.grid_type == "1"
+    assign type_left = true
+  else
+    assign type_left = false
+  endif
+
+  assign big_show_text = false
+  if section.settings.big_show_text
+    assign big_show_text = true
+  endif
+
+  assign small_1_show_text = false
+  if section.settings.small_1_show_text
+    assign small_1_show_text = true
+  endif
+
+  assign small_2_show_text = false
+  if section.settings.small_2_show_text
+    assign small_2_show_text = true
+  endif
+
+  assign small_3_show_text = false
+  if section.settings.small_3_show_text
+    assign small_3_show_text = true
+  endif
+  assign small_4_show_text = false
+  if section.settings.small_4_show_text
+    assign small_4_show_text = true
+  endif
+
+  assign class_image = 'w-full hover:scale-105 transition-all	duration-500'
+  assign class_title = 'pb-1.5 text-sm border-b border-grey-900 font-bold text-grey-900 hover:text-primary-hover uppercase flex w-max mx-auto md:inline-block mt-6 tracking-lgSpacing'
+  assign class_image_wrapper = 'overflow-hidden'
+%}
+
+<div class="5-title-grid-wrapper">
+  <div class="5-title-grid-content flex px-4 max-w-7xl 2xl:px-0 mx-auto flex-col md:flex-row mb-8 lg:mb-20 md:gap-x-6">
+    <div class="title-col-1 w-100% md:w-[45.625%] {% if type_left %} mb-6 md:mb-0 {% else %} order-1 mt-6 md:mt-0 {% endif %}">
+      <div class="big-image h-full">
+        <a class="{{ class_link }}" href="{{ section.settings.url_big}}">
+          <div class="title-image {{ class_image_wrapper }} {% if big_show_text == false %} h-full {% else %} h-[calc(100%-53px)] {% endif %}">
+            <div class="bg-center bg-cover bg-no-repeat {{ class_image }} h-full pt-[147%]" style="background-image: url('{{ section.settings.image_big | img_url: 'master'}}')"></div>
+          </div>
+          {%- if big_show_text -%}
+            <div class="{{ class_title }}">
+              {{ section.settings.big_title }}
+            </div>
+          {%- endif -%}
+        </a>
+      </div>
+    </div>
+    <div class="title-col-2 w-100% md:w-[52.5%] grid grid-cols-2 gap-x-4 gap-y-6 md:gap-x-6 md:gap-y-8 flex-frow">
+      <div class="small-image-1">
+        <a class="{{ class_link }}" href="{{ section.settings.url_small_1}}">
+          <div class="title-image {{ class_image_wrapper }} {% if small_1_show_text == false %} h-full {% else %} h-[calc(100%-53px)] {% endif %}">
+            <div class="bg-center bg-cover bg-no-repeat {{ class_image }} h-full {% if small_1_show_text == false %} pt-[151.83%] md:pt-[136%] {% else %} pt-[119.5%] {% endif %}" style="background-image: url('{{ section.settings.image_small_1 | img_url: 'master'}}')"></div>
+          </div>
+
+          {%- if small_1_show_text -%}
+            <div class="{{ class_title }}">
+              {{ section.settings.small_1_title }}
+            </div>
+          {%- endif -%}
+        </a>
+      </div>
+      <div class="small-image-2">
+        <a class="{{ class_link }}" href="{{ section.settings.url_small_2}}">
+          <div class="title-image {{ class_image_wrapper }} {% if small_2_show_text == false %} h-full {% else %} h-[calc(100%-53px)] {% endif %}">
+            <div class="bg-center bg-cover bg-no-repeat {{ class_image }} h-full {% if small_2_show_text == false %} pt-[151.83%] md:pt-[136%] {% else %} pt-[119.5%] {% endif %}" style="background-image: url('{{ section.settings.image_small_2 | img_url: 'master'}}')"></div>
+          </div>
+          {%- if small_2_show_text -%}
+            <div class="{{ class_title }}">
+              {{ section.settings.small_2_title }}
+            </div>
+          {%- endif -%}
+        </a>
+      </div>
+      <div class="small-image-3">
+        <a class="{{ class_link }}" href="{{ section.settings.url_small_3}}">
+          <div class="title-image {{ class_image_wrapper }} {% if small_3_show_text == false %} h-full {% else %} h-[calc(100%-53px)] {% endif %}">
+            <div class="bg-center bg-cover bg-no-repeat {{ class_image }} h-full {% if small_3_show_text == false %} pt-[151.83%] md:pt-[136%] {% else %} pt-[119.5%] {% endif %}" style="background-image: url('{{ section.settings.image_small_3 | img_url: 'master'}}')"></div>
+          </div>
+          {%- if small_3_show_text -%}
+            <div class="{{ class_title }}">
+              {{ section.settings.small_3_title }}
+            </div>
+          {%- endif -%}
+        </a>
+      </div>
+      <div class="small-image-4">
+        <a class="{{ class_link }}" href="{{ section.settings.url_small_4}}">
+          <div class="title-image {{ class_image_wrapper }} {% if small_4_show_text == false %} h-full {% else %} h-[calc(100%-53px)] {% endif %}">
+            <div class="bg-center bg-cover bg-no-repeat {{ class_image }} h-full {% if small_4_show_text == false %} pt-[151.83%] md:pt-[136%] {% else %} pt-[119.5%] {% endif %}" style="background-image: url('{{ section.settings.image_small_4 | img_url: 'master'}}')"></div>
+          </div>
+          {%- if small_4_show_text -%}
+            <div class="{{ class_title }}">
+              {{ section.settings.small_4_title }}
+            </div>
+          {%- endif -%}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "5 Tile Grid",
+    "settings": [
+      {
+        "type": "select",
+        "id": "grid_type",
+        "label": "Grid Type",
+        "options": [
+          {
+            "value": "1",
+            "label": "5 tile grid - left"
+          }, {
+            "value": "2",
+            "label": "5 tile grid - right"
+          }
+        ],
+        "default": "1"
+      },
+      {
+        "type": "header",
+        "content": "Big Image"
+      },
+      {
+        "type": "text",
+        "id": "big_title",
+        "label": "Title"
+      },
+      {
+        "type": "checkbox",
+        "id": "big_show_text",
+        "label": "Show Title",
+        "default": true
+      }, {
+        "type": "image_picker",
+        "id": "image_big",
+        "label": "Image"
+      }, {
+        "type": "url",
+        "id": "url_big",
+        "label": "Url"
+      }, {
+        "type": "header",
+        "content": "Small Image 1"
+      }, {
+        "type": "text",
+        "id": "small_1_title",
+        "label": "Title"
+      }, {
+        "type": "checkbox",
+        "id": "small_1_show_text",
+        "label": "Show Title",
+        "default": true
+      }, {
+        "type": "image_picker",
+        "id": "image_small_1",
+        "label": "Image"
+      }, {
+        "type": "url",
+        "id": "cta_url_small_1",
+        "label": "Url"
+      }, {
+        "type": "header",
+        "content": "Small Image 2"
+      }, {
+        "type": "text",
+        "id": "small_2_title",
+        "label": "Title"
+      }, {
+        "type": "checkbox",
+        "id": "small_2_show_text",
+        "label": "Show Title",
+        "default": true
+      }, {
+        "type": "image_picker",
+        "id": "image_small_2",
+        "label": "Image"
+      }, {
+        "type": "url",
+        "id": "cta_url_small_2",
+        "label": "Url"
+      }, {
+        "type": "header",
+        "content": "Small Image 3"
+      }, {
+        "type": "text",
+        "id": "small_3_title",
+        "label": "Title"
+      }, {
+        "type": "checkbox",
+        "id": "small_3_show_text",
+        "label": "Show Title",
+        "default": true
+      }, {
+        "type": "image_picker",
+        "id": "image_small_3",
+        "label": "Image"
+      }, {
+        "type": "url",
+        "id": "cta_url_small_3",
+        "label": "Url"
+      }, {
+        "type": "header",
+        "content": "Small Image 4"
+      }, {
+        "type": "text",
+        "id": "small_4_title",
+        "label": "Title"
+      }, {
+        "type": "checkbox",
+        "id": "small_4_show_text",
+        "label": "Show Title",
+        "default": true
+      }, {
+        "type": "image_picker",
+        "id": "image_small_4",
+        "label": "Image"
+      }, {
+        "type": "url",
+        "id": "cta_url_small_4",
+        "label": "Url"
+      }
+    ],
+    "presets": [
+      {
+        "name": "5 Tile Grid"
+      }
+    ]
+  }
+{% endschema %}

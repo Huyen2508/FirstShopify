@@ -1,0 +1,165 @@
+{{- 'section-template-contact-us.css' | asset_url | stylesheet_tag -}}
+
+{% liquid
+  assign name_label = 'templates.contact.form.name' | t
+  assign email_label = 'templates.contact.form.email' | t
+  assign phone_number_label = 'templates.contact.form.phone' | t
+  assign order_number_label = 'templates.contact.form.order_number' | t
+  assign message_label = 'templates.contact.form.comment' | t
+  assign message_placeholder = 'templates.contact.form.comment_placeholder' | t
+%}
+
+<div class="flex flex-col lg:flex-row">
+  <div class="contact-left order-2 md:order-1 w-full lg:max-w-[calc(100%-264px)] mr-12">
+    <h1 class="hidden md:block text-2xl text-grey-900 font-bold tracking-mdSpacing mb-4">{{ page.title }}</h1>
+    <validate-form>
+      {%- form 'contact', id: 'ContactForm', class: 'isolate' -%}
+        {%- liquid
+          assign contact_success = form.posted_successfully?
+          assign form_contact = form
+          assign notice_class = 'mb-4'
+        -%}
+        {%- if contact_success == true -%}
+          {%- assign success_message = 'customer.recover_password.success' | t -%}
+          {%- render 'form-notice', form: form_contact, class: notice_class, success_message: success_message -%}
+        {%- endif -%}
+        {%- if form.errors -%}
+          <notice-main class="notice-main mb-4 notice-main-error js-auto-close-notice">
+            <button type="button" class="notice-main-icon "><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14Z" fill="#FF3F2E"></path>
+            <path d="M10 6L6 10" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M10 10L6 6" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg></button><div class="notice-main-content "><ul>
+              <li>
+                {{ form.errors | default_errors }}
+              </li>
+            </ul></div>
+          </notice-main>
+        {%- endif -%}
+        {%- capture select_options %}
+          {% for item in shop.metafields.globals.contact_subject %}
+            <option value="{{ item }}">{{ item }}</option>
+          {% endfor %}
+          
+        {%- endcapture -%}
+        <div class="field mb-4">
+          {%- render 'select-input',
+            class: 'w-full',
+            name: 'contact[Subject]',
+            id: 'ContactForm-subject',
+            options: select_options,
+            hide_label: true
+          -%}
+        </div>
+        <div class="contact__fields flex flex-col md:flex-row md:gap-6">
+          <div class="mb-4 w-full md:w-1/2">
+            {%- render 'text-input'
+              , class: 'text-base',
+              id: 'ContactForm-name',
+              name: 'contact[Name]',
+              type: 'text',
+              label: name_label,
+              placeholder: name_label,
+              show_label: true,
+              required: true -%}
+          </div>
+          <div class="mb-4 w-full md:w-1/2">
+            {%- render 'text-input'
+              , name: 'contact[email]',
+              id: 'ContactForm-email',
+              type: 'email',
+              label: email_label,
+              placeholder: email_label,
+              show_label: true,
+              required: true -%}
+          </div>
+        </div>
+        <div class="contact__fields flex flex-col md:flex-row md:gap-6">
+          <div class="mb-4 w-full md:w-1/2">
+            {%- render 'text-input'
+              , name: 'contact[Phone number]',
+              id: 'ContactForm-phone',
+              type: 'text',
+              label: phone_number_label,
+              placeholder: phone_number_label,
+              show_label: true,
+              required: true -%}
+          </div>
+          <div class="mb-4 w-full md:w-1/2">
+            {%- render 'text-input'
+              , name: 'contact[Order number]',
+              id: 'ContactForm-order',
+              type: 'text',
+              label: order_number_label,
+              placeholder: order_number_label,
+              show_label: true,
+              required: true -%}
+          </div>
+        </div>    
+        <div class="field">
+          {%- render 'text-area'
+            , id: 'ContactForm-body',
+            name: 'contact[Message]',
+            class_input: 'w-full h-30 mb-4',
+            label: message_label,
+            show_placeholder: true,
+            placeholder: message_placeholder %}
+        </div>
+        <div class="row w-full flex items-center">
+          <input
+            id="register-checkbox"
+            name="contact[accepts_marketing]"
+            class="checkbox-input__input cursor-pointer"
+            type="checkbox">
+          <label for="register-checkbox" class="text-base font-normal cursor-pointer pl-3">{{- 'templates.contact.form.register' | t -}}</label>
+        </div>
+        <button type="submit" class="uppercase button-primary mt-4 py-3.5 px-10 w-full md:w-auto">
+          <span class="inline-block px-px py-px">{{- 'templates.contact.form.submit' | t -}}</span>
+        </button>
+      {%- endform -%}
+    </validate-form>
+  </div>
+  <div class="contact-right order-1 mb:order-2 lg:w-[216px] mb-8 md:mb-0 md:mt-8 lg:mt-0">
+      {% if section.settings.address_title != blank %}
+        <h5 class="text-lg text-grey-900 font-bold tracking-xsSpacing mb-3 md:mb-4">{{ section.settings.address_title }}</h5>
+      {% endif %}
+      {% if section.settings.address != blank %}
+        <div class="text-base text-black font-normal tracking-xsSpacing">
+          {{ section.settings.address }}
+        </div>
+      {% endif %}
+      {% if section.settings.phone != blank %}
+        <p class="text-base text-black font-normal tracking-xsSpacing mt-4">{{ 'templates.contact.form.phone_address' | t }} <a href="tel:{{ section.settings.phone }}">{{ section.settings.phone }}</a></p>
+      {% endif %}
+  </div>
+</div>
+
+{%- capture src_url -%}
+  {{- 'section-template-contact-us.js' | asset_url -}}
+{%- endcapture -%}
+{%- render 'atom_script', src: src_url, priority: 'normal', type: 'defer' -%}
+
+{% schema %}
+  {
+    "name": "Contact Form",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "address_title",
+        "label": "Address Title"
+      },
+      {
+        "type": "richtext",
+        "id": "address",
+        "label": "Address"
+      },
+      {
+        "type": "text",
+        "id": "phone",
+        "label": "Phone"
+      }
+    ]
+  }
+{% endschema %}

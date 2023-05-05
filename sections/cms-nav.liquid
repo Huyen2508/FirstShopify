@@ -1,0 +1,29 @@
+{{ 'section-cms-nav.css' | asset_url | stylesheet_tag }}
+
+<h2 class="text-grey-900 text-center mb-4 text-xl font-bold tracking-xsSpacing md:hidden">{{ page.title }}</h2>
+<div class="nav_customer md:w-72 xl:w-[400px] border border-grey-600 rounded-sm p-4 pl-6 pr-5 md:px-6 mb-8 md:mb-0 md:p-6">
+    {%- assign menu_linklist = linklists[settings.cms_menu].links -%}
+    <h3 class="customer-nav-title flex justify-between text-grey-900 capitalize font-bold text-base md:text-lg tracking-xsSpacing md:pb-5 md:border-b md:border-grey-600">
+        {{- 'menu.cms_nav_title' | t -}}
+        <span class="nav-plus md:hidden plus">{%- render 'plus' -%}</span>
+        <span class="nav-minus hidden minus">{%- render 'minus' -%}</span>
+    </h3>
+    <ul class="customer-nav-content pt-5 hidden md:block">
+        {% for link in menu_linklist %}
+            <li class="pt-4 first:pt-0">                
+                {% if request.path == link.url %}
+                    <p class="text-grey-900 py-2.5 px-6 bg-grey-100 rounded-sm" >
+                        {{ link.title }}
+                    </p>
+                {% else %}
+                    <a href="{{ link.url }}" class="text-grey-900 block hover:text-primary-hover" >
+                        {{ link.title }}
+                    </a>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>    
+</div>
+
+{% capture src_url %}{{ 'section-cms-nav.js' | asset_url }}{% endcapture %}
+{% render 'atom_script', src: src_url, priority: 'normal', type: "defer" %}

@@ -1,0 +1,72 @@
+{% liquid
+	assign blocks = section.blocks
+%}
+
+{%- if blocks.size > 0 -%}
+  <div class="brands-wrapper max-w-7xl mx-auto px-4 2xl:px-0 overflow-hidden">
+    <div class="brands-content pb-8 lg:pb-20 flex flex-wrap items-center lg:flex-nowrap" style="background-color: {{ section.settings.bg_color }};">
+      <div class="brands-title w-full text-2xl font-bold tracking-mdSpacing text-center mb-6 lg:w-auto lg:whitespace-nowrap lg:pr-9 lg:mb-0 text-grey-900 lg:text-base lg:leading-5 lg:tracking-xsSpacing lg:font-semibold">
+        {{ section.settings.title }}
+      </div>
+      <div class="brands grid items-center grid-cols-2 lg:grid-cols-4 gap-y-5 w-full lg:flex-grow flex-wrap [&>*:nth-child(even)]:border-l lg:-mr-9">
+        {%- for block in blocks -%}
+          <a class="w-full h-full items-center px-4 lg:px-9 lg:border-l border-grey-2 flex" href="{{ block.settings.cta_url }}">
+            <img class="w-max h-auto" src="{{ block.settings.image | img_url: 'master'}}">
+          </a>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Brands",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      }, {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background color",
+        "default": "#FFFFFF"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "item",
+        "name": "Item",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Logo"
+          }, {
+            "type": "url",
+            "id": "cta_url",
+            "label": "Cta url"
+          }
+        ]
+      }
+    ],
+    "max_blocks": 4,
+    "presets": [
+      {
+        "name": "Brands",
+        "blocks": [
+          {
+            "type": "item"
+          }, {
+            "type": "item"
+          }, {
+            "type": "item"
+          }, {
+            "type": "item"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

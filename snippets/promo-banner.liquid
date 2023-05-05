@@ -1,0 +1,23 @@
+{%- if collection.metafields.accentuate.promo_text != blank -%}
+  <div class="promo-banner flex items-center justify-center border-header-heading py-4 mt-3 mb-6 md:mb-5" style="background-color: {{ shop.metafields.globals.promo_background_color }};">
+    {% for image in collection.metafields.accentuate.promo_icon %}
+      <img class="w-5 h-5 object-contain mr-3" src="{{ image.src }}" alt="{{ image.alt }}" />
+    {% endfor %}
+    <span class="font-medium text-sm tracking-lgSpacing" style="color: {{ shop.metafields.globals.promo_text_color }}">{{ collection.metafields.accentuate.promo_text }}</span>
+  </div>
+{% endif %}
+
+<div class="compare-a-fit flex items-center justify-center border-header-heading py-4 mt-3 mb-6 md:mb-5" style="background-color: {{ shop.metafields.globals.promo_background_color }};">
+{%- if shop.metafields.globals.compare_a_fit_link -%}  
+  <a class="flex items-center justify-center" target="_blank" href="/pages/{{ shop.metafields.globals.compare_a_fit_link }}">
+{%- else -%}  
+  <a class="flex items-center justify-center" href="#">
+{%- endif -%}  
+    {% for image in shop.metafields.globals.compare_a_fit_icon %}
+      <img class="w-5 h-5 object-contain mr-3" src="{{ image.src }}" alt="{{ image.alt }}" />
+    {% endfor %}
+    {%- if shop.metafields.globals.compare_a_fit_text != blank -%}
+      <span class="font-medium text-sm tracking-lgSpacing" style="color: {{ shop.metafields.globals.promo_text_color }}">{{ shop.metafields.globals.compare_a_fit_text }}</span>
+    {% endif %}
+  </a>
+</div>

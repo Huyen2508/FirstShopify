@@ -1,0 +1,26 @@
+{% assign cart_total = cart.total_price %}
+{% assign shipping_fee = settings.shipping_fee | times: 100 %}
+{% assign cart_shipping_fee = settings.cart_shipping_fee | times: 100 %}
+{% assign disable_delivery = true %}
+{% assign giftCartPrice = 0 %}
+
+<cart-slideout>
+  <modal-dialog
+    data-target="MiniCart"
+    id="MiniCartSlideout"
+    data-type="slideout"
+    class="modal-dialog-mini-cart"
+    data-scroll-target=".js-mini-cart-content">
+    <div class="modal-dialog-content max-w-xs border-0 js-content-modal-dialog w-full md:max-w-482 md:pl-16 bg-transparent">
+      <div class="minicart-content h-full bg-white">
+        {%- render 'mini-cart' -%}
+      </div>
+    </div>
+  </modal-dialog>
+</cart-slideout>
+
+{%- capture src_url -%}
+  {{- 'section-cart-slideout.js' | asset_url -}}
+{%- endcapture -%}
+
+{%- render 'atom_script', src: src_url, type: 'defer' -%}

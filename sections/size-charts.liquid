@@ -1,0 +1,208 @@
+{% liquid
+  assign blocks = section.blocks
+%}
+<div class="wrapper">
+  <div class="relative">
+    {% if section.settings.table_size_name != blank %}
+      <h2 class="font-bold text-xl hidden tracking-xsSpacing text-grey-900 mb-4 lg:mb-6 md:block lg:text-2xl text-left">{{ section.settings.table_size_name }}</h2>
+    {% endif %}
+    <table class="w-full table-fixed">
+      <thead class="bg-grey-300 ">
+        <tr>
+          {% if section.settings.column_size_name != blank %}
+            {% assign columnName = section.settings.column_size_name | split: ";" %}
+          {% endif %}
+          {% for name in columnName %}
+            <th scope="col" class="font-bold border-b border-grey-600 normal-case text-xs lg:text-base text-grey-900 text-center tracking-xsSpacing py-4.5">{{ name }}</th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'tablerow' %}
+            {%- assign type = block.settings.size_conversion -%}
+            {%- if type == "Size" -%}
+              <tr class="bg-white dark:bg-gray-900">
+                {%- if block.settings.size != blank -%}
+                    {%- assign sizes = block.settings.size | split: ';' -%} 
+                {% endif %}
+
+                {% for size in sizes %}
+                  <td class="py-3.5 text-center  tracking-xsSpacing text-xs leading-6 lg:text-base">
+                    {{ size }}
+                  </td>
+                {% endfor %}
+              </tr>
+            {% endif %}
+          {% endcase %}
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="relative">
+    {% if section.settings.table_conversion_name != blank %}
+      <h2 class="font-bold text-lg tracking-xsSpacing text-grey-900 mt-8 mb-3.5 lg:mt-6">{{ section.settings.table_conversion_name }}</h2>
+    {% endif %}
+    <table class="w-full table-fixed">
+      <thead class="bg-grey-300 ">
+        <tr>
+          {% if section.settings.column_conversion_name != blank %}
+            {% assign columnCvName = section.settings.column_conversion_name | split: ";" %}
+          {% endif %}
+          {% for name in columnCvName %}
+            <th scope="col" class="font-bold normal-case text-base border text-grey-900 text-center tracking-wide py-4.5">{{ name }}</th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'tablerow' %}
+            {%- assign type = block.settings.size_conversion -%}
+              {%- if type == "internationalSize" -%}
+                <tr class="bg-white border  border-grey-600">
+                  {%- if block.settings.size != blank -%}
+                    {%- assign sizes = block.settings.size | split: ';' -%} 
+                  {% endif %}
+
+                  {% for size in sizes %}
+                    <td class="py-3.5 text-center  tracking-xsSpacing text-base">
+                      {{ size }}
+                    </td>
+                  {% endfor %}
+                </tr>
+            {% endif %}
+          {% endcase %}
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="size-tutorials">
+    {% if section.settings.tutorials_size_name != blank %}
+      <h2 class="font-bold text-lg tracking-xsSpacing text-grey-900 mt-8 mb-3.5 lg:mt-6 lg:mb-5 ">{{ section.settings.tutorials_size_name }}</h2>
+    {% endif %}
+    <div class="relative grid grid-cols-1 gap-x-0 gap-y-5 md:grid-cols-2 lg:grid-cols-3 md:gap-8.5">
+      {% for block in blocks %}
+        {% case block.type %}
+          {% when 'tutorialsItem' %}
+          {%- render 'card' 
+            , url: block.settings.cta_url,
+            class: 'w-full,
+            content_class: 'flex flex-col grow',
+            image: block.settings.image,
+            image_class: '',
+            image_wrapper_class: 'border rounded-sm border-grey-600 min-h-344 sm:min-h-0 aspect-[244/244] lg:aspect-[344/344]'
+            mobile_width: 440,
+            title: block.settings.title,
+            title_class: 'text-base pt-4 tracking-xsSpacing text-grey-900 font-bold',
+            description: block.settings.description,
+            description_class: 'text-base text-grey-700 font-normal',
+            cta_text: block.settings.cta_text,
+            cta_class: 'button-outlined uppercase w-fit mt-4 lg:mt-6' -%}
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Size charts",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "table_size_name",
+        "label": "Table Size Name",
+        "default": "Size Chart"
+      },
+      {
+        "type": "textarea",
+        "id": "column_size_name",
+        "label": "Column Size Name",
+        "default": "Size;Bust (cm);Waist (cm);Hip (cm)"
+      },
+      {
+        "type": "text",
+        "id": "table_conversion_name",
+        "label": "Table Conversion Name",
+        "default": "International Size Conversion"
+      },
+      {
+        "type": "textarea",
+        "id": "column_conversion_name",
+        "label": "Column Conversion Name",
+        "default": "AUST;US;UK;EUR"
+      }, {
+        "type": "text",
+        "id": "tutorials_size_name",
+        "label": "Tutorials Size Name",
+        "default": "How to measure"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "tablerow",
+        "name": "sizes-row",
+        "settings": [
+          {
+            "type": "select",
+            "id": "size_conversion",
+            "options": [
+              {
+                "value": "Size",
+                "label": "Size"
+              }, {
+                "value": "internationalSize",
+                "label": "International Size"
+              }
+            ],
+            "label": "Select Type Size"
+          }, {
+            "type": "textarea",
+            "id": "size",
+            "label": "Size"
+          }
+        ]
+      }, {
+        "type": "tutorialsItem",
+        "name": "Tutorials Size Item",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Title"
+          },
+          {
+            "type": "textarea",
+            "id": "description",
+            "label": "Description",
+            "default": "Description"
+          },
+          {
+            "type": "text",
+            "id": "cta_text",
+            "label": "Cta text"
+          }, {
+            "type": "url",
+            "id": "cta_url",
+            "label": "Cta url"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Size charts"
+      }
+    ]
+  }
+{% endschema %}

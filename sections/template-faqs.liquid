@@ -1,0 +1,52 @@
+{{ 'section-template-faqs.css' | asset_url | stylesheet_tag }}
+
+<div class="faq-container">
+    <h1 class="faq-heading text-grey-900 text-2xl font-bold tracking-mdSpacing text-left mb-6 hidden md:block">{{ page.title }}</h1>
+    <div class="content-faq">
+        {% for block in section.blocks %}
+            <div class="faq-item py-5 first:pt-0 border-b last:border-b-0 last:md:border-b border-grey-600">
+                <accordion-dropdown class="block w-full pt-1 pb-0.5 mb-px">
+                    <h4 class="faq-title text-base text-grey-900 font-bold flex items-center justify-between gap-4 cursor-pointer">
+                        <span class="heading">{{ block.settings.faq_question_text }} </span>
+                        <div class="chevron-arrow flex items-center">
+                            <span class="flex justify-center items-center open w-full">{% render 'faq-dropdown-up' %}</span>
+                            <span class="justify-center items-center close w-full hidden">{% render 'faq-dropdown-down' %}</span>
+                        </div>
+                    </h4>
+                    <div class="faq-content text-xs text-grey-700 tracking-xsSpacing overflow-hidden transition-all duration-300">
+                        {{ block.settings.faq_answer_text }}
+                    </div>
+                </accordion-dropdown>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% capture src_url %}{{ 'section-template-faqs.js' | asset_url }}{% endcapture %}
+{% render 'atom_script', src: src_url, priority: 'normal', type: "defer" %}
+
+{% schema %}
+{
+    "name": "Faq Section",
+    "blocks": [
+        {
+            "type": "faq",
+            "name": "faq",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "faq_question_text",
+                    "label": "Faq Title",
+                    "default": "Title"
+                },
+                {
+                    "type": "richtext",
+                    "id": "faq_answer_text",
+                    "label": "Answer Here",
+                    "default": "<p>Text here</p>"
+                }
+            ]
+        }
+    ]
+} 
+{% endschema %}

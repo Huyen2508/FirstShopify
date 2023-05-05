@@ -1,0 +1,50 @@
+{%- unless ignore_style == true -%}
+  {{- 'module-account-sidebar.css' | asset_url | stylesheet_tag -}}
+{%- endunless -%}
+
+{%- liquid
+  assign page_url = page_url | default: '/account'
+  assign account_sidebar = account_sidebar | default: 'account-sidebar'
+  assign sidebar_menu = linklists[account_sidebar]
+-%}
+
+{%- if page_url contains '/account/orders' -%}
+  {%- assign page_url = '/account?view=orders' -%}
+{%- endif -%}
+
+{%- if sidebar_menu.links.size > 0 -%}
+  <account-sidebar class="relative flex bg-white">
+    <nav class="js-sidebar-nav w-full bg-white lg:static lg:block lg:border-none [&.active]:block text-center md:pt-6 md:pb-8 py-4 my-px">
+      <div>
+        {%- for item in sidebar_menu.links -%}
+          {%- liquid
+            assign mod_title = item.title | split: ']' | last | strip
+            assign mod_icon = item.title | split: ']' | first | remove: '[' | strip
+            assign mod_class = ''
+            if item.url == page_url
+              assign mod_class = 'active'
+            endif
+            if page_url contains 'view=orders'
+              if item.url contains '/account?view=orders'
+                assign mod_class = 'active'
+              endif
+            endif
+          -%}
+          <a
+            href="{{ item.url }}"
+            class="font-nomarl text-base tracking-xsSpacing text-gret-700 [&.active]:font-bold [&.active]:text-primary [&.active]:after:bg-primary {{ mod_class }} md:mx-4 mx-2 relative [&.active]:after:content-empty [&.active]:after:absolute [&.active]:after:w-full [&.active]:after:left-0 [&.active]:after:-bottom-1 [&.active]:after:h-0.5">
+            {%- render 'icon' with mod_icon, class: 'mr-3' -%}
+            {{- mod_title -}}
+          </a>
+        {%- endfor -%}
+      </div>
+    </nav>
+  </account-sidebar>
+{%- endif -%}
+
+{%- unless ignore_script -%}
+  {%- capture src_url -%}
+    {{- 'module-account-sidebar.js' | asset_url -}}
+  {%- endcapture -%}
+  {%- render 'atom_script', src: src_url, priority: 'normal', type: 'defer' -%}
+{%- endunless -%}

@@ -1,0 +1,27 @@
+{% liquid
+  assign show_placeholder = show_placeholder | default: true
+%}
+<div class="relative {{ class }}">
+  {%- if label != blank -%}
+    <label class="input-label" for="{{ id }}">{{ label }}</label>
+  {%- endif -%}
+  <textarea
+    class="input peer {{ class_input }}"
+    id="{{ id }}"
+    name="{{ name }}"
+    value="{{ value }}"
+    {% if show_placeholder %}
+      placeholder="{{ placeholder }}"
+    {% endif %}
+    autocomplete="{{ autocomplete }}"
+    {% if required %}
+      required
+    {% endif %}
+    {% if disabled %}
+      disabled
+    {% endif %}
+  ></textarea>
+  {%- if error != blank -%}
+    <p class="input-error">{{- error -}}</p>
+  {%- endif -%}
+</div>

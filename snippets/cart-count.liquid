@@ -1,0 +1,43 @@
+{%- assign id_button = id_button | default: 'MiniCart' -%}
+
+{%- if template.name == 'cart' or settings.enable_mini_cart == false -%}
+  <a
+    is="cart-count"
+    href="{{- routes.cart_url -}}"
+    type="Cart page"
+    class="relative">
+    {%- render 'icon' with 'icon-shopping-bag-header' -%}
+    {%- if cart.item_count > 0 -%}
+      <span id="CartCount" class="absolute pt-px pl-px top-2 -right-2 flex h-[20px] w-[20px] items-center justify-center rounded-full bg-primary text-xs font-bold text-white tracking-xsSpacing">
+        {{- cart.item_count -}}
+      </span>
+    {%- else -%}
+      <span id="CartCount" class="absolute pt-px pl-px top-2 -right-2 hidden h-[20px] w-[20px] items-center justify-center rounded-full bg-primary text-xs font-bold text-white tracking-xsSpacing">
+        {{- cart.item_count -}}
+      </span>
+    {%- endif -%}
+  </a>
+{%- else -%}
+  <button
+    is="cart-count"
+    type="button"
+    class="js-modal-dialog-trigger relative"
+    id="{{- id_button -}}"
+    aria-label="open mini cart">
+    {%- render 'icon' with 'icon-shopping-bag-header' -%}
+    {%- if cart.item_count > 0 -%}
+      <span id="CartCount" class="absolute pt-px pl-px top-2 -right-2 flex h-[20px] w-[20px] items-center justify-center rounded-full bg-primary text-xs font-bold text-white tracking-xsSpacing">
+        {{- cart.item_count -}}
+      </span>
+    {%- else -%}
+      <span id="CartCount" class="absolute pt-px pl-px top-2 -right-2 hidden h-[20px] w-[20px] items-center justify-center rounded-full bg-primary text-xs font-bold text-white tracking-xsSpacing">
+        {{- cart.item_count -}}
+      </span>
+    {%- endif -%}
+  </button>
+{%- endif -%}
+
+{%- capture src_url -%}
+  {{- 'module-cart-count.js' | asset_url -}}
+{%- endcapture -%}
+{%- render 'atom_script', src: src_url, priority: 'important', type: 'defer' -%}

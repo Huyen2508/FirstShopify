@@ -1,0 +1,47 @@
+<div class="border border-t-0 md:border-l-0 border-grey-600 md:[&:nth-child(3n+1)]:border-l lg:px-8 px-5 md:pt-8 pt-5 md:pb-7 pb-5 {% if default_address %}order-first{% endif %}">
+  {%- if type != 'new_address' -%}
+    <div class="md:pl-0 pl-px ml-0.5 md:ml-0 pt-0.5 mt-px md:pt-0 md:mt-0">
+      {%- if title != blank -%}
+        <h3 class="mb-2 text-base font-bold text-grey-900 text-base tracking-xsSpacing pt-px">{{- title -}}</h3>
+      {%- endif -%}
+      <p class="text-base font-normal tracking-xsSpacing text-grey-700">
+        {{ address.first_name }}
+        {{ address.last_name }}
+      </p>
+      {%- unless address.company == blank -%}
+        <p class="text-base font-normal tracking-xsSpacing text-grey-700">{{- address.company -}}</p>
+      {%- endunless -%}
+      {%- unless address.address1 == blank and address.address2 == blank -%}
+        <p class="text-base font-normal tracking-xsSpacing text-grey-700">
+          {{ address.address1 }}
+          {{ address.address2 }}
+        </p>
+      {%- endunless -%}
+      {%- unless address.city == blank and address.province == blank -%}
+        <p class="text-base font-normal tracking-xsSpacing text-grey-700">
+          {{- address.city -}}
+          , {{ address.province_code }}
+          {{ address.zip }}
+        </p>
+      {%- endunless -%}
+      <p class="text-base font-normal tracking-xsSpacing text-grey-700">{{- address.country -}}</p>
+    </div>
+    <div class="mt-2 pb-0.5 md:pl-0 pl-px ml-0.5 md:ml-0">
+      <button
+        class="mr-3 inline-block underline text-base font-normal tracking-xsSpacing text-grey-700 hover:text-primary-hover"
+        onclick="this.closest('account-addresses').toggleForm('{{- address.id -}}')"
+      >
+        {{- 'customer.addresses.edit' | t -}}
+      </button>
+      <form class="inline" method="post" action="/account/addresses/{{- address.id -}}">
+        <input type="hidden" name="_method" value="delete">
+        <button class="underline text-base font-normal tracking-xsSpacing text-grey-700 hover:text-primary-hover inline-block" type="submit">{{- 'customer.addresses.delete' | t -}}</button>
+      </form>
+    </div>
+  {%- else -%}
+    <div class="flex-center h-full flex-col add-address-icon md:mt-2.5 md:mt-0 mt-14 md:pt-0.5 pt-4 md:mb-0 mb-16 md:pb-0 pb-1.5">
+      {% render 'icon' with 'icon-location', class: 'w-8 h-8 text-secondary' %}
+      <button class="mt-2 text-base font-bold text-grey-900 text-base tracking-xsSpacing hover:text-primary-hover hover:underline" onclick="this.closest('account-addresses').toggleForm('new')">{{- 'customer.addresses.add_new' | t -}}</button>
+    </div>
+  {%- endif -%} 
+</div>

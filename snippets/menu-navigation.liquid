@@ -1,0 +1,230 @@
+{%- liquid
+  assign main_menu_linklist = main_menu_linklist | default: null
+  assign blocks = blocks | default: null
+  assign menu_nav_item_class = "inline-flex items-center font-semibold tracking-xsSpacing whitespace-nowrap lg:whitespace-pre-wrap text-grey-900 text-base leading-5 pt-2 pb-6 capitalize relative after:content-[''] after:absolute after:w-[0] after:transition-[width] after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:bg-primary after:h-0.5 [&.hover]:after:w-full after:duration-[400ms]"
+  assign menu_list_class = 'block text-sm text-grey-900 mb-2 link no-underline hover:underline w-fit'
+-%}
+
+<menu-navigation class="block [&.is-active>.header-sticky>.menu-overlay]:opacity-100 md:w-full md:order-6">
+  <div class="header-sticky js-header-sticky top-0 z-30 hidden w-full bg-white md:block">
+    <div class="container">
+      <div class="flex items-center justify-between">
+        <div class="mx-auto text-center">
+          <nav class="md:flex-center js-menu-navigation hidden">
+            {%- for link in main_menu_linklist -%}
+              {%- assign is_simple_menu = false -%}
+              {%- for block in blocks -%}
+                {%- if block.settings.title == link.title and block.settings.simple_menu -%}
+                  {%- assign is_simple_menu = true -%}
+                {%- endif -%}
+              {%- endfor -%}
+              <div class="menu-item hover:menu-item-line px-3.5 wrapper-menu-lv1" data-dropdown>
+                <a href="{% if is_simple_menu == true %} javascript:void(0) {% else %} {{- link.link -}} {% endif %}" class="menu-lv1 {{ menu_nav_item_class }} {% if link.url contains "sale" %} text-red-special {% endif %} relative cursor-default [&.hover>svg]:rotate-180 [&.hover+div]:visible [&.hover+div]:opacity-100">
+                  {{- link.title -}}
+                </a>
+              </div>
+            {%- endfor -%}
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="menu-overlay top-menu-navigation top-full pointer-events-none absolute left-0 h-screen w-full bg-dark-overlayMenu opacity-0 transition-opacity delay-100 duration-[400ms] top-full"></div>
+    <div class="top-menu-navigation top-full max-height-menu-navigation scrollbar-hide js-nav-dropdown absolute left-0 z-[11] w-full overflow-auto bg-white transition-[height] delay-100 duration-[400ms] border-t border-input top-full">
+      {%- for link in main_menu_linklist -%}
+        {%- assign is_simple_content = false -%}
+        {%- for block in blocks -%}
+          {%- if block.settings.title == link.title and block.settings.simple_menu -%}
+            {%- assign is_simple_content = true -%}
+          {%- endif -%}
+          {%- if block.settings.title == link.title and block.settings.simple_menu == true -%}
+            <div class="js-nav-dropdown-item px-4 md:pb-14 hidden w-full [.is-sticky_&]:border-default">
+              <div class="mx-auto md:pt-12 w-full max-w-7xl justify-between flex">
+                <div class="menu-left md:mr-1.5 flex max-w-full w-full justify-between ">
+                  {% comment %} Shop by Category {% endcomment %}
+                  <div class="shop-by-category flex w-full">
+                    {%- if block.settings.featured_navigation != blank -%}
+                      <div class="content w-full md:max-w-xs">
+                        <h3 class="heading-title tracking-lgSpacing text-xxxs font-bold uppercase text-grey-900">{{- 'menu.shop_by_category' | t -}}</h3>
+                        <ul class="mega-menu1">
+                          {%- for link in block.settings.featured_navigation.links -%}
+                            <li class="item">
+                              <a href="{{- link.url -}}" class="block mt-4 md:mt-3 text-base font-normal text-grey-700 hover:underline hover:text-primary-hover">
+                                {{- link.title -}}
+                              </a>
+                            </li>
+                          {%- endfor -%}
+                        </ul>
+                      </div>
+                    {%- endif -%}
+
+                    {%- if block.settings.menu_item_column == 'menu1' -%}
+                      {% assign limitCollection = 4 %}
+                      {% assign gridColumn = 2 %}
+                      {% assign class = 'md:max-w-xs md:pl-1' %}
+                      {% assign classCategory = 'md:ml-3.5' %}
+                    {%- endif -%}
+
+                    {%- if block.settings.menu_item_column == 'menu3' -%}
+                      {% assign limitCollection = 6 %}
+                      {% assign gridColumn = 3 %}
+                      {% assign class = 'md:max-w-482 md:mr-0 lg:mr-28' %}
+                      {% assign classCategory = 'md:ml-5 md:-mt-3' %}
+                    {%- endif -%}
+
+                    {%- if block.settings.featured_navigation_two != blank -%}
+                      {%- if block.settings.menu_item_column == 'menu2' or block.settings.menu_item_column == 'menu3' -%}
+                        <div class="content w-full md:max-w-xs {{classCategory}}">
+                          {%- if block.settings.menu_item_column == 'menu2' -%}
+                            <h3 class="heading-title tracking-lgSpacing text-xxxs font-bold uppercase text-grey-900">{{- 'menu.shop_by_category' | t -}}</h3>
+                          {%- endif -%}
+                          <ul class="mega-menu2">
+                            {%- for link in block.settings.featured_navigation_two.links -%}
+                              <li class="item">
+                                <a href="{{- link.url -}}" class="block mt-4 md:mt-3 text-base font-normal text-grey-700 hover:underline hover:text-primary-hover">{{- link.title -}}</a>
+                              </li>
+                            {%- endfor -%}
+                          </ul>
+                        </div>
+                      {%- endif -%}
+                    {%- endif -%}
+                  </div>
+                  {% comment %} End Shop by category {% endcomment %}
+
+                  {% comment %} Shop by Collection {% endcomment %}
+                  {%- if block.settings.menu_item_column == 'menu1' or block.settings.menu_item_column == 'menu3' -%}
+                    <div class="shop-by-collection {{class}} w-full">
+                      {%- for collection in linklists['shop-by-collection'].links -%}
+                        {%- if collection.title == block.settings.title -%}
+                          {% comment %} check length array collection {% endcomment %}
+                          {% assign array_collection = collection.links | size %}
+                          {% comment %} End check length array collection {% endcomment %}
+                          {%- if array_collection > 0 -%}
+                            <h3 class="heading-title tracking-lgSpacing text-xxxs font-bold uppercase text-grey-900 mb-3 md:mb-4">{{- 'menu.shop_by_collection' | t -}}</h3>
+                          {%- endif -%}
+                        {%- endif -%}
+                      {%- endfor -%}
+                      <div class="content grid col-span-{{gridColumn}} grid-cols-{{gridColumn}} gap-4">
+                        {%- for collection in linklists['shop-by-collection'].links -%}
+                          {%- if collection.title == block.settings.title -%}
+                            {% comment %} check length array collection {% endcomment %}
+                            {% assign array_collection = collection.links | size %}
+                            {% comment %} End check length array collection {% endcomment %}
+                            {%- if array_collection > 0 -%}
+                              {%- for child_link in collection.links limit: limitCollection -%}
+                                {% if child_link.title contains "image:" %}
+                                  {% assign files = 'files/' %}
+                                  {% assign splitChildLink = child_link.title | split: 'image:' %}
+                                  {% assign typeImg = splitChildLink.last %}
+                                  {% assign linkImg = files | append: typeImg %}
+                                  {% for block in blocks %}
+                                    {% if block.type == 'shop_by_collection' %}
+                                      {% if block.settings.collectiom_image == linkImg %}
+                                        <div class="item">
+                                          <div class="img overflow-hidden rounded-sm">
+                                            <a href="{{- child_link.link -}}" class="overflow-hidden rounded-sm">
+                                              <img
+                                                src="{{ block.settings.collectiom_image | img_url: 'master'}}"
+                                                class="w-full h-full transition-all duration-400 hover:scale-105"
+                                                loading="lazy">
+                                            </a>
+                                          </div>
+                                          <div class="title mt-3">
+                                            <a href="{{- child_link.link -}}" class="text-base font-normal text-grey-700 hover:underline">{{- block.settings.collection_item_title -}}</a>
+                                          </div>
+                                        </div>
+                                      {% endif %}
+                                    {% endif %}
+                                  {% endfor %}
+                                {% endif %}
+                              {%- endfor -%}
+                            {%- endif -%}
+                          {%- endif -%}
+                        {%- endfor -%}
+                      </div>
+                    </div>
+                  {%- endif -%}
+                  {% comment %} End Shop by Collection {% endcomment %}
+                </div>
+
+                {%- if block.settings.menu_item_column == 'menu1' or block.settings.menu_item_column == 'menu2' -%}
+                  <div class="menu-right w-full lg:max-w-482 md:max-w-sm md:ml-12 lg:ml-36 md:pl-1 ">
+                    {% comment %} Menu Banner {% endcomment %}
+                    <div class="banner-menu flex justify-end">
+                      <div class="banner-menu__left grid md:gap-y-4">
+                        {%- for banner in linklists['banner-menu'].links -%}
+                          {%- if banner.title == block.settings.title -%}
+                            {% assign beatles = banner.links | slice: 0, 2 %}
+                            {%- for child_link in beatles limit: 3 -%}
+                              {% if child_link.title contains "image:" %}
+                                {% assign files = 'files/' %}
+                                {% assign splitChildLink = child_link.title | split: 'image:' %}
+                                {% assign typeImg = splitChildLink.last %}
+                                {% assign linkImg = files | append: typeImg %}
+                                {% for block in blocks %}
+                                  {% if block.type == 'menu_banner' %}
+                                    {% if block.settings.banner_image == linkImg %}
+                                      <a href="{{- child_link.link -}}" class="overflow-hidden rounded max-w-202">
+                                        <img
+                                          src="{{ block.settings.banner_image | img_url: 'master'}}"
+                                          alt="{{- block.settings.banner_alt -}}"
+                                          class="w-full h-full transition-all duration-400 hover:scale-105"
+                                          loading="lazy">
+                                      </a>
+                                    {% endif %}
+                                  {% endif %}
+                                {% endfor %}
+                              {% endif %}
+                            {%- endfor -%}
+                          {%- endif -%}
+                        {%- endfor -%}
+                      </div>
+                      <div class="banner-menu__right hidden md:block md:w-64 md:ml-4 overflow-hidden rounded">
+                        {%- for banner in linklists['banner-menu'].links -%}
+                          {%- if banner.title == block.settings.title -%}
+                            {% assign beatles = banner.links | slice: 2 %}
+                            {%- for child_link in beatles limit: 3 -%}
+                              {% if child_link.title contains "image:" %}
+                                {% assign files = 'files/' %}
+                                {% assign splitChildLink = child_link.title | split: 'image:' %}
+                                {% assign typeImg = splitChildLink.last %}
+                                {% assign linkImg = files | append: typeImg %}
+                                {% for block in blocks %}
+                                  {% if block.type == 'menu_banner' %}
+                                    {% if block.settings.banner_image == linkImg %}
+                                      <a href="{{- child_link.link -}}" class="overflow-hidden">
+                                        <img
+                                          src="{{ block.settings.banner_image | img_url: 'master'}}"
+                                          alt="{{- block.settings.banner_alt -}}"
+                                          class="rounded w-full h-full transition-all duration-400 hover:scale-105"
+                                          loading="lazy">
+                                      </a>
+                                    {% endif %}
+                                  {% endif %}
+                                {% endfor %}
+                              {% endif %}
+                            {%- endfor -%}
+                          {%- endif -%}
+                        {%- endfor -%}
+                      </div>
+                    </div>
+                    {% comment %} End Menu Banner {% endcomment %}
+                  </div>
+                {%- endif -%}
+              </div>
+            </div>
+          {% elsif block.settings.title == link.title and block.settings.simple_menu == false %}
+            <div class="js-nav-dropdown-item px-4 md:pb-14 hidden w-full [.is-sticky_&]:border-default"></div>
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</menu-navigation>
+
+{%- unless ignore_script == true -%}
+  {%- capture src_url -%}
+    {{- 'module-menu-navigation.js' | asset_url -}}
+  {%- endcapture -%}
+
+  {%- render 'atom_script', src: src_url, priority: 'normal', type: 'defer' -%}
+{%- endunless -%}

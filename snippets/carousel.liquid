@@ -1,0 +1,81 @@
+{%- liquid
+  assign has_container = has_container | default: false
+  assign custom_dots = custom_dots | default: false
+  assign class_icon = class_icon | append: ' carousel-icon'
+  assign class_wrap = class_wrap | default: ''
+  assign class_inner = class_inner | default: ''
+  assign class_main = class_main | default: ''
+  assign class_dots = class_dots | default: 'flex items-center justify-center '
+  assign class_carousel = class_carousel
+  assign class_buttons = class_buttons
+  assign class_button = class_button
+  assign circle_button = circle_button | default: false
+  assign class_track = class_track
+-%}
+
+<carousel-main {% if class_carousel != blank %}class="{{ class_carousel }}"{% endif %}>
+  <div class="carousel-wrap relative {{ class_wrap }}">
+    <div class="carousel-inner {{ class_inner }}">
+      <div class="carousel{% if has_container == false %} {% endif %} {{ class_main }}">
+        <div class="carousel-track relative flex scroll-smooth {{ class }} {{ class_track }}">
+          {{ content }}
+        </div>
+        {%- if custom_dots -%}
+          <div class="carousel-dots-custom {{ class_custom_dots }} {{ class_buttons }}">
+            <button
+              class="carousel-button carousel-button-prev h-4 w-4 {{ class_custom_button }} mr-5"
+              aria-label="back"
+              data-direction="prev"
+              type="button">
+              {%- render 'icon' with 'icon-chevron-left-carousel', class: class_icon -%}
+            </button>
+            <div class="carousel-dots {{ class_dots }} mx-0.5"></div>
+            <button
+              class="carousel-button carousel-button-next h-4 w-4 {{ class_custom_button }} ml-5"
+              aria-label="forward"
+              data-direction="next"
+              type="button">
+              {%- render 'icon' with 'icon-chevron-right-carousel', class: class_icon -%}
+            </button>
+          </div>
+        {%- elsif circle_button -%}
+          <div class="carousel-buttons hidden {{ class_buttons }}">
+            <button
+              class="carousel-button carousel-button-prev mr-3 rotate-180	{{ class_button }}"
+              aria-label="back"
+              data-direction="prev"
+              type="button">
+              {%- render 'icon' with 'icon-circle-right', class: class_icon -%}
+            </button>
+            <div class="carousel-dots {{ class_dots }} mx-0.5"></div>
+            <button
+              class="carousel-button carousel-button-next ml-3 {{ class_button }}"
+              aria-label="forward"
+              data-direction="next"
+              type="button">
+              {%- render 'icon' with 'icon-circle-right', class: class_icon -%}
+            </button>
+          </div>
+        {%- else -%}
+          <div class="carousel-buttons hidden {{ class_buttons }}">
+            <button
+              class="carousel-button carousel-button-prev mr-5 {{ class_button }}"
+              aria-label="back"
+              data-direction="prev"
+              type="button">
+              {%- render 'icon' with 'icon-chevron-left-carousel', class: class_icon -%}
+            </button>
+            <div class="carousel-dots {{ class_dots }} mx-0.5"></div>
+            <button
+              class="carousel-button carousel-button-next ml-5 {{ class_button }}"
+              aria-label="forward"
+              data-direction="next"
+              type="button">
+              {%- render 'icon' with 'icon-chevron-right-carousel', class: class_icon -%}
+            </button>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</carousel-main>

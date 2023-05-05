@@ -1,0 +1,136 @@
+{{- 'section-shop-the-look.css' | asset_url | stylesheet_tag -}}
+
+{% liquid
+  if section.settings.position == "1"
+    assign type_left = true
+  else
+    assign type_left = false
+  endif
+%}
+
+{%- capture list_products -%}
+  {%- for block in section.blocks -%}
+    <div class="item carousel-item snap-start shrink-0 w-full">
+      {% render 'card-product' 
+       , card_product: block.settings.product,
+       media_aspect_ratio: block.settings.image_ratio,
+       show_secondary_image: block.settings.show_secondary_image,
+       show_vendor: block.settings.show_vendor,
+       show_rating: block.settings.show_rating,
+       lazy_load: lazy_load %}
+    </div>
+  {%- endfor -%}
+{%- endcapture -%}
+
+<div class="shop-the-look-wrapper">
+  <div class="mb-8 lg:mb-20 flex flex-col md:grid md:grid-cols-2">
+    <div class="py-8 md:py-14 px-4 lg:px-20 2xl:px-32 flex flex-col justify-center {% if type_left %} order-1 {% endif %}" style="background-color: {{ section.settings.bg_color }};">
+      {%- if section.settings.title -%}
+        <div class="banner-title mb-6 text-2xl lg:text-3xl font-bold tracking-mdSpacing text-center" style="color: {{ section.settings.text_color }};">
+          {{ section.settings.title }}
+        </div>
+      {%- endif -%}
+
+      {% liquid
+        assign class_for_buttons =' -bottom-16 '
+
+        if section.blocks.size < 2
+          assign class_for_buttons = class_for_buttons | append: ' !hidden '
+        endif
+      %}
+
+      <div class="shop-the-look-products mx-0.5 px-14">
+        <div class="p-5 bg-white mb-11">
+          {%- render 'carousel', class_track: '', class_button: '!flex', class_buttons: class_for_buttons, class_wrap: '', class_main: '', class_inner: '', class: 'carousel-enable', class_dots: '', content: list_products -%}
+        </div>
+      </div>
+    </div>
+    <div class="shop-the-look-image overflow-hidden">
+      <div class="bg-center hover:scale-105 transition-all duration-500 bg-cover bg-no-repeat h-full pt-[111.11%]" style="background-image: url('{{ section.settings.image | img_url: 'master'}}')"></div>
+    </div>
+  </div>
+</div>
+
+{%- capture src_url -%}
+  {{- 'section-shop-the-look.js' | asset_url -}}
+{%- endcapture -%}
+{%- render 'atom_script', src: src_url, priority: 'normal', type: 'defer' -%}
+
+{% schema %}
+  {
+    "name": "Shop The Look",
+    "max_blocks": 4,
+    "settings": [
+      {
+        "type": "select",
+        "id": "position",
+        "label": "Position",
+        "options": [
+          {
+            "value": "1",
+            "label": "Image Left"
+          }, {
+            "value": "2",
+            "label": "Image Right"
+          }
+        ],
+        "default": "1"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color",
+        "default": "#090F24"
+      },
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background Color",
+        "default": "#F2E8E0"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      }, {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "product",
+        "name": "Product",
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Product"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Shop The Look",
+        "settings": {},
+        "blocks": [
+          {
+            "type": "product",
+            "settings": {}
+          }, {
+            "type": "product",
+            "settings": {}
+          }, {
+            "type": "product",
+            "settings": {}
+          }, {
+            "type": "product",
+            "settings": {}
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

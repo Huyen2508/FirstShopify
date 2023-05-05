@@ -1,0 +1,28 @@
+{%- if blocks.size > 0 -%}
+  <div class="sub-menu-footer hidden md:block">
+    {%- for block in blocks -%}
+      {%- if block.settings.footer_icon == blank -%}
+        <div class="sub-menu w-3/12 float-left">
+          {%- if block.settings.title != blank -%}
+            <h6 class="text-base text-grey-900 font-bold tracking-xsSpacing mb-4">{{- block.settings.title -}}</h6>
+          {%- endif -%}
+          <ul class="w-full">
+            {%- for link in linklists[block.settings.footer_menu].links -%}
+              <li class="mb-4 w-fit">
+                <a
+                  href="{{- link.url -}}"
+                  class="text-base text-grey-700 font-normal tracking-xsSpacing hover:underline hover:text-primary-hover"
+                  title="{{- link.title -}}"
+                  target="_self"
+                  rel="noopener"
+                >
+                  {{- link.title -}}
+                </a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+      {%- endif -%}
+    {% endfor %}
+  </div>
+{%- endif -%}

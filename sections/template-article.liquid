@@ -1,0 +1,56 @@
+{{- 'section-blog-article.css' | asset_url | stylesheet_tag -}}
+{%- liquid
+  assign description = article.metafields.article_top.description | default: article.content
+  assign image = article.metafields.article_top.image | first
+  assign image_mobile = article.metafields.article_top.image_mobile | first
+-%}
+
+<div class="mx-auto mt-6 md:mt-20 px-4 md:px-0">
+  <div class="block md:flex heading jusify-start md:justify-between mx-auto lg:max-w-mdd items-center">
+    <a href="{{ blog.url }}" class="article-template__link link animate-arrow no-underline inline-block">
+      <span class="inline-block pl-1">{%- render 'icon' with 'icon-back' -%}</span>
+      <div class="pl-2 inline-block text-base underline hover:text-secondary-hover">Back to
+        <span class="lowercase">{{ blog.title }}</span>
+      </div>
+    </a>
+    <p class="heading-right mt-2">
+      <span class="text-base mr-0.5 md:mr-0">
+        {{ article.created_at | date: "%B %d, %Y" }}
+      </span>
+      <span class="ml-6 text-pink-blog ">{{ blog.title }}</span>
+    </p>
+  </div>
+  <div class="mx-auto max-w-mdd">
+    <h2 class="h2 mt-4 md:mt-6">{{- article.title -}}</h2>
+  </div>
+  <div class="blog-post mx-auto mt-4 max-w-mdd md:mt-6">
+    <div class="wysiwyg wysiwyg--article-description">
+      {{- description -}}
+    </div>
+    <div class="social flex justify-center md:justify-start items-center h-6 mb-6 md:mb-20">
+      {%- if settings.social_facebook_link != blank -%}
+        <a href="{{- settings.social_facebook_link -}}" class="article-template__link link animate-arrow no-underline inline-block mr-4 ml-4 md:ml-0">
+          <span class="inline-block">{%- render 'icon' with 'icon-facebook-blog' -%}</span>
+        </a>
+      {%- endif -%}
+      {%- if settings.social_twitter_link != blank -%}
+        <a href="{{- settings.social_twitter_link -}}" class="article-template__link link animate-arrow no-underline inline-block mx-4">
+          <span class="inline-block">{%- render 'icon' with 'icon-twitter-blog' -%}</span>
+        </a>
+      {%- endif -%}
+      {%- if settings.social_pinterest_link != blank -%}
+        <a href="{{- settings.social_pinterest_link -}}" class="article-template__link link animate-arrow no-underline inline-block mx-4">
+          <span class="inline-block">{%- render 'icon' with 'icon-pinterest-blog' -%}</span>
+        </a>
+      {%- endif -%}
+      <a href="{{- settings.social_email_link -}}" class="article-template__link link animate-arrow no-underline inline-block mx-4">
+        <span class="inline-block">{%- render 'icon' with 'icon-email-blog' -%}</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+{%- capture src_url -%}
+  {{- 'section-blog-article.js' | asset_url -}}
+{%- endcapture -%}
+{%- render 'atom_script', src: src_url, priority: 'normal', type: 'defer' -%}

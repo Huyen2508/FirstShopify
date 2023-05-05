@@ -1,0 +1,52 @@
+{%- if settings.social_enable -%}
+  <div class="text-center">
+    {%- if settings.social_facebook_link != blank -%}
+      <a
+        href="{{- settings.social_facebook_link -}}"
+        class="text-primary face-icon inline-block"
+        target="_blank"
+        title="{{- 'general.social.links.facebook' | t -}}"
+      >
+        {%- render 'icon' with 'icon-facebook', class: 'w-6 h-6' -%}
+        <span class="sr-only">{{- 'general.social.links.facebook' | t -}}</span>
+      </a>
+    {%- endif -%}
+
+    {%- if settings.social_instagram_link != blank -%}
+      <a
+        href="{{ settings.social_instagram_link }}"
+        class="text-primary inline-block ml-6 mr-3"
+        target="_blank"
+        title="{{- 'general.social.links.instagram' | t -}}"
+      >
+        {%- render 'icon' with 'icon-instagram', class: 'w-6 h-6' -%}
+        <span class="sr-only">{{- 'general.social.links.instagram' | t -}}</span>
+      </a>
+    {%- endif -%}
+
+    {%- if settings.social_twitter_link != blank -%}
+      <a
+        href="{{ settings.social_twitter_link }}"
+        class="text-primary inline-block ml-3 mr-6"
+        target="_blank"
+        title="{{- 'general.social.links.twitter' | t -}}"
+      >
+        {%- render 'icon' with 'icon-twitter', class: 'w-6 h-6' -%}
+        <span class="sr-only">{{- 'general.social.links.twitter' | t -}}</span>
+      </a>
+    {%- endif -%}
+
+    {%- if settings.social_pinterest_link != blank -%}
+      <a
+        href="{{ settings.social_pinterest_link }}"
+        class="text-primary inline-block" 
+        target="_blank"
+        title="{{- 'general.social.links.pinterest' | t -}}"
+      >
+        {%- render 'icon' with 'pinterest', class: 'w-6 h-6' -%}
+        <span class="sr-only">{{- 'general.social.links.pinterest' | t -}}</span>
+      </a>
+    {%- endif -%}
+
+  </div>
+{%- endif -%}

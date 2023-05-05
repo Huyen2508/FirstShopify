@@ -1,0 +1,4 @@
+{{ 'section-template-about-us.css' | asset_url | stylesheet_tag }}
+
+{% capture src_url %}{{ 'section-template-about-us.js' | asset_url }}{% endcapture %}
+{% render 'atom_script', src: src_url, priority: 'normal', type: "defer" %}

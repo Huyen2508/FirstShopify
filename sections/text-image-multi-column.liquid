@@ -1,0 +1,172 @@
+{% liquid
+  assign blocks = section.blocks
+  case blocks.size
+    when 2
+      assign class_grid = 'md:grid-cols-2'
+      assign image_wrapper_class = 'rounded-sm md:rounded-none'
+      assign image_class = 'pt-[121%]'
+      assign title_class = 'mb-6'
+    when 3
+      assign class_grid = 'md:grid-cols-2 lg:grid-cols-3'
+      assign image_wrapper_class = 'rounded-sm'
+      assign image_class = 'pt-[121%] md:pt-[126.62%]'
+      assign title_class = 'mb-6 lg:mb-8'
+  endcase
+
+  assign carousel_item_class = ' item carousel-item snap-start shrink-0 w-full '
+  assign enable_casrousel = section.settings.enable_casrousel
+%}
+
+<div class="multi-cols-text-image px-4 2xl:px-0 max-w-7xl mx-auto">
+  <div class="pb-11 mb-8 lg:pb-20 md:mb-0">
+    <div class="multi-cols-text-image-heading {{ title_class }}">
+      {%- if section.settings.heading != blank -%}
+        <p class="text-2xl md:text-3xl text-grey-900 tracking-mdSpacing font-bold text-center">{{- section.settings.heading -}}</p>
+      {%- endif -%}
+      {%- if section.settings.content != blank -%}
+        <div class="mt-4 mb-8 md:max-w-lg1 md:px-1 text-center mx-auto">
+          {{- section.settings.content -}}
+        </div>
+      {%- endif -%}
+    </div>
+    {%- capture carousel_contents -%}
+      {% for block in blocks %}
+        {% liquid
+        assign url = block.settings.cta_url | default: nil
+        assign image = block.settings.image
+        assign class = 'w-full' | prepend: 'overflow-hidden '
+        assign title_class = 'text-xl md:text-2xl font-bold mb-6 md:mb-2 tracking-xsSpacing md:tracking-mdSpacing text-grey-900'
+        assign sub_title_class = 'text-xs leading-4 font-semibold mb-2 uppercase tracking-lgSpacing text-grey-900'
+        assign description_class = 'text-base tracking-xsSpacing font-normal mb-8 hidden md:block'
+        assign content_class = 'flex flex-col grow text-center md:text-left' | default: nil
+        assign title = block.settings.title | default: nil
+        assign sub_title = block.settings.sub_title | default: nil
+        assign description = block.settings.description | default: nil
+        assign image_wrapper_class = image_wrapper_class | default: 'aspect-[348/306] lg:aspect-[416/440]' | prepend: 'relative w-full overflow-hidden '
+        assign cta_text = block.settings.cta_text | default: nil
+        assign cta_class = 'uppercase text-sm pb-1.5 border-b border-grey-900 text-grey-900 hover:text-primary-hover tracking-lgSpacing font-bold inline-block w-max mx-auto md:mx-0'
+        assign mobile_width = 440
+        assign object_fit = 'fill'
+      %}
+        {%- if url != blank -%}
+          <a
+            href="{{ url }}"
+            class="{{ class }} {{ carousel_item_class  }}"
+            title="{{- title -}}">
+          {%- else -%}
+            <div class="{{ class }} {{ carousel_item_class  }}">
+            {%- endif -%}
+            <div class=" overflow-hidden mb-6 md:mb-8 {{ image_wrapper_class }}">
+              <div class="bg-center hover:scale-105 transition-all duration-500 bg-cover bg-no-repeat h-full {{ image_class }}" style="background-image: url('{{ image | img_url: 'master'}}')"></div>
+            </div>
+            <div class="{{ content_class }}">
+              {%- if sub_title != blank -%}
+                <h4 class="{{ sub_title_class }}">{{- sub_title -}}</h4>
+              {%- endif -%}
+              {%- if title != blank -%}
+                <h3 class="{{ title_class }}">{{- title -}}</h3>
+              {%- endif -%}
+              {%- if description != blank -%}
+                <p class="{{ description_class }}">{{- description -}}</p>
+              {%- endif -%}
+              {%- if cta_text != blank -%}
+                <p class="{{ cta_class }}">{{- cta_text -}}</p>
+              {%- endif -%}
+            </div>
+            {%- if url != blank -%}
+            </a>
+        {%- else -%}
+          </div>
+        {%- endif -%}
+
+      {% endfor %}
+    {%- endcapture -%}
+
+    <div class="relative grid-cols-1 {{ class_grid }} gap-x-6 gap-y-6 {% if enable_casrousel and blocks.size != 1 %} hidden md:grid {% else %} grid {% endif %}">
+      {{ carousel_contents }}
+    </div>
+
+    {%- if enable_casrousel and blocks.size != 1 -%}
+      <div class="md:hidden">
+        {%- render 'carousel', class_buttons: '-bottom-12', class_wrap: '', class_main: '', class_inner: '', class: 'carousel-enable', class_dots: '', content: carousel_contents -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Multi Cols Text And Image",
+    "max_blocks": 3,
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      }, {
+        "type": "text",
+        "id": "content",
+        "label": "Content"
+      }, {
+        "type": "checkbox",
+        "id": "enable_casrousel",
+        "label": "Enable Mobile Carousel",
+        "default": true
+      }
+    ],
+    "blocks": [
+      {
+        "type": "item",
+        "name": "Item",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "sub_title",
+            "label": "Sub-Title",
+            "default": "Sub Title"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Title"
+          },
+          {
+            "type": "textarea",
+            "id": "description",
+            "label": "Description",
+            "default": "Description"
+          }, {
+            "type": "text",
+            "id": "cta_text",
+            "label": "Cta text"
+          }, {
+            "type": "url",
+            "id": "cta_url",
+            "label": "Cta url"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Multi Cols Text And Image",
+        "category": "Card Grid",
+        "blocks": [
+          {
+            "type": "item"
+          }, {
+            "type": "item"
+          }, {
+            "type": "item"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

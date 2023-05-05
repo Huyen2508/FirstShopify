@@ -1,0 +1,122 @@
+{{- 'section-banner-text-image-video.css' | asset_url | stylesheet_tag -}}
+
+<div class="banner-text-image-video-wrapper pb-8 lg:pb-20">
+  <div class="banner-text-image-video" style="background-color: {{ section.settings.bg_color }};">
+    {%- if section.settings.banner_type == "1" -%}
+      <div class="type-text text-center py-8 lg:py-20 px-6 font-bold">
+        <div class="text-3xl md:text-5xl42 tracking-mdSpacing mb-4 lg:mb-5 lg:pb-0.5 lg:mt-px" style="color: {{ section.settings.text_color }};">
+          {{ section.settings.title }}
+        </div>
+        <div class="banner-message text-base md:text-lg tracking-xsSpacing max-w-lg mx-auto mb-6 lg:mb-10" style="color: {{ section.settings.text_color }};">
+          {{ section.settings.message }}
+        </div>
+        <div class="banner-link inline-block w-max lg:mb-px">
+          <a
+            class="pb-1.5 border-b border-grey-900 block text-sm tracking-lgSpacing uppercase"
+            href="{{ section.settings.cta_url }}"
+            style="border-color: {{ section.settings.text_color }}; color: {{ section.settings.text_color }};">
+            {{ section.settings.cta_text }}
+          </a>
+        </div>
+      </div>
+    {%- elsif section.settings.banner_type == "2" -%}
+      <div class="type-images">        
+        {% if section.settings.cta_url != blank %}
+          <a class="" href="{{ section.settings.cta_url }}">
+            <img class="w-full hidden md:block" src="{{ section.settings.image_desktop | img_url: 'master'}}">
+            <img class="w-full md:hidden" src="{{ section.settings.image_mobile | img_url: 'master'}}">
+          </a>
+        {% else %}
+          <img class="w-full hidden md:block" src="{{ section.settings.image_desktop | img_url: 'master'}}">
+          <img class="w-full md:hidden" src="{{ section.settings.image_mobile | img_url: 'master'}}">
+        {% endif %}
+      </div>
+    {%- elsif section.settings.banner_type == "3" -%}
+      <div class="type-video overflow-hidden relative" style="padding-top: {{ section.settings.video_ratio }}%;">
+        {{ section.settings.video }}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{%- capture src_url -%}
+  {{- 'section-banner-text-image-video.js' | asset_url -}}
+{%- endcapture -%}
+{%- render 'atom_script', src: src_url, priority: 'normal', type: 'defer' -%}
+
+{% schema %}
+  {
+    "name": "Banner Text|Image|Video",
+    "settings": [
+      {
+        "type": "select",
+        "id": "banner_type",
+        "label": "Banner Type",
+        "options": [
+          {
+            "value": "1",
+            "label": "Text"
+          }, {
+            "value": "2",
+            "label": "Image"
+          }, {
+            "value": "3",
+            "label": "Video"
+          }
+        ],
+        "default": "1"
+      },
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background color",
+        "default": "#FFDFEE"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color",
+        "default": "#090F24"
+      }, {
+        "type": "richtext",
+        "id": "message",
+        "label": "Message"
+      }, {
+        "type": "text",
+        "id": "cta_text",
+        "label": "Cta text"
+      }, {
+        "type": "url",
+        "id": "cta_url",
+        "label": "Cta url"
+      }, {
+        "type": "image_picker",
+        "id": "image_desktop",
+        "label": "Image desktop"
+      }, {
+        "type": "image_picker",
+        "id": "image_mobile",
+        "label": "Image mobile"
+      }, {
+        "type": "text",
+        "id": "video",
+        "label": "Embed Video Code"
+      }, {
+        "type": "text",
+        "id": "video_ratio",
+        "label": "Video aspect ratio: Height divided by Width (%)",
+        "default": "56.25"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Banner Text|Image|Video"
+      }
+    ]
+  }
+{% endschema %}

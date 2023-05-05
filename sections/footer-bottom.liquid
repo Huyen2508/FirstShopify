@@ -1,0 +1,89 @@
+{% liquid
+  assign blocks = section.blocks
+  assign copyright = section.settings.copyright
+%}
+
+<div class="footer-bottom inline-block float-left w-full md:bg-yellow-bg2">
+  <div class="mx-auto my-0 md:px-4 lg:px-20">
+    <div class="md:block flex flex-wrap">
+      {%- if copyright != blank or text_link != blank -%}
+        <div class="w-full md:w-2/6 float-left inline-block md:pt-8 pt-3.5 md:pb-6 pb-2.5 order-3 bg-yellow-bg2">
+          <p class="md:text-left text-center lg:text-base text-xs text-grey-900 font-normal tracking-xsSpacing">{{- copyright -}}</p>
+        </div>
+      {%- endif -%}
+      <div class="w-full md:w-2/6 float-left inline-block md:pt-8 pt-5 md:pb-6 pb-0 order-1 md:bg-yellow-bg2 bg-yellow-bg1">
+        {%- render 'social-media', class: 'justify-center' -%}
+      </div>
+      {%- if blocks.size > 0 -%}
+        <div class="w-full md:w-2/6 float-left inline-block md:pt-8 pt-4 pb-6 text-center order-2 md:bg-yellow-bg2 bg-yellow-bg1">
+          <div class="inline-block md:float-right md:mt-0 mt-0.5">
+            {%- for block in blocks -%}
+              {%- if block.settings.icon_link != blank -%}
+                <div class="rounded w-9 h-6 inline-block ml-2 pl-px first:ml-0" title="Payment icon">
+              {%- else -%}
+                <div class="rounded w-9 h-6">
+              {%- endif -%}
+                {%- render 'image',
+                  image: block.settings.image,
+                  class: 'w-full h-full',
+                  object_fit: 'contain'
+                -%}
+              {%- if block.settings.icon_link == blank -%}
+                </div>
+              {%- else -%}
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+         
+        </div>
+      {%- else -%}
+        {%- assign enabled_payment_types = 'master,visa,american_express,paypal,apple_pay,afterpay' | remove: ' ' | split: ',' -%}
+        <div class="flex gap-x-3 gap-y-2 mb-6 md:mb-0 md:ml-auto">
+          {%- for type in enabled_payment_types -%}
+            <div class="rounded w-9 h-6">
+              <img
+                src="{{- type | payment_type_img_url -}}"
+                alt="{{- type -}}"
+                loading="lazy"
+                class="w-full h-full object-contain"
+                width="35"
+                height="24"
+              >
+            </div>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Footer bottom",
+  "settings": [
+    {
+      "type": "text",
+      "id": "copyright",
+      "label": "Copyright"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Icon",
+      "type": "icon",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "icon_link",
+          "label": "Icon link"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

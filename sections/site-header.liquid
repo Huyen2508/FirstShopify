@@ -1,0 +1,254 @@
+{%- if section.settings.menu.links == blank -%}
+  {%- assign main_menu_linklist = 'main-menu' -%}
+{%- else -%}
+  {%- assign main_menu_linklist = section.settings.menu.links -%}
+{%- endif -%}
+
+<site-header id="site-header" class="relative z-30">
+  <div class="header-wrapper-full box-border relative z-30 bg-white text-grey-900 container mt-0.5 px-4 pt-4 pb-4 lg:pt-5 md:px-10 1.5xl:px-20 md:pb-0 border-b border-input">
+    <div class="flex items-center justify-between flex-wrap">
+      <div class="site-header-left-mobile md:hidden">
+        <button
+          class="js-menu-trigger flex h-6 w-6 flex-col focus:outline-none"
+          type="button"
+          aria-label="open menu">
+          <span class="hamburger">{%- render 'icon' with 'hamburger-header' -%}</span>
+          <span class="close hidden">{%- render 'icon' with 'close-header' -%}</span>
+        </button>
+
+        <button
+          class="js-menu-trigger hidden h-6 w-6 flex-col focus:outline-none [&.is-active]:flex"
+          type="button"
+          aria-label="open menu"></button>
+      </div>
+      <div class="location pl-4 md:order-3 md:pl-0 md:pr-4 md:mx-0.5">
+        {%- if section.settings.location_url -%}
+          <a href="{{- section.settings.location_url -}}" title="Location">
+            {%- render 'icon' with 'icon-location-header' -%}
+          </a>
+        {%- endif -%}
+      </div>
+      <div class="text-center grow md:grow-0 md:order-1 logo-wrapper">
+        {%- render 'logo', class: 'w-auto h-6 md:h-7' -%}
+      </div>
+      <div class="text-right md:order-4">
+        <div class="flex items-start justify-end gap-3 md:gap-6">
+          <div class="text-right md:pl-1">
+            <div class="flex items-center justify-end gap-4 md:gap-5.5">
+              {%- if shop.customer_accounts_enabled -%}
+                <a
+                  href="{{- routes.account_url -}}"
+                  title="{{- 'customer.account.title' | t -}}"
+                  class="relative hidden md:block">
+                  {%- render 'icon' with 'icon-person-header' -%}
+                </a>
+              {%- endif -%}
+              {%- if settings.enable_wishlist -%}
+                {%- render 'wishlist-count', class: '' -%}
+              {%- endif -%}
+              {%- render 'cart-count', id_button: 'MiniCart' -%}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-devider pt-4 mt-0.5 md:mt-px w-full md:pt-5 md:pb-0 md:order-5"></div>
+      <div class="js-search-bar w-full md:w-auto md:order-2 md:grow md:px-5 lg:px-20 xl:px-40 xl:ml-10 xl:mr-4">
+        {%- render 'search-bar' -%}
+      </div>
+      {%- render 'menu-navigation', settings: section.settings, main_menu_linklist: main_menu_linklist, blocks: section.blocks -%}
+    </div>
+  </div>
+</site-header>
+
+{%- render 'menu-slideout' 
+  , settings: section.settings,
+  blocks: section.blocks,
+  menu_handle: section.settings.menu,
+  menu_second_handle: section.settings.menu_second -%}
+
+{%- capture src_url -%}
+  {{- 'section-site-header.js' | asset_url -}}
+{%- endcapture -%}
+
+{%- render 'atom_script', src: src_url, priority: 'normal', type: 'defer' -%}
+
+{% schema %}
+  {
+    "name": "Site Header",
+    "class": "shopify-section-site-header",
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "menu",
+        "label": "Header Navigation Menu",
+        "default": "main-menu"
+      },
+      {
+        "type": "link_list",
+        "id": "menu_second",
+        "label": "Header Navigation Menu Second"
+      },
+      {
+        "type": "url",
+        "id": "location_url",
+        "label": "URL of location"
+      },
+      {
+        "type": "header",
+        "content": "Banner (Mobile Only)"
+      }, {
+        "type": "color",
+        "id": "banner_background",
+        "label": "Background Colour",
+        "default": "#D9D7B2"
+      }, {
+        "type": "image_picker",
+        "id": "banner_image",
+        "label": "Image"
+      }, {
+        "type": "text",
+        "id": "banner_title",
+        "label": "Title"
+      }, {
+        "type": "text",
+        "id": "banner_cta",
+        "label": "CTA Text"
+      }, {
+        "type": "url",
+        "id": "banner_url",
+        "label": "CTA URL"
+      }, {
+        "type": "color",
+        "id": "banner_text_color",
+        "label": "Text Colour",
+        "default": "#050606"
+      }, {
+        "type": "header",
+        "content": "Call to action"
+      }, {
+        "type": "image_picker",
+        "id": "cta_image_1",
+        "label": "CTA Image 1"
+      }, {
+        "type": "text",
+        "id": "cta_text_1",
+        "label": "CTA Text 1"
+      }, {
+        "type": "url",
+        "id": "cta_url_1",
+        "label": "CTA URL 1"
+      }, {
+        "type": "image_picker",
+        "id": "cta_image_2",
+        "label": "CTA Image 2"
+      }, {
+        "type": "text",
+        "id": "cta_text_2",
+        "label": "CTA Text 2"
+      }, {
+        "type": "url",
+        "id": "cta_url_2",
+        "label": "CTA URL 2"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "mega_menu_item",
+        "name": "Mega menu item",
+        "settings": [
+          {
+            "type": "checkbox",
+            "label": "Show Mega Menu",
+            "id": "simple_menu"
+          },
+          {
+            "type": "text",
+            "label": "Menu Title",
+            "id": "title"
+          },
+          {
+            "type": "select",
+            "id": "menu_item_column",
+            "options": [
+              {
+                "value": "menu1",
+                "label": "Menu 1 Column"
+              }, {
+                "value": "menu2",
+                "label": "Menu 2 Column"
+              }, {
+                "value": "menu3",
+                "label": "Menu 6 Block"
+              }
+            ],
+            "default": "menu1",
+            "label": "Select Type Menu"
+          },
+          {
+            "type": "link_list",
+            "id": "featured_navigation",
+            "label": "Featured Navigation"
+          }, {
+            "type": "link_list",
+            "id": "featured_navigation_two",
+            "label": "Featured Navigation 2"
+          }
+        ]
+      }, {
+        "type": "shop_by_collection",
+        "name": "Shop by Collection",
+        "settings": [
+          {
+            "type": "text",
+            "label": "Heading Title",
+            "id": "collection_item_title"
+          }, {
+            "type": "text",
+            "id": "collection_alt",
+            "label": "Alt image"
+          }, {
+            "type": "image_picker",
+            "id": "collectiom_image",
+            "label": "Shop by Collection Image"
+          }
+        ]
+      }, {
+        "type": "menu_banner",
+        "name": "Menu Banner",
+        "settings": [
+          {
+            "type": "text",
+            "id": "banner_title",
+            "label": "title"
+          }, {
+            "type": "text",
+            "id": "banner_alt",
+            "label": "Alt image"
+          }, {
+            "type": "image_picker",
+            "label": "Banner Image",
+            "id": "banner_image"
+          }
+        ]
+      }, {
+        "type": "mobile_menu",
+        "name": "Mobile menu",
+        "settings": [
+          {
+            "type": "text",
+            "id": "mobile_title",
+            "label": "title"
+          }, {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          }, {
+            "type": "image_picker",
+            "label": "Icon",
+            "id": "mobile_icon"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

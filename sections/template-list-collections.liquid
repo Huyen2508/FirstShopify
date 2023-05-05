@@ -1,0 +1,57 @@
+<div class="mb-6 md:mb-20 flex flex-col items-center">
+  <h1 class="text-2xl md:text-3xl font-bold tracking-mdSpacing not-italic text-grey-900 mt-4 md:mt-0">
+    {{ section.settings.title }}
+  </h1>
+  <div class="container-update w-full mt-6 md:mt-10 px-4 md:px-10 1.5xl:px-20">
+    <div class="grid grid-cols-2 gap-x-4 gap-y-6 md:gap-y-10 md:gap-x-6 md:grid-cols-3">
+      {%- for collection in collections -%}
+        {%- if collection.all_products_count > 0 -%}
+          <div class="w-full">
+            <div class="overflow-hidden bg-white">
+              <a href="{{ collection.url }}">
+                <div class="h-full overflow-hidden rounded-sm relative pb-[97.41%]">
+                  {%- if collection.featured_image != blank -%}
+                    {%- assign collection_image = collection.featured_image -%}
+                  {%- else -%}
+                    {%- assign collection_image = collection.products.first.image -%}
+                  {%- endif -%}
+                  {%- if collection_image != blank -%}
+                    <img
+                      class="image-collection absolute h-full w-full transform rounded-sm object-cover transition duration-1000 ease-in-out hover:scale-105"
+                      src="{{ collection_image | image_url: master }}"
+                      alt="{{ collection.title | escape }}"
+                      width="240"
+                      height="240"
+                      loading="lazy"
+                    >
+                  {%- else -%}
+                    <img class="image-collection absolute h-full w-full transform rounded-sm object-cover transition duration-1000 ease-in-out hover:scale-105" src="{{ 'default.jpg' | asset_img_url }} " />
+                  {%- endif -%}
+                </div>
+              </a>
+              <div class="bg-primary-700 pt-3 md:pb-1.5 md:pt-5">
+                <h2 class="text-center text-base not-italic font-bold tracking-xsSpacing text-grey-900 md:text-xl md:mb-5">{{ collection.title }}</h2>
+                <a class="hidden md:block uppercase underline underline-offset-8 text-center text-sm not-italic font-bold tracking-lgSpacing text-grey-900 hover:text-primary-hover" href="{{ collection.url }}">{{- 'collection.landing.shop' | t -}}</a>
+              </div>
+            </div>
+          </div>
+        {%- else -%}
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Template List Collection",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Shop All"
+    }
+  ]
+}
+{% endschema %}

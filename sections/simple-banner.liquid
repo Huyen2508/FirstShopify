@@ -1,0 +1,102 @@
+<div class="py-8 md:py-14 px-4 text-center" style="background-color: {{ section.settings.bg_color }};">
+  <div class="banner-title mb-1.5 md:mb-3 text-xl md:text-3xl font-bold tracking-xsSpacing md:pt-1 md:tracking-mdSpacing" style="color: {{ section.settings.title_color }};">
+    {{ section.settings.title }}
+  </div>
+  <div class="banner-message mb-4 md:mb-5 text-base tracking-xsSpacing max-w-lg mx-auto" style="color: {{ section.settings.message_color }};">
+    {{ section.settings.message }}
+  </div>
+  {% if section.settings.cta_text %}
+    <div class="banner-link inline-block w-max md:pt-1">
+      <a class="button-primary py-4 px-8" href="{{ section.settings.cta_url }}">
+        {{ section.settings.cta_text }}
+      </a>
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+  {
+    "name": "Simple Banner",
+    "settings": [
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background color",
+        "default": "#FCF7F4"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "color",
+        "id": "title_color",
+        "label": "Title color",
+        "default": "#090F24"
+      },
+      {
+        "type": "richtext",
+        "id": "message",
+        "label": "Message"
+      }, {
+        "type": "color",
+        "id": "message_color",
+        "label": "Message color",
+        "default": "#404346"
+      }, {
+        "type": "text",
+        "id": "cta_text",
+        "label": "Cta text"
+      }, {
+        "type": "url",
+        "id": "cta_url",
+        "label": "Cta url"
+      }, {
+        "type": "header",
+        "content": "Margin (1 pt = 4px)"
+      }, {
+        "type": "range",
+        "id": "margin_top_desktop",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "unit": "pts",
+        "label": "Margin Top Desktop",
+        "default": 0
+      }, {
+        "type": "range",
+        "id": "margin_bottom_desktop",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "unit": "pts",
+        "label": "Margin Bottom Desktop",
+        "default": 0
+      }, {
+        "type": "range",
+        "id": "margin_top_mobile",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "unit": "pts",
+        "label": "Margin Top Mobile",
+        "default": 0
+      }, {
+        "type": "range",
+        "id": "margin_bottom_mobile",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "unit": "pts",
+        "label": "Margin Bottom Mobile",
+        "default": 0
+      }
+    ],
+    "presets": [
+      {
+        "name": "Simple Banner"
+      }
+    ]
+  }
+{% endschema %}

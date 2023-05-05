@@ -1,0 +1,171 @@
+{% liquid
+  assign blocks = section.blocks
+%}
+{{- 'section-footer.css' | asset_url | stylesheet_tag -}}
+
+<footer class="footer">
+  <div class="footer-top mx-auto my-0 px-4 lg:px-20">
+    <div class="footer-content-top border-t border-input md:pt-14 pt-5 md:pb-12 pb-3 inline-block w-full">
+      {% assign column_blocks = section.blocks | where: 'type', 'column' %}
+      {%- for block in column_blocks -%}
+        <div class="column w-2/6 float-left text-center my-1 ">
+          {%- if block.settings.footer_icon != blank -%}
+            <img class="1.5xl:inline-block 1.5xl:mb-0 mx-auto md:mb-4 mb-2 md:pb-0 pb-0.5 md:w-10 w-8" src="{{ block.settings.footer_icon  | img_url: 'master' }}" alt="">
+          {%- endif -%}
+          {%- if block.settings.text_icon != blank -%}
+            <p class=" block 1.5xl:inline-block 1.5xl:text-base text-xs font-semibold text-grey-900 md:leading-5 leading-22 1.5xl:ml-4 tracking-xsSpacing">{{ block.settings.text_icon}}</p>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+
+  <div class="footer-image inline-block float-left w-full">
+    <div class="tinline-block float-left w-full relative" style="background-color: {{ section.settings.background_color_footer}};">
+      <div class="image w-full md:w-1/2 float-left">
+        <div class="image_footer_desktop md-max:hidden">
+          <img class="w-full" src="{{ section.settings.image_footer_desktop  | img_url: 'master' }}" alt="">
+        </div>
+        <div class="image_footer_mobile md:hidden pt-8 pb-5">
+          <img class="mx-auto" src="{{  section.settings.image_footer_mobile  | img_url: 'master' }}" alt="">
+        </div>
+      </div>
+      <div class="text w-full md:w-1/2 float-left">
+        <div class="md:absolute md:top-1/2 md:-translate-y-2/4 md:pl-8 xl:pl-20 md:max-w-560 md:pr-3 md:text-left text-center md:pb-0 pb-9">
+          <p class="leading-4 text-xs font-medium text-grey-900 uppercase tracking-lgSpacing ">{{ section.settings.title_book }}</p>
+          <h4 class="md:leading-10 leading-7 text-xl lg:text-3xl md:text-2xl md:tracking-mdSpacing tracking-xsSpacing font-bold text-grey-900 mt-4 md:mb-8 mb-5 md:px-0 px-8">{{ section.settings.content_footer }}</h4>
+          <a class="relative font-bold text-grey-900 uppercase text-sm tracking-lgSpacing after:content-[''] after:-bottom-2 after:absolute after:bg-grey-900 after:w-full after:left-0 after:h-px" href="{{section.settings.link_url }}">{{ section.settings.link_label }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <div class=" footer-menu inline-block float-left bg-yellow-bg1 md:pt-14 pt-7 md:pb-11 pb-0.5 w-full">
+    <div class="mx-auto my-0 px-4 lg:px-20 ">
+      <div class="footer-sign-up w-full lg:w-1/3 md:w-1/4 float-left pt-1 md:pr-5 lg:pr-14 mt-px">
+        <h6 class="md:text-base text-xl text-grey-900 font-bold tracking-xsSpacing mb-3 md:text-left text-center">{{ section.settings.title_sign_up }}</h6>
+        <p class="text-base text-grey-700 font-normal tracking-xsSpacing md:pb-5 pb-4 md:text-left text-center">{{ section.settings.content_sign_up }}</p>
+        <a class="button-primary py-4 w-full md:max-w-156" href="{{section.settings.button_sign_up }}">{{ section.settings.sign_up_link }}</a>
+      </div>
+      <div class="w-full lg:w-2/3 md:w-3/4 float-left md:pt-1 pt-0 mt-px">
+        <div class="">
+          {%- if blocks.size > 0 -%}
+            {%- render 'footer-blocks', blocks: blocks %}
+          {%- endif -%}
+          {%- render 'footer-blocks-desktop', blocks: blocks -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+{%- capture src_url -%}
+  {{- 'section-footer.js' | asset_url -}}
+{%- endcapture -%}
+{%- render 'atom_script', src: src_url, priority: 'normal', type: 'defer' -%}
+{% schema %}
+{ 
+  "name": "Footer Main",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_footer_desktop",
+      "label": "Image Footer Desktop"   
+    },
+    {
+      "type": "image_picker",
+      "id": "image_footer_mobile",
+      "label": "Image Footer Mobile"    
+    },
+    {
+      "type": "color",
+      "id": "background_color_footer",
+      "label": "Content's background color",
+      "default": "#FCF7F4"
+    },
+    {
+      "type": "text",
+      "id": "title_book",
+      "label": "Title Book",
+      "default": "Book a Style Consultation"
+    },
+    {
+      "type": "text",
+      "id": "content_footer",
+      "label": "Content Footer",
+      "default": "Our fabulous in-store stylist, Tracey, will walk you through her essential list of basics."
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Link's label",
+      "default": "Book a Stylist"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Link's URL"
+    },
+    {
+      "type": "text",
+      "id": "title_sign_up",
+      "label": "Title Sign Up",
+      "default": "Sign Up & Save"
+    },
+    {
+      "type": "text",
+      "id": "content_sign_up",
+      "label": "Content Sign Up",
+      "default": "Sign up to our newsletter to receive your $20 voucher, first access to sales & promotions, and invitations to styling events."
+    },
+    {
+      "type": "text",
+      "id": "sign_up_link",
+      "label": "Sign UP Link",
+      "default": "sign me up"
+    },
+    {
+      "type": "url",
+      "id": "button_sign_up",
+      "label": "Button Sign UP"
+    }
+  ],
+
+  "blocks": [
+    {
+      "type": "menu",
+      "name": "Menu",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "link_list",
+          "id": "footer_menu",
+          "label": "Menu"
+        }
+      ]
+    },
+    {
+      "type":"column",
+      "name":"column",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "footer_icon",
+          "label": "Icon"
+        },
+        {
+          "type":"text",
+          "id":"text_icon",
+          "label":"Text Icon"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

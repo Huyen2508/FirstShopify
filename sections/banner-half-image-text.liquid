@@ -1,0 +1,96 @@
+<div class="banner-half-image-text-wrapper">
+  <a class="mb-8 lg:mb-20 flex flex-col md:grid md:grid-cols-2" href="{{ section.settings.cta_url }}">
+    <div class="banner-content py-10 md:py-14 px-4 lg:px-20 2xl:pr-24 flex flex-col justify-center {% if section.settings.banner_type == "1" %} md:order-1 {% endif %}" style="background-color: {{ section.settings.bg_color }};">
+      {%- if section.settings.show_title and section.settings.title -%}
+        <div class="banner-title mb-4 text-xss font-extrabold tracking-lgSpacing uppercase" style="color: {{ section.settings.text_color }};">
+          {{ section.settings.title }}
+        </div>
+      {%- endif -%}
+
+      <div class="banner-message text-2xl lg:text-4xl tracking-mdSpacing font-bold mb-6 lg:mb-8 2xl:mr-11" style="color: {{ section.settings.text_color }};">
+        {{ section.settings.message }}
+      </div>
+      {%- if section.settings.cta_text and section.settings.show_link -%}
+        <div class="banner-link inline-block w-max">
+          <div class="text-sm border-b font-bold uppercase inline-block tracking-lgSpacing pb-1.5" style="color: {{ section.settings.text_color }}; border-color: {{ section.settings.text_color }}">
+            {{ section.settings.cta_text }}
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+    <div class="banner-half-image-text-image overflow-hidden {% if section.settings.banner_type == "2" %} -order-1 md:order-2 {% endif %}">
+      <div class="bg-center hover:scale-105 transition-all duration-500 bg-cover bg-no-repeat h-full pt-[100%]" style="background-image: url('{{ section.settings.image | img_url: 'master'}}')"></div>
+    </div>
+  </a>
+</div>
+
+{% schema %}
+  {
+    "name": "Banner Half Image Text",
+    "settings": [
+      {
+        "type": "select",
+        "id": "banner_type",
+        "label": "Banner Type",
+        "options": [
+          {
+            "value": "1",
+            "label": "Image Left"
+          }, {
+            "value": "2",
+            "label": "Image Right"
+          }
+        ],
+        "default": "2"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background Color",
+        "default": "#1F2844"
+      },
+      {
+        "type": "richtext",
+        "id": "title",
+        "label": "Title"
+      }, {
+        "type": "checkbox",
+        "id": "show_title",
+        "label": "Show Title",
+        "default": true
+      }, {
+        "type": "richtext",
+        "id": "message",
+        "label": "Message"
+      }, {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      }, {
+        "type": "text",
+        "id": "cta_text",
+        "label": "Cta text"
+      }, {
+        "type": "url",
+        "id": "cta_url",
+        "label": "Cta url"
+      }, {
+        "type": "checkbox",
+        "id": "show_link",
+        "label": "Show link",
+        "default": true
+      }
+    ],
+    "presets": [
+      {
+        "name": "Banner Half Image Text"
+      }
+    ]
+  }
+{% endschema %}

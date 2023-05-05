@@ -1,0 +1,163 @@
+<style>
+  @font-face {
+    font-family: 'Urbanist';
+    src: url({{ 'Urbanist-Thin.ttf' | asset_url }}) format('truetype'),
+    url({{ 'Urbanist-Thin.ttf' | asset_url }});
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Urbanist';
+    src: url({{ 'Urbanist-ThinItalic.ttf' | asset_url }}) format('truetype'),
+    url({{ 'Urbanist-ThinItalic.ttf' | asset_url }});
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Urbanist';
+    src: url({{ 'Urbanist-ExtraLight.ttf' | asset_url }}) format('truetype'),
+    url({{ 'Urbanist-ExtraLight.ttf' | asset_url }});
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Urbanist';
+    src: url({{ 'Urbanist-ExtraLightItalic.ttf' | asset_url }}) format('truetype'),
+    url({{ 'Urbanist-ExtraLightItalic.ttf' | asset_url }});
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Urbanist';
+    src: url({{ 'Urbanist-Light.ttf' | asset_url }}) format('truetype'),
+    url({{ 'Urbanist-Light.ttf' | asset_url }});
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Urbanist';
+    src: url({{ 'Urbanist-LightItalic.ttf' | asset_url }}) format('truetype'),
+    url({{ 'Urbanist-LightItalic.ttf' | asset_url }});
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Urbanist';
+    src: url({{ 'Urbanist-Regular.ttf' | asset_url }}) format('truetype'),
+    url({{ 'Urbanist-Regular.ttf' | asset_url }});
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Urbanist';
+    src: url({{ 'Urbanist-Regular.ttf' | asset_url }}) format('truetype'),
+    url({{ 'Urbanist-Regular.ttf' | asset_url }});
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Urbanist';
+    src: url({{ 'Urbanist-Medium.ttf' | asset_url }}) format('truetype'),
+    url({{ 'Urbanist-Medium.ttf' | asset_url }});
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Urbanist';
+    src: url({{ 'Urbanist-MediumItalic.ttf' | asset_url }}) format('truetype'),
+    url({{ 'Urbanist-MediumItalic.ttf' | asset_url }});
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Urbanist';
+    src: url({{ 'Urbanist-SemiBold.ttf' | asset_url }}) format('truetype'),
+    url({{ 'Urbanist-SemiBold.ttf' | asset_url }});
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Urbanist';
+    src: url({{ 'Urbanist-SemiBoldItalic.ttf' | asset_url }}) format('truetype'),
+    url({{ 'Urbanist-SemiBoldItalic.ttf' | asset_url }});
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Urbanist';
+    src: url({{ 'Urbanist-Bold.ttf' | asset_url }}) format('truetype'),
+    url({{ 'Urbanist-Bold.ttf' | asset_url }});
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Urbanist';
+    src: url({{ 'Urbanist-BoldItalic.ttf' | asset_url }}) format('truetype'),
+    url({{ 'Urbanist-BoldItalic.ttf' | asset_url }});
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Urbanist';
+    src: url({{ 'Urbanist-ExtraBold.ttf' | asset_url }}) format('truetype'),
+    url({{ 'Urbanist-ExtraBold.ttf' | asset_url }});
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Urbanist';
+    src: url({{ 'Urbanist-ExtraBoldItalic.ttf' | asset_url }}) format('truetype'),
+    url({{ 'Urbanist-ExtraBoldItalic.ttf' | asset_url }});
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Urbanist';
+    src: url({{ 'Urbanist-Black.ttf' | asset_url }}) format('truetype'),
+    url({{ 'Urbanist-Black.ttf' | asset_url }});
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Urbanist';
+    src: url({{ 'Urbanist-BlackItalic.ttf' | asset_url }}) format('truetype'),
+    url({{ 'Urbanist-BlackItalic.ttf' | asset_url }});
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+  }
+</style>
